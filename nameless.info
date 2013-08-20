@@ -17,4 +17,4 @@ stylesheets[all][] = css/styles.css
 
 ;--------------------- J S ------------------------
 
-scripts[] = nameless.js
+scripts[] = js/nameless.js
