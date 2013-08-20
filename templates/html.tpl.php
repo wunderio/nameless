@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Snowcrash base theme implementation to display the basic html structure of
+ * nameless theme implementation to display the basic html structure of
  * a single Drupal page.
  *
  * Variables:
@@ -11,7 +11,7 @@
  * @see template_preprocess()
  * @see template_preprocess_html()
  * @see template_process()
- * @see snowcrash_base_preprocess_html()
+ * @see nameless_preprocess_html()
  */
 
 ?>
