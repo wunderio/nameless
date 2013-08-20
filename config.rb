@@ -28,6 +28,7 @@ javascripts_dir = "js"
 
 # State additional import paths here.
 add_import_path "libraries/normalize.scss"
+add_import_path "libraries/formalize/assets/css"
 
 ##
 ## You probably don't need to edit anything below this.

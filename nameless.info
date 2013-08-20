@@ -17,4 +17,5 @@ stylesheets[all][] = css/styles.css
 
 ;--------------------- J S ------------------------
 
+scripts[] = libraries/formalize/assets/js/jquery.formalize.legacy.js
 scripts[] = js/nameless.js
