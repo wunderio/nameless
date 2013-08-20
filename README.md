@@ -1,11 +1,12 @@
 # Nameless Drupal theme
 
-Starting point for development and allow a clean look at content
+Starting point for development and to allow a clean output of content
 
 ## Usage
 
 1. Add to %drupalroot%/sites/all/themes
 2. **Rename theme and hooks to a project specific name**
+3. update README to contain project specific information
 
 ## Technical goals
 
