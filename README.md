@@ -6,7 +6,8 @@ Starting point for development and to allow a clean output of content
 
 1. Add to %drupalroot%/sites/all/themes
 2. **Rename theme and hooks to a project specific name**
-3. update README to contain project specific information
+3. Update README to contain project specific information
+4. Run 'bower install' to download the required libraries
 
 ## Technical goals
 
