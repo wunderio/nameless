@@ -2,7 +2,8 @@
   "name": "nameless",
   "version": "0.0.0",
   "dependencies": {
-    "html5shiv": "~3.6.2"
+    "html5shiv": "~3.6.2",
+    "normalize.scss": "~2.1.2"
   },
   "devDependencies": {}
 }

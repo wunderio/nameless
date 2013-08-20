@@ -27,7 +27,7 @@ javascripts_dir = "js"
 #require 'plugin'
 
 # State additional import paths here.
-
+add_import_path "libraries/normalize.scss"
 
 ##
 ## You probably don't need to edit anything below this.
