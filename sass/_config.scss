@@ -1,6 +1,11 @@
-// =============================================================================
-// @file:
+//
 // VARIABLES for SASS/COMPASS
 // =============================================================================
 
 @import 'compass';
+
+
+$legacy-support-for-ie: false;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
