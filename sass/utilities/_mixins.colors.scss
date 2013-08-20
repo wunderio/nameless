@@ -1,0 +1,18 @@
+//
+// Color Mixins
+// =============================================================================
+
+// Gradient Bar Colors. For example for buttons and alerts.
+@mixin gradientBar($primaryColor, $secondaryColor) {
+  @include background-image(linear-gradient($primaryColor, $secondaryColor));
+  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+}
+
+// Use a gradient for the button background
+@mixin buttonGradientBackground($startColor, $endColor) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  @include gradientBar($startColor, $endColor);
+  *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  @include gradient-reset-filter();
+}

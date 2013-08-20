@@ -1,0 +1,26 @@
+//
+// Shorthand mixins - These save you some typing
+// =============================================================================
+
+// Sizing shortcuts
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Create vendor-prefixed CSS in one go
+// Example: @include vendor(border-radius, 4px);
+@mixin vendor($property, $value){
+    -webkit-#{$property}: $value;
+       -moz-#{$property}: $value;
+        -ms-#{$property}: $value;
+         -o-#{$property}: $value;
+            #{$property}: $value;
+}
+
+// Set font properties seperated
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}

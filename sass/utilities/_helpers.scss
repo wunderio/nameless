@@ -1,0 +1,59 @@
+//
+// Helpers - Helping classes
+// =============================================================================
+
+// CSS image replacement
+.hide-text {
+  @include hide-text();
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.element-invisible,
+.visuallyhidden {
+  @include element-invisible();
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+.element-invisible.focusable,
+.visuallyhidden.focusable {
+  @include element-invisible-focusable();
+}
+
+.element-visible {
+  @include element-invisible-off();
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.clear {
+  clear: both;
+}
+
+.text-overflow {
+  @include text-overflow();
+}
+
+.muted {
+  @include opacity(0.5);
+}
+
+.base-margin-bottom {
+  margin-bottom: $baseRhythm;
+}
+
