@@ -9,7 +9,7 @@
  *
  * @see template_preprocess()
  * @see template_preprocess_node()
- * @see nameless_base_preprocess_node()
+ * @see nameless_preprocess_node()
  * @see template_process()
  */
 ?>
