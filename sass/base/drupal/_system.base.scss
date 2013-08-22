@@ -30,12 +30,12 @@
 }
 /* Animated throbber */
 html.js input.form-autocomplete {
-  background-image: url(../../misc/throbber.gif);
-  background-position: 100% 2px; /* LTR */
+  background-image: url(../images/throbber-inactive.gif);
+  background-position: 98% 50%;
   background-repeat: no-repeat;
 }
 html.js input.throbbing {
-  background-position: 100% -18px; /* LTR */
+  background-image: url(../images/throbber-active.gif);
 }
 
 /**
