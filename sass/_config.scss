@@ -4,8 +4,36 @@
 
 @import 'compass';
 
+// -----------------------------------------------------------------------------
+// Browser support
+// -----------------------------------------------------------------------------
 
-$legacy-support-for-ie: false;
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: false;
+$legacy-support-for-ie:   false;
+$legacy-support-for-ie6:  false;
+$legacy-support-for-ie7:  false;
+$legacy-support-for-ie8:  false;
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+$base-font-size:    16px;
+$base-line-height:  24px;
+
+// -----------------------------------------------------------------------------
+// Colors
+// -----------------------------------------------------------------------------
+
+$black: #000;
+$white: #fff;
+
+// Shades of gray (not the book, just the colors)
+$gainsboro:       #DCDCDC;
+$lightgray:       #D3D3D3;
+$silver:          #C0C0C0;
+$mediumgray:      #BEBEBE;
+$darkgray:        #A9A9A9;
+$gray:            #808080;
+$dimgray:         #696969;
+$davygray:        #555555;
+$jet:             #343434;
