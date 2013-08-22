@@ -95,3 +95,16 @@ function nameless_preprocess_node(&$variables, $hook) {
 
   $variables['title_attributes_array']['class'][] = 'node-title';
 }
+
+/**
+ * Implements hook_css_alter().
+ */
+function nameless_css_alter(&$css) {
+
+  // Remove Drupal default stylesheets
+  $exclude = array(
+    'modules/system/system.menus.css' => FALSE,
+  );
+
+  $css = array_diff_key($css, $exclude);
+}
