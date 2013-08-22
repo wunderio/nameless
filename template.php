@@ -103,6 +103,7 @@ function nameless_css_alter(&$css) {
 
   // Remove Drupal default stylesheets
   $exclude = array(
+    'modules/system/system.base.css' => FALSE,
     'modules/system/system.menus.css' => FALSE,
     'modules/system/system.messages.css' => FALSE,
   );
