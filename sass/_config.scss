@@ -47,3 +47,16 @@ $tab-secondary-color-hover:       $black;
 $tab-secondary-bgcolor-default:   nth($grays, 1);
 $tab-secondary-color-default:     $black;
 $tab-secondary-border-radius:   $tab-primary-border-radius;
+
+// Messages
+$message-border-style:        1px dashed;
+$message-border-radius:       8px;
+$message-status-bgcolor:      #f8fff0;
+$message-status-bordercolor:  #be7;
+$message-status-color:        #234600;
+$message-warning-bgcolor:     #fffce5;
+$message-warning-bordercolor: #ed5;
+$message-warning-color:       #840;
+$message-error-bgcolor:       #fef5f1;
+$message-error-bordercolor:   #ed541d;
+$message-error-color:         #8c2e0b;
