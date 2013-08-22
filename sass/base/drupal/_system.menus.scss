@@ -18,15 +18,15 @@ ul {
   }
   li {
     &.expanded {
-      list-style-image: url(../../misc/menu-expanded.png);
+      list-style-image: url(../../../../../misc/menu-expanded.png);
       list-style-type: circle;
     }
     &.collapsed {
-      list-style-image: url(../../misc/menu-collapsed.png);
+      list-style-image: url(../../../../../misc/menu-collapsed.png);
       list-style-type: disc;
     }
     &.leaf {
-      list-style-image: url(../../misc/menu-leaf.png);
+      list-style-image: url(../../../../../misc/menu-leaf.png);
       list-style-type: square;
     }
   }
