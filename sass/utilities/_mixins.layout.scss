@@ -1,0 +1,36 @@
+//
+// Layout mixins - Layout related mixins
+// =============================================================================
+
+// Cross-Browser justified grid.
+// Inspired by http://code.jelmerdemaat.nl/2012/perfectly-justified-css-grid-technique-using-inline-block/
+// Important note: All elements need at least one space character between their tags to make this working!
+@mixin justifiedGrid($font-size: $baseFontSize, $vertical-align: middle) {
+  text-align: justify;
+
+  @if $legacy-support-for-ie {
+    -ms-text-justify: distribute-all-lines;
+  }
+
+  @if $legacy-support-for-ie7 {
+    text-justify: distribute-all-lines;
+  }
+
+  font-size: 0;
+
+  > * {
+    @include inline-block($vertical-align);
+
+    font-size: $font-size;
+
+    @if $legacy-support-for-ie7 {
+      *text-align: left;
+    }
+  }
+
+  &:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+  }
+}
