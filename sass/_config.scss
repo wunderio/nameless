@@ -20,3 +20,30 @@ $legacy-support-for-ie8:  false;
 
 $base-font-size:    16px;
 $base-line-height:  24px;
+
+// -----------------------------------------------------------------------------
+// Functional color variables
+// -----------------------------------------------------------------------------
+
+$base-background-color: $white;
+
+// -----------------------------------------------------------------------------
+// Drupal elements
+// -----------------------------------------------------------------------------
+
+// Tabs
+$tab-primary-bgcolor-active:   nth($grays, 5);
+$tab-primary-color-active:     $white;
+$tab-primary-bgcolor-hover:    nth($grays, 3);
+$tab-primary-color-hover:      $black;
+$tab-primary-bgcolor-default:  nth($grays, 1);
+$tab-primary-color-default:    $black;
+$tab-primary-border-radius:  5px;
+
+$tab-secondary-bgcolor-active:    nth($grays, 5);
+$tab-secondary-color-active:      $white;
+$tab-secondary-bgcolor-hover:     nth($grays, 3);
+$tab-secondary-color-hover:       $black;
+$tab-secondary-bgcolor-default:   nth($grays, 1);
+$tab-secondary-color-default:     $black;
+$tab-secondary-border-radius:   $tab-primary-border-radius;
