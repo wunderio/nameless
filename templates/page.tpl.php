@@ -80,13 +80,13 @@
       </div> <!-- /.content -->
 
       <?php if ($page['sidebar_first']): ?>
-        <aside class="sidebar-first">
+        <aside class="sidebar-first" role="complementary">
           <?php print render($page['sidebar_first']); ?>
         </aside> <!-- /.sidebar-first -->
       <?php endif; ?>
 
       <?php if ($page['sidebar_second']): ?>
-        <aside class="sidebar-second">
+        <aside class="sidebar-second" role="complementary">
           <?php print render($page['sidebar_second']); ?>
         </aside> <!-- /.sidebar-second -->
       <?php endif; ?>
