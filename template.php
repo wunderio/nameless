@@ -84,6 +84,14 @@ function nameless_process_page(&$variables) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function nameless_preprocess_node(&$variables, $hook) {
+  // Add a suggestion based on view_mode.
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+
+  // Add a class based on view_mode.
+  $variables['classes_array'][] = 'node-' . $variables['view_mode'];
+  $variables['classes_array'][] = 'node-' . $variables['type'] . '-' . $variables['view_mode'];
+  
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
 
