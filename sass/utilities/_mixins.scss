@@ -7,6 +7,7 @@
 @import 'mixins.ie';
 @import 'mixins.layout';
 @import 'mixins.shorthand';
+@import 'mixins.debug';
 
 // For clearing floats like a boss h5bp.com/q
 @mixin clearfix() {

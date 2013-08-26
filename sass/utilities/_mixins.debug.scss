@@ -1,0 +1,23 @@
+//
+// Mixins for debugging purposes
+// =============================================================================
+
+@mixin regionDebug($regionBgColor, $regionTitle) {
+  @if $debug {
+    @extend %border-box;
+    min-height: 150px;
+    background: rgba($regionBgColor, 0.2);
+    outline: 1px dashed $silver;
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+    &:after {
+      content: $regionTitle;
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      color: $black;
+    }
+  }
+}

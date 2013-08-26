@@ -46,6 +46,10 @@ function nameless_process_html(&$variables, $hook) {
  *   The name of the template being rendered ("page" in this case.)
  */
 function nameless_preprocess_page(&$variables, $hook) {
+  // add a variable for debugging,
+  // like showing all region containers even if they have no content
+  $variables['debug'] = TRUE;
+
   // remove default message from main content if there is no content created yet.
   unset($variables['page']['content']['system_main']['default_message']);
 }

@@ -32,7 +32,7 @@
         </a>
       <?php endif; ?>
 
-      <?php if ($page['header']): ?>
+      <?php if ($page['header'] || $debug): ?>
         <div class="header">
           <?php print render($page['header']); ?>
         </div>
@@ -40,13 +40,13 @@
 
     </header> <!-- /.header -->
 
-    <?php if ($page['navigation']): ?>
+    <?php if ($page['navigation'] || $debug): ?>
       <nav class="navigation">
         <?php print render($page['navigation']); ?>
       </nav> <!-- /.navigation-->
     <?php endif; ?>
 
-    <?php if ($page['highlighted']): ?>
+    <?php if ($page['highlighted'] || $debug): ?>
       <section class="highlighted">
         <?php print render($page['highlighted']); ?>
       </section> <!-- /.highlighted-->
@@ -79,13 +79,13 @@
 
       </div> <!-- /.content -->
 
-      <?php if ($page['sidebar_first']): ?>
+      <?php if ($page['sidebar_first'] || $debug): ?>
         <aside class="sidebar-first" role="complementary">
           <?php print render($page['sidebar_first']); ?>
         </aside> <!-- /.sidebar-first -->
       <?php endif; ?>
 
-      <?php if ($page['sidebar_second']): ?>
+      <?php if ($page['sidebar_second'] || $debug): ?>
         <aside class="sidebar-second" role="complementary">
           <?php print render($page['sidebar_second']); ?>
         </aside> <!-- /.sidebar-second -->
@@ -93,7 +93,7 @@
 
     </div> <!-- /#main -->
 
-    <?php if ($page['footer']): ?>
+    <?php if ($page['footer'] || $debug): ?>
       <footer class="footer" role="contentinfo">
         <?php print render($page['footer']); ?>
       </footer> <!-- /.footer -->

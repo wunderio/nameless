@@ -53,3 +53,6 @@
   @include opacity(0.5);
 }
 
+%border-box {
+  @include box-sizing(border-box);
+}
