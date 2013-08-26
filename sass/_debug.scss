@@ -1,0 +1,67 @@
+//
+// Debug code
+// =============================================================================
+
+@if $debug {
+/*******************************************************************************
+     ____       _
+    |  _ \  ___| |__  _   _  __ _
+    | | | |/ _ \ '_ \| | | |/ _` |
+    | |_| |  __/ |_) | |_| | (_| |
+    |____/ \___|_.__/ \__,_|\__, |
+                            |___/
+*******************************************************************************/
+}
+
+// Breakpoint debug
+@if $debug {
+  html, body {
+    &:before,
+    &:after {
+      font-size: 16px;
+      position: absolute;
+      top: 1em;
+      color: $black;
+    }
+    &:before {
+      left: 1em;
+    }
+    &:after {
+      right: 1em;
+    }
+  }
+
+  html {
+    @include leader(1, 16px, 'padding');
+
+    &:before {
+      content: 'Breakpoint: none (Mobile-First)';
+    }
+
+    @include breakpointDebug('$breakpoint-xxs', $breakpoint-xxs, 'before');
+    @include breakpointDebug('$breakpoint-xs', $breakpoint-xs, 'before');
+    @include breakpointDebug('$breakpoint-s', $breakpoint-s, 'before');
+    @include breakpointDebug('$breakpoint-m', $breakpoint-m, 'before');
+    @include breakpointDebug('$breakpoint-l', $breakpoint-l, 'before');
+    @include breakpointDebug('$breakpoint-xl', $breakpoint-xl, 'before');
+    @include breakpointDebug('$breakpoint-xxl', $breakpoint-xxl, 'before');
+  }
+
+  body {
+    position: relative;
+    @include leader(1, 16px, 'padding');
+
+    &:before {
+      content: 'Resolution: 1.0';
+    }
+
+    &:after {
+      content: 'Orientation: unknown';
+    }
+
+    @include breakpointDebug('Resolution: High-res', $breakpoint-high-resolution, 'before');
+
+    @include breakpointDebug('Orientation: Landscape', $breakpoint-orientation-landscape);
+    @include breakpointDebug('Orientation: Portrait', $breakpoint-orientation-portrait);
+  }
+}
