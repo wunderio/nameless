@@ -1,0 +1,25 @@
+//
+// Breakpoint definitions
+// =============================================================================
+
+// Device min-width breakpoints:
+$breakpoint-xxs:  320px;
+$breakpoint-xs:   480px;
+$breakpoint-s:    640px;
+$breakpoint-m:    950px;
+$breakpoint-l:    1025px;
+$breakpoint-xl:   1200px;
+$breakpoint-xxl:  1400px;
+
+// High-Resolution breakpoints:
+// http://bjango.com/articles/min-device-pixel-ratio/
+$breakpoint-high-resolution: (1.3dppx device-pixel-ratio), (1.5dppx device-pixel-ratio), (2dppx device-pixel-ratio), (3dppx device-pixel-ratio);
+
+// min- & max-device-pixel-ratio is currently not working with Breakpoint 2.0.6
+// (The min- and max- prefix is allways missing)
+// $breakpoint-min-device-pixel-ratio: 2.0dppx min-dpr;
+// $breakpoint-max-device-pixel-ratio: 2.0dppx max-dpr;
+
+// Orientation breakpoints:
+$breakpoint-orientation-landscape: orientation landscape;
+$breakpoint-orientation-portrait: orientation portrait;
