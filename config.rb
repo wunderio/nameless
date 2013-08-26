@@ -25,6 +25,8 @@ javascripts_dir = "js"
 
 # Require any additional compass plugins here.
 #require 'plugin'
+require 'singularitygs'
+require 'breakpoint'
 
 # State additional import paths here.
 add_import_path "libraries/normalize.scss"
