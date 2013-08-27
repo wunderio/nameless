@@ -22,11 +22,16 @@
   }
 }
 
-@mixin breakpointDebug($breakpointTitle, $breakpoint, $pseudo-element: 'after') {
+@mixin breakpointDebug($breakpointTitle, $breakpoint, $pseudo-element: 'after', $showBreakpointValue: false) {
   @if $debug {
     @include breakpoint($breakpoint) {
       &:#{$pseudo-element} {
-        content: $breakpointTitle;
+        @if $showBreakpointValue {
+          content: '#{$breakpointTitle}: #{$breakpoint}';
+        }
+        @else {
+          content: '#{$breakpointTitle}';
+        }
       }
     }
   }

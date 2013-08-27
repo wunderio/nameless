@@ -18,38 +18,46 @@
   html, body {
     &:before,
     &:after {
-      font-size: 16px;
+      display: block;
+      font-size: 12px;
       position: absolute;
       top: 1em;
       color: $black;
+      margin: 0 auto;
+      width: 33%;
     }
     &:before {
       left: 1em;
     }
     &:after {
       right: 1em;
+      text-align: right;
     }
   }
 
   html {
-    @include leader(1, 16px, 'padding');
+    @include leader(1, 12px, 'padding');
 
     &:before {
+      top: 3em;
+      left: 1em;
+      right: 1em;
+      text-align: center;
       content: 'Breakpoint: none (Mobile-First)';
     }
 
-    @include breakpointDebug('$breakpoint-xxs', $breakpoint-xxs, 'before');
-    @include breakpointDebug('$breakpoint-xs', $breakpoint-xs, 'before');
-    @include breakpointDebug('$breakpoint-s', $breakpoint-s, 'before');
-    @include breakpointDebug('$breakpoint-m', $breakpoint-m, 'before');
-    @include breakpointDebug('$breakpoint-l', $breakpoint-l, 'before');
-    @include breakpointDebug('$breakpoint-xl', $breakpoint-xl, 'before');
-    @include breakpointDebug('$breakpoint-xxl', $breakpoint-xxl, 'before');
+    @include breakpointDebug('$breakpoint-xxs', $breakpoint-xxs, 'before', true);
+    @include breakpointDebug('$breakpoint-xs', $breakpoint-xs, 'before', true);
+    @include breakpointDebug('$breakpoint-s', $breakpoint-s, 'before', true);
+    @include breakpointDebug('$breakpoint-m', $breakpoint-m, 'before', true);
+    @include breakpointDebug('$breakpoint-l', $breakpoint-l, 'before', true);
+    @include breakpointDebug('$breakpoint-xl', $breakpoint-xl, 'before', true);
+    @include breakpointDebug('$breakpoint-xxl', $breakpoint-xxl, 'before', true);
   }
 
   body {
     position: relative;
-    @include leader(1, 16px, 'padding');
+    @include leader(1, 12px, 'padding');
 
     &:before {
       content: 'Resolution: 1.0';
