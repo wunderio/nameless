@@ -109,6 +109,146 @@ function nameless_preprocess_node(&$variables, $hook) {
 }
 
 /**
+ * Override or insert variables into the comment templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("comment" in this case.)
+ */
+function nameless_preprocess_comment(&$variables, $hook) {
+  // If comment subjects are disabled, don't display them.
+  if (variable_get('comment_subject_field_' . $variables['node']->type, 1) == 0) {
+    $variables['title'] = '';
+  }
+
+  // Add pubdate to submitted variable.
+  $variables['pubdate'] = '<time pubdate datetime="' . format_date($variables['comment']->created, 'custom', 'c') . '">' . $variables['created'] . '</time>';
+  $variables['submitted'] = t('!username commented on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['pubdate']));
+
+  // Zebra striping.
+  if ($variables['id'] == 1) {
+    $variables['classes_array'][] = 'first';
+  }
+  if ($variables['id'] == $variables['node']->comment_count) {
+    $variables['classes_array'][] = 'last';
+  }
+  $variables['classes_array'][] = $variables['zebra'];
+
+  $variables['title_attributes_array']['class'][] = 'comment-title';
+}
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function nameless_preprocess_block(&$variables, $hook) {
+
+  $variables['classes_array'][] = $variables['block_zebra'];
+
+  $variables['title_attributes_array']['class'][] = 'block-title';
+
+  // Add Aria Roles via attributes.
+  // Suggest a navigation block template if appropriate.
+  switch ($variables['block']->module) {
+    case 'admin':
+      switch ($variables['block']->delta) {
+        case 'menu':
+          // Suggest a navigation block template and set role
+          $variables['theme_hook_suggestions'][] = 'block__navigation';
+          $variables['attributes_array']['role'] = 'navigation';
+          break;
+      }
+      break;
+    case 'system':
+      switch ($variables['block']->delta) {
+        case 'main':
+          // Note: the "main" role goes in the page.tpl, not here.
+          // Use a template with no wrapper for the page's main content.
+          $variables['theme_hook_suggestions'][] = 'block__no_wrapper';
+          break;
+        case 'help':
+        case 'powered-by':
+          $variables['attributes_array']['role'] = 'complementary';
+          break;
+        default:
+          // Any other "system" block is a menu block.
+          $variables['theme_hook_suggestions'][] = 'block__navigation';
+          $variables['attributes_array']['role'] = 'navigation';
+          break;
+      }
+      break;
+    case 'menu':
+    case 'menu_block':
+    case 'blog':
+    case 'book':
+    case 'comment':
+    case 'forum':
+    case 'shortcut':
+    case 'statistics':
+      $variables['theme_hook_suggestions'][] = 'block__navigation';
+      $variables['attributes_array']['role'] = 'navigation';
+      break;
+    case 'search':
+      $variables['attributes_array']['role'] = 'search';
+      break;
+    case 'help':
+    case 'aggregator':
+    case 'locale':
+    case 'poll':
+    case 'profile':
+      $variables['attributes_array']['role'] = 'complementary';
+      break;
+    case 'node':
+      switch ($variables['block']->delta) {
+        case 'syndicate':
+          $variables['attributes_array']['role'] = 'complementary';
+          break;
+        case 'recent':
+          $variables['theme_hook_suggestions'][] = 'block__navigation';
+          $variables['attributes_array']['role'] = 'navigation';
+          break;
+      }
+      break;
+    case 'user':
+      switch ($variables['block']->delta) {
+        case 'login':
+          $variables['attributes_array']['role'] = 'form';
+          break;
+        case 'new':
+        case 'online':
+          $variables['attributes_array']['role'] = 'complementary';
+          break;
+      }
+      break;
+  }
+  // In some regions, visually hide the title of any block, but leave it accessible.
+  $region = $variables['block']->region;
+  if ($region == 'header' ||
+    $region == 'navigation' ||
+    $region == 'highlighted') {
+    $variables['title_attributes_array']['class'][] = 'element-invisible';
+  }
+}
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function nameless_process_block(&$variables, $hook) {
+  // Drupal 7 should use a $title variable instead of $block->subject.
+  $variables['title'] = $variables['block']->subject;
+}
+
+/**
  * Implements hook_css_alter().
  */
 function nameless_css_alter(&$css) {

@@ -41,9 +41,9 @@
     </header> <!-- /.header -->
 
     <?php if ($page['navigation'] || $debug): ?>
-      <nav class="navigation">
+      <div class="navigation">
         <?php print render($page['navigation']); ?>
-      </nav> <!-- /.navigation-->
+      </div> <!-- /.navigation-->
     <?php endif; ?>
 
     <?php if ($page['highlighted'] || $debug): ?>
