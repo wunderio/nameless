@@ -54,7 +54,11 @@
 
     <div class="main">
 
-      <?php print $messages; ?>
+      <?php if($messages){ ?>
+        <div class="system-messages">
+          <?php print $messages; ?>
+        </div>
+      <?php } ?>
 
       <div class="content">
 
