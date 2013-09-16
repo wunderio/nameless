@@ -259,6 +259,8 @@ function nameless_css_alter(&$css) {
     'modules/system/system.base.css' => FALSE,
     'modules/system/system.menus.css' => FALSE,
     'modules/system/system.messages.css' => FALSE,
+
+    'modules/comment/comment.css' => FALSE,
   );
 
   $css = array_diff_key($css, $exclude);
