@@ -261,6 +261,11 @@ function nameless_css_alter(&$css) {
     'modules/system/system.messages.css' => FALSE,
 
     'modules/comment/comment.css' => FALSE,
+
+    // jQuery UI
+    'misc/ui/jquery.ui.core.css' => FALSE,
+    'misc/ui/jquery.ui.theme.css' => FALSE,
+    'misc/ui/jquery.ui.tabs.css' => FALSE,
   );
 
   $css = array_diff_key($css, $exclude);
