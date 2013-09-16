@@ -1,0 +1,43 @@
+//
+// Link styles
+// =============================================================================
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  @include transition(0.3s color, 0.3s background);
+
+  &:hover,
+  &:active,
+  &:focus{
+    color: $link-color-hover;
+    text-decoration: underline;
+
+    &.icon {
+      text-decoration: none;
+    }
+  }
+
+}
+
+// current / active link
+.current,
+.active {
+  & > a {
+    cursor: text;
+    text-decoration: underline;
+  }
+}
+
+// links in headlines
+h1, h2, h3, h4, h5, h6 {
+  a {
+    color: inherit;
+    &:hover,
+    &:active,
+    &:focus{
+      color: $link-color-hover;
+      text-decoration: none;
+    }
+  }
+}
