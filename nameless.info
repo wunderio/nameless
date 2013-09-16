@@ -14,9 +14,11 @@ core = 7.x
 
 stylesheets[all][] = css/editor.css
 stylesheets[all][] = css/style.css
+stylesheets[print][] = css/print.css
 
 ;--------------------- J S ------------------------
 
+scripts[] = libraries/respond/respond.src.js
 scripts[] = libraries/formalize/assets/js/jquery.formalize.legacy.js
 scripts[] = js/nameless.js
 
