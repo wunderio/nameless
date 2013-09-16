@@ -94,9 +94,9 @@ function nameless_preprocess_node(&$variables, $hook) {
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
   // Add a class based on view_mode.
-  $variables['classes_array'][] = 'node-' . $variables['view_mode'];
-  $variables['classes_array'][] = 'node-' . $variables['type'] . '-' . $variables['view_mode'];
-  
+  $variables['classes_array'][] = 'node-' . drupal_html_class($variables['view_mode']);
+  $variables['classes_array'][] = 'node-' .  drupal_html_class($variables['type']) . '-' .  drupal_html_class($variables['view_mode']);
+
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
 
@@ -137,6 +137,26 @@ function nameless_preprocess_comment(&$variables, $hook) {
   $variables['classes_array'][] = $variables['zebra'];
 
   $variables['title_attributes_array']['class'][] = 'comment-title';
+}
+
+/**
+ * Override or insert variables into the taxonomy term templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function nameless_preprocess_taxonomy_term(&$variables) {
+  // Add a suggestion based on view_mode.
+  $variables['theme_hook_suggestions'][] = 'term__' . $variables['view_mode'];
+  $variables['theme_hook_suggestions'][] = 'term__' . $variables['vocabulary_machine_name'] . '__' . $variables['view_mode'];
+
+  // Add a class based on view_mode.
+  $variables['classes_array'][] = 'term-' . drupal_html_class($variables['view_mode']);
+  $variables['classes_array'][] = 'term-' .  drupal_html_class($variables['vocabulary_machine_name']) . '-' .  drupal_html_class($variables['view_mode']);
+
+  $variables['title_attributes_array']['class'][] = 'term-title';
 }
 
 /**
@@ -184,6 +204,8 @@ function nameless_preprocess_block(&$variables, $hook) {
       }
       break;
     case 'menu':
+      // add a class indicating the menu name
+      $variables['classes_array'][] = drupal_html_class($variables['block']->delta);
     case 'menu_block':
     case 'blog':
     case 'book':
@@ -247,6 +269,20 @@ function nameless_preprocess_block(&$variables, $hook) {
 function nameless_process_block(&$variables, $hook) {
   // Drupal 7 should use a $title variable instead of $block->subject.
   $variables['title'] = $variables['block']->subject;
+}
+
+/**
+ * Add some template suggestions
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ */
+function nameless_preprocess_panels_pane(&$variables) {
+  $subtype = $variables['pane']->subtype;
+  $layout = $variables['display']->layout;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $layout;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $subtype;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $layout . '__' . $subtype;
 }
 
 /**
