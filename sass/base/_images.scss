@@ -1,0 +1,38 @@
+// =============================================================================
+// @file:
+// basic elements
+// =============================================================================
+
+// Image
+//
+// Markup:
+// <img src="http://placehold.it/350x250" />
+//
+// Styleguide 3.1.1
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Figure image
+//
+// Markup:
+// <figure><img src="http://placehold.it/250x250" /></figure>
+//
+// Styleguide 3.1.2
+figure > img {
+  display: block;
+}
+
+span.image-left {
+  float: left;
+  margin-right: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+span.image-right {
+  float: right;
+  margin-left: 0.75em;
+  margin-bottom: 0.75em;
+}
