@@ -16,3 +16,15 @@
   *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   @include gradient-reset-filter();
 }
+
+// Cross-Browser background gradient
+@mixin backgroundLinearGradient($startColor, $endColor, $direction: top) {
+  @include background(linear-gradient($direction, $startColor, $endColor));
+  @if $direction == top {
+    $ie-direction: 0;
+  } @else {
+    $ie-direction: 1;
+  }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=$ie-direction );
+  background-color: $startColor;
+}
