@@ -25,15 +25,46 @@ $legacy-support-for-ie8:  false;
 // -----------------------------------------------------------------------------
 // Typography
 // -----------------------------------------------------------------------------
+$base-rhythm:       rhythm(0.75);
 
 $base-font-size:    16px;
 $base-line-height:  24px;
+
+$sans-font-family:        Arial, sans-serif;
+$serif-font-family:       Georgia, "Times New Roman", Times, serif;
+$mono-font-family:        Monaco, Menlo, Consolas, "Courier New", monospace;
+$brand-font-family:       'PT Sans Narrow', sans-serif;
+
+// The font sizes for h1-h6.
+$h1-font-size: 2.77 * $base-font-size; // 36px/13px
+$h2-font-size: 1.85 * $base-font-size; // 24px/13px
+$h3-font-size: 1.385* $base-font-size; // 18px/13px
+$h4-font-size: 1.077* $base-font-size; // 14px/13px
+$h5-font-size: 0.85 * $base-font-size; // 11px/13px
+$h6-font-size: 0.67 * $base-font-size;
+
+$headings-font-family:    inherit;
+$headings-font-weight:    bold;
+
+// extra font sizes
+$huge-font-size:          3    * $base-font-size;
+$mega-font-size:          4.5  * $base-font-size;
+$giga-font-size:          6    * $base-font-size;
+
+$small-font-size:         0.7  * $base-font-size;
+$micro-font-size:         0.5  * $base-font-size;
 
 // -----------------------------------------------------------------------------
 // Functional color variables
 // -----------------------------------------------------------------------------
 
 $base-background-color: $white;
+
+// -----------------------------------------------------------------------------
+// Mathematical values
+// -----------------------------------------------------------------------------
+
+$golden-ratio: 1.618;
 
 // -----------------------------------------------------------------------------
 // Drupal elements
