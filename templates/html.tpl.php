@@ -37,7 +37,7 @@
   <script src="<?php print $base_path . $theme_path; ?>/libraries/html5shiv/dist/html5shiv.js"></script>
   <![endif]-->
   <?php print $styles; ?>
-
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 
