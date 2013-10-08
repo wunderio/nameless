@@ -3,16 +3,23 @@
 // basic elements
 // =============================================================================
 
-// Image
+// Responsive Image
 //
 // Markup:
 // <img src="http://placehold.it/350x250" />
+// Responsive Image:
+// <div style="width: 150px"><img src="http://placehold.it/350x250" /></div>
 //
 // Styleguide 3.1.1
 
 img {
   max-width: 100%;
   height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+.lt-ie9 img {
+  width: auto; // IE8-Fix
 }
 
 // Figure image
@@ -23,16 +30,4 @@ img {
 // Styleguide 3.1.2
 figure > img {
   display: block;
-}
-
-span.image-left {
-  float: left;
-  margin-right: 0.75em;
-  margin-bottom: 0.75em;
-}
-
-span.image-right {
-  float: right;
-  margin-left: 0.75em;
-  margin-bottom: 0.75em;
 }
