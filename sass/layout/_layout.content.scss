@@ -1,0 +1,30 @@
+.main-content {
+  @include clearfix();
+
+  // panels 2 column layout
+  .panel-2col .panel-col-first {
+    @include breakpoint($breakpoint-s, $no-query: true) {
+      @include grid-span(4, 1, 8);
+    }
+  }
+
+  .panel-2col .panel-col-last {
+    margin-top: 1em;
+    @include breakpoint($breakpoint-s, $no-query: true) {
+      margin-top: 0;
+      @include grid-span(4, 5, 8);
+    }
+  }
+
+  margin-bottom: 2em;
+  @include breakpoint($breakpoint-m, $no-query: true) {
+    margin-bottom: 0;
+  }
+
+}
+
+aside {
+  .block + .block {
+    margin-top: 2em;
+  }
+}

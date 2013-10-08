@@ -1,0 +1,46 @@
+//
+// Panels styles
+// - removed to specific selectors div.classname
+// - removed styles for nodes and rss in panes
+// =============================================================================
+
+.panel-pane .admin-links {
+  font-size: xx-small;
+  margin-right: 1em;
+}
+
+.panel-pane .admin-links li a {
+  color: #ccc;
+}
+
+.panel-pane .admin-links li {
+  padding-bottom: 2px;
+  background: white;
+  z-index: 201;
+}
+
+.panel-pane .admin-links:hover a,
+.panel-pane .admin-links-hover a {
+  color: #000;
+}
+
+.panel-pane .admin-links a:before {
+  content: "[";
+}
+
+.panel-pane .admin-links a:after {
+  content: "]";
+}
+
+.panel-pane .panel-hide {
+  display: none;
+}
+
+/** For IE we add the class via js; for other browsers we rely on :hover **/
+.panel-pane .panel-hide-hover,
+.panel-pane:hover .panel-hide {
+  display: block;
+  position: absolute;
+  z-index: 200;
+  margin-top: -1.5em;
+}
