@@ -2,4 +2,5 @@
 // Sprite definitions
 // =============================================================================
 
-$sprite: sprite-map("sprite/*.png");
+$sprite-spacing: 50px;
+$sprite: sprite-map("sprite/*.png", $spacing: 50px);
