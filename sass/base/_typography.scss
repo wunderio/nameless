@@ -155,7 +155,12 @@ pre {
 p + p,
 p + pre,
 pre + p,
-pre + pre {
+pre + pre,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6, {
   margin: $base-rhythm 0 0;
 }
 // leading paragraph
@@ -184,13 +189,29 @@ blockquote {
 
 // Lists
 // -----------------------------------------------------------------------------
-
-dl,
-menu,
+ul,
 ol,
-ul {
-  margin: 0 0 rhythm(0.5) $base-rhythm;
+dl,
+menu {
+  margin: 0 0 rhythm(0.5) 0;
   padding: 0;
+}
+
+.node, .cke_editable {
+  ul, ol, dl {
+    overflow: hidden;
+
+    li {
+      position: relative;
+      left: 1.5em;
+    }
+  }
+
+  ol {
+    li {
+      left: 2.5em;
+    }
+  }
 }
 
 ul ul,
