@@ -248,6 +248,13 @@ function nameless_preprocess_block(&$variables, $hook) {
           break;
       }
       break;
+    case 'views':
+      // Add view css classes to block
+      if (isset($variables['elements']['#views_contextual_links_info']['views_ui']['view']->display['default']->display_options['css_class'])) {
+        $views_css_classes = explode(' ', $variables['elements']['#views_contextual_links_info']['views_ui']['view']->display['default']->display_options['css_class']);
+        $variables['classes_array'] = array_merge($variables['classes_array'], $views_css_classes);
+      }
+      break;
   }
   // In some regions, visually hide the title of any block, but leave it accessible.
   $region = $variables['block']->region;
