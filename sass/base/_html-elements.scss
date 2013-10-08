@@ -5,3 +5,22 @@
 html {
   overflow-y: scroll;
 }
+
+
+// Tables
+
+table.borderless {
+  border: 0;
+
+  tbody, td {
+    border: 0;
+  }
+}
+
+.cke_editable table.borderless {
+  border: 1px $silver dashed;
+
+  td {
+    border: 1px $silver dashed;
+  }
+}
