@@ -312,4 +312,14 @@ function nameless_css_alter(&$css) {
   );
 
   $css = array_diff_key($css, $exclude);
+
+  // remove some contrib stylesheets
+  $fuzzy_exclude = array('twocol.css', 'ds_2col_stacked.css', 'panels.css');
+  foreach ($css as $path => $meta) {
+    foreach ($fuzzy_exclude as $css_file) {
+      if (strpos($path, $css_file) !== FALSE) {
+        unset($css[$path]);
+      }
+    }
+  }
 }
