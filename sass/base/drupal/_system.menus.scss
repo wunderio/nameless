@@ -13,21 +13,18 @@ ul {
     list-style: none;
     text-align: left;
     li {
-      margin: 0 0 0 0.5em;
+      list-style: none;
     }
   }
   li {
     &.expanded {
-      list-style-image: url(../../../../../misc/menu-expanded.png);
-      list-style-type: circle;
+
     }
     &.collapsed {
-      list-style-image: url(../../../../../misc/menu-collapsed.png);
-      list-style-type: disc;
+
     }
     &.leaf {
-      list-style-image: url(../../../../../misc/menu-leaf.png);
-      list-style-type: square;
+
     }
   }
 }
@@ -54,6 +51,7 @@ ul {
   &.inline, &.links.inline {
     display: inline;
     padding-left: 0;
+    margin-left: 0;
   }
   &.inline li {
     display: inline;
@@ -88,6 +86,10 @@ ul.tabs {
     padding: 0 0 0 1em;
     li {
       @include inline-block();
+      padding: 0;
+      & + li {
+        margin: 0;
+      }
       a {
         @include inline-block();
         background-color: $tab-primary-bgcolor-default;

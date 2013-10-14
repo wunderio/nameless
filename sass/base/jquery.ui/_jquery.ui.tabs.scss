@@ -1,0 +1,45 @@
+/*!
+ * jQuery UI Tabs 1.10.2
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs {
+  position: relative; /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+  padding: 0;
+
+  .ui-tabs-nav {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+      a {
+        padding: 0 1em;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      &.ui-tabs-active {
+        a {
+          cursor: text;
+        }
+      }
+      &.ui-state-disabled a, &.ui-tabs-loading a {
+        cursor: text;
+      }
+    }
+  }
+  .ui-tabs-panel {
+  }
+}
+
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+  cursor: pointer;
+}

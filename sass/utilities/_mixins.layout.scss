@@ -5,7 +5,7 @@
 // Cross-Browser justified grid.
 // Inspired by http://code.jelmerdemaat.nl/2012/perfectly-justified-css-grid-technique-using-inline-block/
 // Important note: All elements need at least one space character between their tags to make this working!
-@mixin justifiedGrid($font-size: $baseFontSize, $vertical-align: middle) {
+@mixin justifiedGrid($font-size: $base-font-size, $vertical-align: middle) {
   text-align: justify;
 
   @if $legacy-support-for-ie {

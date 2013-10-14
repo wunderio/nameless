@@ -1,0 +1,281 @@
+//
+// Typography styles
+// =============================================================================
+
+
+html,
+button,
+input,
+select,
+textarea {
+  color: $text-color;
+  font-family: $sans-font-family;
+}
+
+body {
+  background: $body-background;
+  @include adjust-font-size-to($base-font-size);
+  font-size: $base-font-size; // set a pixel based value as a basic font-size
+}
+
+// Headlines
+//
+// 0.75 unit of vertical rhythm on the bottom margin.
+//
+// Markup:
+// <h1>-headline -h1</h1>
+// <h2>-headline -h2</h2>
+// <h3>-headline -h3</h3>
+// <h4>-headline -h4</h4>
+// <h5>-headline -h5</h5>
+// <h6>-headline -h6</h6>
+//
+// Styleguide 3.2.1
+
+// Headline like styled elements
+//
+// As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+// When we define a heading we also define a corresponding class to go with it.
+// This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+// heading hierarchy.
+//
+// Markup:
+// <p class="alpha">Paragraph "alpha" styled like a headline -h1: Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. </p>
+// <p class="beta">Paragraph "beta" styled like a headline -h2: But I can't give you this case, it don't belong to me.</p>
+// <p class="gamma">Paragraph "gamma" styled like a headline -h3: Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
+// <p class="delta">Paragraph "delta" styled like a headline -h4: Now that we know who you are, I know who I am. I'm not a mistake!</p>
+// <p class="epsilon">Paragraph "epsilon" styled like a headline -h5: It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be?</p>
+// <p class="zeta">Paragraph "zeta" styled like a headline -h6: -he's the exact opposite of the hero. And most times they're friends, like you and me!</p>
+//
+// Styleguide 3.2.2
+
+
+h1,
+.alpha {
+  @include adjust-font-size-to( $h1-font-size );
+  @include trailer(0.75, $h1-font-size);
+}
+
+h2,
+.beta {
+  @include adjust-font-size-to( $h2-font-size );
+  @include trailer(0.75, $h2-font-size);
+}
+
+h3,
+.gamma {
+  @include adjust-font-size-to( $h3-font-size );
+  @include trailer(0.75, $h3-font-size);
+}
+
+h4,
+.delta {
+  @include adjust-font-size-to( $h4-font-size );
+  @include trailer(0.75, $h4-font-size);
+}
+
+h5,
+.epsilon {
+  @include adjust-font-size-to( $h5-font-size );
+  @include trailer(0.75, $h5-font-size);
+}
+
+h6,
+.zeta {
+  @include adjust-font-size-to( $h6-font-size );
+  @include trailer(0.75, $h6-font-size);
+}
+
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+  margin-top: 0;
+  hgroup & {
+    margin-bottom: 0;
+  }
+}
+
+h1, h2,
+.alpha, .beta {
+  font-family: $brand-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+}
+
+h3, h4, h5, h6,
+.gamma, .delta, .epsilon, .zeta {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+}
+
+hgroup {
+  @include trailer(0.75, $h2-font-size);
+}
+
+// Predefined type sizes
+//
+// A series of classes for setting massive type; for use in heroes, mastheads,
+// promos, etc.
+// A series of classes for setting small type, for use in smallprint etc.
+//
+// Markup:
+// <p class="micro">Paragraph "micro": Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. </p>
+// <p class="small">Paragraph "small": But I can't give you this case, it don't belong to me.</p>
+// <p>Paragraph without any class: -he's the exact opposite of the hero. And most times they're friends, like you and me!</p>
+// <p class="huge">Paragraph "huge": It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be?</p>
+// <p class="mega">Paragraph "mega": Now that we know who you are, I know who I am. I'm not a mistake!</p>
+// <p class="giga">Paragraph "giga": Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
+//
+// Styleguide 3.2.3
+
+.micro {
+  @include adjust-font-size-to($micro-font-size);
+}
+.small {
+  @include adjust-font-size-to($small-font-size);
+}
+.huge {
+  @include adjust-font-size-to($huge-font-size);
+}
+.mega {
+  @include adjust-font-size-to($mega-font-size);
+}
+.giga {
+  @include adjust-font-size-to($giga-font-size);
+}
+
+p,
+pre {
+  margin: 0;
+}
+
+p + p,
+p + pre,
+pre + p,
+pre + pre,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6, {
+  margin: $base-rhythm 0 0;
+}
+// leading paragraph
+.lead {
+
+}
+
+blockquote {
+  padding: 0 0 0 rhythm(0.5);
+  margin: 0 0 $base-rhythm;
+  p {
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: $base-line-height * 1.25;
+  }
+  footer,
+  small {
+    display: block;
+    line-height: $base-line-height;
+    color: nth($grays, 3);
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+// Lists
+// -----------------------------------------------------------------------------
+ul,
+ol,
+dl,
+menu {
+  margin: 0 0 rhythm(0.5) 0;
+  padding: 0;
+}
+
+.node, .cke_editable {
+  ul, ol, dl {
+    overflow: hidden;
+
+    li {
+      position: relative;
+      left: 1.5em;
+    }
+  }
+
+  ol {
+    li {
+      left: 2.5em;
+    }
+  }
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: $base-line-height;
+}
+
+dl {
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 0 $base-rhythm;
+}
+
+ul.unstyled,
+ol.unstyled,
+nav ul,
+nav ol {
+  margin-left: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+// Misc
+// -----------------------------------------------------------------------------
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid nth($grays, 3);
+  margin: 0 0 $base-rhythm;
+  padding: 0;
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: $base-rhythm;
+  font-style: normal;
+  line-height: $base-line-height;
+}
+
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection declarations have to be separate.
+// Customize the background color to match your design.
+::-moz-selection {
+  background: $text-selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $text-selection-color;
+  text-shadow: none;
+}
+
+.caps{
+  text-transform: uppercase;
+}

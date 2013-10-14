@@ -3,7 +3,11 @@
  * Styles for system messages.
  */
 
-div.messages {
+.system-messages {
+  @extend .clear;
+}
+
+.messages {
   background-position: 8px 8px;
   background-repeat: no-repeat;
   border: $message-border-style;
@@ -23,7 +27,7 @@ div.messages {
 
 // Status
 
-div.status {
+.status {
   background-image: url(../../../../../misc/message-24-ok.png);
   border-color: $message-status-bordercolor;
   color: $message-status-color;
@@ -33,13 +37,13 @@ div.status {
   color: $message-status-color;
 }
 
-div.status, table tr.ok {
+.status, table tr.ok {
   background-color: $message-status-bgcolor;
 }
 
 // Warning
 
-div.warning {
+.warning {
   background-image: url(../../../../../misc/message-24-warning.png);
   border-color: $message-warning-bordercolor;
   color: $message-warning-color;

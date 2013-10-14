@@ -21,6 +21,7 @@ function nameless_preprocess_html(&$variables, $hook) {
   $variables['html_attributes_array'] = array(
     'lang' => $variables['language']->language,
     'dir' => $variables['language']->dir,
+    'class' => array('no-js'),
   );
 }
 
@@ -93,9 +94,9 @@ function nameless_preprocess_node(&$variables, $hook) {
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
   // Add a class based on view_mode.
-  $variables['classes_array'][] = 'node-' . $variables['view_mode'];
-  $variables['classes_array'][] = 'node-' . $variables['type'] . '-' . $variables['view_mode'];
-  
+  $variables['classes_array'][] = 'node-' . drupal_html_class($variables['view_mode']);
+  $variables['classes_array'][] = 'node-' .  drupal_html_class($variables['type']) . '-' .  drupal_html_class($variables['view_mode']);
+
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
 
@@ -136,6 +137,26 @@ function nameless_preprocess_comment(&$variables, $hook) {
   $variables['classes_array'][] = $variables['zebra'];
 
   $variables['title_attributes_array']['class'][] = 'comment-title';
+}
+
+/**
+ * Override or insert variables into the taxonomy term templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function nameless_preprocess_taxonomy_term(&$variables) {
+  // Add a suggestion based on view_mode.
+  $variables['theme_hook_suggestions'][] = 'term__' . $variables['view_mode'];
+  $variables['theme_hook_suggestions'][] = 'term__' . $variables['vocabulary_machine_name'] . '__' . $variables['view_mode'];
+
+  // Add a class based on view_mode.
+  $variables['classes_array'][] = 'term-' . drupal_html_class($variables['view_mode']);
+  $variables['classes_array'][] = 'term-' .  drupal_html_class($variables['vocabulary_machine_name']) . '-' .  drupal_html_class($variables['view_mode']);
+
+  $variables['title_attributes_array']['class'][] = 'term-title';
 }
 
 /**
@@ -183,6 +204,8 @@ function nameless_preprocess_block(&$variables, $hook) {
       }
       break;
     case 'menu':
+      // add a class indicating the menu name
+      $variables['classes_array'][] = drupal_html_class($variables['block']->delta);
     case 'menu_block':
     case 'blog':
     case 'book':
@@ -225,6 +248,13 @@ function nameless_preprocess_block(&$variables, $hook) {
           break;
       }
       break;
+    case 'views':
+      // Add view css classes to block
+      if (isset($variables['elements']['#views_contextual_links_info']['views_ui']['view']->display['default']->display_options['css_class'])) {
+        $views_css_classes = explode(' ', $variables['elements']['#views_contextual_links_info']['views_ui']['view']->display['default']->display_options['css_class']);
+        $variables['classes_array'] = array_merge($variables['classes_array'], $views_css_classes);
+      }
+      break;
   }
   // In some regions, visually hide the title of any block, but leave it accessible.
   $region = $variables['block']->region;
@@ -249,6 +279,20 @@ function nameless_process_block(&$variables, $hook) {
 }
 
 /**
+ * Add some template suggestions
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ */
+function nameless_preprocess_panels_pane(&$variables) {
+  $subtype = $variables['pane']->subtype;
+  $layout = $variables['display']->layout;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $layout;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $subtype;
+  $variables['theme_hook_suggestions'][] = 'panels_pane__' . $layout . '__' . $subtype;
+}
+
+/**
  * Implements hook_css_alter().
  */
 function nameless_css_alter(&$css) {
@@ -258,7 +302,24 @@ function nameless_css_alter(&$css) {
     'modules/system/system.base.css' => FALSE,
     'modules/system/system.menus.css' => FALSE,
     'modules/system/system.messages.css' => FALSE,
+
+    'modules/comment/comment.css' => FALSE,
+
+    // jQuery UI
+    'misc/ui/jquery.ui.core.css' => FALSE,
+    'misc/ui/jquery.ui.theme.css' => FALSE,
+    'misc/ui/jquery.ui.tabs.css' => FALSE,
   );
 
   $css = array_diff_key($css, $exclude);
+
+  // remove some contrib stylesheets
+  $fuzzy_exclude = array('twocol.css', 'ds_2col_stacked.css', 'panels.css');
+  foreach ($css as $path => $meta) {
+    foreach ($fuzzy_exclude as $css_file) {
+      if (strpos($path, $css_file) !== FALSE) {
+        unset($css[$path]);
+      }
+    }
+  }
 }
