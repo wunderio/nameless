@@ -8,6 +8,7 @@ Starting point for development and to allow a clean output of content
 2. **Rename theme and hooks to a project specific name**
 3. Update README to contain project specific information
 4. Run 'bower install' to download the required libraries
+5. Delete the .gitignore file or remove the line ignoring the libraries folder
 
 ## Technical goals
 
