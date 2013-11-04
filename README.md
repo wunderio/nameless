@@ -34,7 +34,7 @@ Replace the **[placeholder]** with your new theme name.
     # Rename files
     find . -depth -name '*nameless*' -execdir bash -c 'mv -i "$1" "${1//nameless/[placeholder]}"' bash {} \;
     
-    # Replace the placeholder recursive (does not working in osx)
+    # Replace the placeholder recursive (does not work in osx)
     find . -depth -type f -print0 | xargs -0 sed -i 's/nameless/[placeholder]/g'
     
     # Install libraries
