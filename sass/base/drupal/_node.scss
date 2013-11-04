@@ -1,0 +1,13 @@
+//
+// Node styles
+// =============================================================================
+
+.node-unpublished {
+  background-color: $unpublished-color;
+}
+.preview .node {
+  background-color: $preview-color;
+}
+td.revision-current {
+  background: $current-revision;
+}

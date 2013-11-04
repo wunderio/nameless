@@ -305,6 +305,8 @@ function nameless_css_alter(&$css) {
 
     'modules/comment/comment.css' => FALSE,
 
+    'modules/node/node.css' => FALSE,
+
     // jQuery UI
     'misc/ui/jquery.ui.core.css' => FALSE,
     'misc/ui/jquery.ui.theme.css' => FALSE,
