@@ -27,18 +27,20 @@ Replace the **[placeholder]** with your new theme name.
     
     # Prepare the theme template
     git clone git@github.com:wunderkraut/nameless.git
-    cp nameless [placeholder]
-    cd [placeholder]
-    rm -r .git*
-    
-    # Rename files
-    find . -depth -name '*nameless*' -execdir bash -c 'mv -i "$1" "${1//nameless/[placeholder]}"' bash {} \;
-    
-    # Replace the placeholder recursive (does not work in osx)
-    find . -depth -type f -print0 | xargs -0 sed -i 's/nameless/[placeholder]/g'
-    
-    # Install libraries
-    bower install
-    
-    # Compile the css files the first time
-	compass compile
+	cp -r nameless [placeholder]
+	cd [placeholder]
+	rm -rdf .git*
+
+	# Rename files
+	find . -depth -name '*nameless*' -execdir bash -c 'mv -i "$1" "${1//nameless/[placeholder]}"' bash {} \;
+
+	# Replace the theme name recursive
+	find . -depth -type f \( -name '*.info' -o -name 'bower.json' -o -name '*.php' -o -name '*.js' \) -exec sed -i '' s%nameless%[placeholder]% {} +
+
+	# Install libraries
+	bower install
+
+	# Compile the css files the first time
+	compass compile	
+	
+	
