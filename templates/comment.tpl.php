@@ -9,7 +9,7 @@
  *
  * @see template_preprocess()
  * @see template_preprocess_comment()
- * @see snowcrash_base_preprocess_comment()
+ * @see nameless_preprocess_comment()
  * @see template_process()
  * @see theme_comment()
  */

@@ -3,6 +3,9 @@
 /**
  * @file
  * nameless theme implementation to display a block.
+ * - headline markup has been altered to a h4, because we already have h2 all over
+ *   the place
+ * - wrapping div around content has been removed
  *
  * Available variables:
  * for info on available variables see modules/block/block.tpl.php

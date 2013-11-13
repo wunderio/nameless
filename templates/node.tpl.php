@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default theme implementation to display a node.
+ * nameless theme implementation to display a node.
  *
  * Available variables:
  * for info on available variables see modules/node/node.tpl.php

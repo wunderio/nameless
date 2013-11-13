@@ -2,7 +2,9 @@
 
 /**
  * @file
- * nameless theme implementation to display a block.
+ * nameless theme implementation to display a navigation block.
+ * - a theme hook suggestion is added in preprocessing
+ *   for all known system navigation blocks
  *
  * Available variables:
  * for info on available variables see modules/block/block.tpl.php
@@ -16,7 +18,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+    <h4<?php print $title_attributes; ?>><?php print $title; ?></h4>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 

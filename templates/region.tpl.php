@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Snowcrash base theme implementation to display a region.
+ * nameless theme implementation to display a region.
  * Should not be wrapped by default.
  *
  * Available variables:
