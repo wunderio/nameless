@@ -12,10 +12,13 @@ textarea {
   font-family: $sans-font-family;
 }
 
-body {
-  background: $body-background;
+html {
   @include adjust-font-size-to($base-font-size);
   font-size: $base-font-size; // set a pixel based value as a basic font-size
+}
+
+body {
+  background: $body-background;
 }
 
 // Headlines

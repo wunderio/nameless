@@ -19,12 +19,22 @@
     &:before,
     &:after {
       display: block;
+      position: fixed;
+      top: 4em;
+      z-index: 999999;
+      width: 25%;
+
+      @include box-sizing(border-box);
+      @include border-radius(10px);
+      @include single-box-shadow(rgba(0,0,0,0.3), 2px, 2px, 3px, false, false);
+
       font-size: 12px;
-      position: absolute;
-      top: 1em;
       color: $black;
-      margin: 0 auto;
-      width: 33%;
+
+      background-color: rgba(255,255,255,0.75);
+      padding: 0.5em 1em;
+
+
     }
     &:before {
       left: 1em;
@@ -39,11 +49,11 @@
     @include leader(1, 12px, 'padding');
 
     &:before {
-      top: 3em;
-      left: 1em;
-      right: 1em;
       text-align: center;
       content: 'Breakpoint: none (Mobile-First)';
+      width: 20em;
+      left: 50%;
+      margin-left: -10em;
     }
 
     @include breakpointDebug('$breakpoint-xxs', $breakpoint-xxs, 'before', true);
