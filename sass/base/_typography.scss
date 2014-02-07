@@ -52,37 +52,37 @@ html {
 h1,
 .alpha {
   @include adjust-font-size-to( $h1-font-size );
-  @include trailer(0.75, $h1-font-size);
+  @include trailer($headings-trailer);
 }
 
 h2,
 .beta {
   @include adjust-font-size-to( $h2-font-size );
-  @include trailer(0.75, $h2-font-size);
+  @include trailer($headings-trailer);
 }
 
 h3,
 .gamma {
   @include adjust-font-size-to( $h3-font-size );
-  @include trailer(0.75, $h3-font-size);
+  @include trailer($headings-trailer);
 }
 
 h4,
 .delta {
   @include adjust-font-size-to( $h4-font-size );
-  @include trailer(0.75, $h4-font-size);
+  @include trailer($headings-trailer);
 }
 
 h5,
 .epsilon {
   @include adjust-font-size-to( $h5-font-size );
-  @include trailer(0.75, $h5-font-size);
+  @include trailer($headings-trailer);
 }
 
 h6,
 .zeta {
   @include adjust-font-size-to( $h6-font-size );
-  @include trailer(0.75, $h6-font-size);
+  @include trailer($headings-trailer);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -165,6 +165,13 @@ p + h6, {
 // leading paragraph
 .lead {
 
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-bottom: 0;
 }
 
 blockquote {
