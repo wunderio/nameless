@@ -1,6 +1,6 @@
 // =============================================================================
 // @file:
-// basic elements
+// basic elements for media (e.g. img and video)
 // =============================================================================
 
 // Responsive Image
@@ -12,14 +12,15 @@
 //
 // Styleguide 3.1.1
 
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
-}
 
-.lt-ie9 img {
-  width: auto; // IE8-Fix
+  .ie8 & {
+    width: auto; // IE8-Fix
+  }
 }
 
 // Figure image
