@@ -1,5 +1,5 @@
 /*
-// Main stylesheet containing layout, features and style overrides
+// Layout stylesheet.
 // ========================================================================== */
 
 @import 'config';
@@ -7,7 +7,4 @@
 
 @import 'debug';
 
-@import 'base/base';
-
-@import 'layout/layout.config';
-@import 'theme/theme';
+@import 'layout/layout';

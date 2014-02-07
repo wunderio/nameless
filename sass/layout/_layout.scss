@@ -10,10 +10,7 @@
     |_____\__,_|\__, |\___/ \__,_|\__|
                 |___/
 *******************************************************************************/
-@import "singularitygs";
-
-$grids: 12;
-$gutters: 1/3;
+@import 'layout.config';
 
 @import 'simple-flexible';
 @import 'layout.content';
