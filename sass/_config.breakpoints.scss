@@ -13,7 +13,7 @@ $breakpoint-xxl:  1400px;
 
 // High-Resolution breakpoints:
 // http://bjango.com/articles/min-device-pixel-ratio/
-$breakpoint-high-resolution: (1.3dppx device-pixel-ratio), (1.5dppx device-pixel-ratio), (2dppx device-pixel-ratio), (3dppx device-pixel-ratio);
+$breakpoint-high-resolution: min-resolution 1.3dppx;
 
 // min- & max-device-pixel-ratio is currently not working with Breakpoint 2.0.6
 // (The min- and max- prefix is allways missing)
