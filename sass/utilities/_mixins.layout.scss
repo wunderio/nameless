@@ -17,11 +17,13 @@
   }
 
   font-size: 0;
+  line-height: 0;
 
   > * {
     @include inline-block($vertical-align);
 
     font-size: $font-size;
+    line-height: $font-size * ($base-line-height / $base-font-size);
 
     @if $legacy-support-for-ie7 {
       *text-align: left;
@@ -43,4 +45,10 @@
   width: 100%;
   height: 0;
   padding-bottom: #{$gap + "%"};
+}
+
+// Reset responsive element to normal behavior
+@mixin reset-responsive-element() {
+  height: initial;
+  max-width: none;
 }

@@ -9,21 +9,13 @@
 @import 'mixins.shorthand';
 @import 'mixins.debug';
 
-// For clearing floats like a boss h5bp.com/q
 @mixin clearfix() {
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    *zoom: 1;
-  }
-  &:before,
   &:after {
-    display: table;
+    visibility: hidden;
+    display: block;
     content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
-    line-height: 0;
-  }
-  &:after {
     clear: both;
+    height: 0;
   }
 }
 
