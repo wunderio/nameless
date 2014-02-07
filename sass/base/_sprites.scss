@@ -2,5 +2,44 @@
 // Sprite definitions
 // =============================================================================
 
-$sprite-spacing: 50px;
-//$sprite: sprite-map("sprite/*.png", $spacing: 50px);
+// General Sprite Defaults
+$sprite-position: 0% !default;
+$sprite-spacing: 10px;
+$sprite-repeat: no-repeat !default;
+
+
+//
+// Creating Of Sprites
+//
+/*
+// Example Sprite
+$sprite-example-width: 20px;
+$sprite-example: sprite-map("sprite/example/*.png",
+  $position: $sprite-position,
+  $spacing: $sprite-spacing,
+  $repeat: $sprite-repeat,
+  $readonly-spacing: $sprite-spacing);
+
+// example Icons HiDpi
+$sprite-example-2x: sprite-map("sprite/example-icons@2x/*.png",
+  $position: $sprite-position,
+  $spacing: $sprite-spacing * 2,
+  $repeat: $sprite-repeat,
+  $readonly-spacing: $sprite-spacing);
+
+//
+// Mixins For Sprite Usage
+//
+
+// Example Sprite Mixin with HiDPI support
+@mixin sprite-example($image-file-name, $dimensions: false, $offset-x: 0, $offset-y: 0) {
+  background: $sprite-example no-repeat;
+  @include sprite($sprite-example, $image-file-name, $dimensions, $offset-x, $offset-y);
+
+  @include breakpoint($breakpoint-high-resolution) {
+    background: $sprite-example-2x no-repeat;
+    background-size: $sprite-example-width;
+    @include sprite($sprite-example, $image-file-name, $dimensions, $offset-x, $offset-y);
+  }
+}
+*/
