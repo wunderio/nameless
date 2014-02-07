@@ -21,6 +21,8 @@
     "jquery": true,
     "predef": [
         "Drupal",
-        "CKEDITOR"
+        "CKEDITOR",
+        "window",
+        "document"
     ]
 }
