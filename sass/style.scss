@@ -7,7 +7,11 @@
 
 @import 'debug';
 
+@import 'normalize';
+@import 'formalize.scss';
+
 @import 'base/base';
 
 @import 'layout/layout.config';
+
 @import 'theme/theme';

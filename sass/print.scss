@@ -9,9 +9,12 @@ $breakpoint-no-query-fallbacks: true;
 
 @import 'utilities/utilities';
 
-@import 'base/base';
-
 @import 'debug';
+
+@import 'normalize';
+@import 'formalize.scss';
+
+@import 'base/base';
 
 @import 'layout/layout';
 
