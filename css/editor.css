@@ -1315,7 +1315,7 @@ fieldset.collapsible .fieldset-legend {
 
 /* line 75, ../sass/base/drupal/_system.base.scss */
 .resizable-textarea .grippie {
-  background: #eeeeee url(../../misc/grippie.png) no-repeat center 2px;
+  background: #eeeeee url(../images/drupal/grippie.png) no-repeat center 2px;
   border: 1px solid #ddd;
   border-top-width: 0;
   cursor: s-resize;
