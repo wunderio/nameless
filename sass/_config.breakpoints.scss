@@ -23,3 +23,42 @@ $breakpoint-high-resolution: min-resolution 1.3dppx;
 // Orientation breakpoints:
 $breakpoint-orientation-landscape: orientation landscape;
 $breakpoint-orientation-portrait: orientation portrait;
+
+$breakpoint-output = false;
+
+@if $breakpont-output == true {
+  //  Output the breakpoint config for use in JavaScript
+  body:after {
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    color: transparent;
+    position: absolute;
+    content: "breakp";
+    @include breakpoint($breakpoint-xxs) {
+      content: "breakp-xxs";
+    }
+    @include breakpoint($breakpoint-xs) {
+      content: "breakp-xxs breakp-xs";
+    }
+    @include breakpoint($breakpoint-s) {
+      content: "breakp-xxs breakp-xs breakp-s";
+    }
+    @include breakpoint($breakpoint-m) {
+      content: "breakp-xxs breakp-xs breakp-s breakp-m";
+    }
+
+    @include breakpoint($breakpoint-l) {
+      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-l";
+    }
+    @include breakpoint($breakpoint-ad-l) {
+      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l";
+    }
+    @include breakpoint($breakpoint-xl) {
+      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl";
+    }
+    @include breakpoint($breakpoint-xxl) {
+      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl breakp-xxl";
+    }
+  }
+}
