@@ -1,3 +1,6 @@
+/*
+// Print stylesheet containing layout, features and style overrides
+// ========================================================================== */
 /*******************************************************************************
      _   _      _
     | | | | ___| |_ __   ___ _ __ ___
@@ -558,12 +561,23 @@ table {
   width: 300px;
 }
 
-/* line 50, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 34, ../libraries/formalize/assets/css/_formalize.scss */
+.input_full {
+  width: 100%;
+}
+
+/* line 41, ../libraries/formalize/assets/css/_formalize.scss */
+.input_full_wrap {
+  display: block;
+  padding-right: 8px;
+}
+
+/* line 49, ../libraries/formalize/assets/css/_formalize.scss */
 input[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-/* line 61, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 60, ../libraries/formalize/assets/css/_formalize.scss */
 input:invalid,
 button:invalid,
 a.button:invalid,
@@ -573,7 +587,7 @@ textarea:invalid {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 66, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 64, ../libraries/formalize/assets/css/_formalize.scss */
 input:focus,
 button:focus,
 a.button:focus,
@@ -585,7 +599,7 @@ textarea:focus {
   z-index: 1;
 }
 
-/* line 76, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 74, ../libraries/formalize/assets/css/_formalize.scss */
 input[type="file"]:focus, input[type="file"]:active,
 input[type="radio"]:focus,
 input[type="radio"]:active,
@@ -596,7 +610,7 @@ input[type="checkbox"]:active {
   box-shadow: none;
 }
 
-/* line 82, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 80, ../libraries/formalize/assets/css/_formalize.scss */
 button,
 a.button,
 input[type="reset"],
@@ -610,15 +624,16 @@ input[type="button"] {
   -o-background-clip: padding-box;
   -webkit-background-clip: padding;
   background-clip: padding-box;
+  background: #dddddd url('../images/button.png?1377505251') repeat-x;
   background-image: -moz-linear-gradient(#ffffff, #dddddd);
-  background-image: -o-linear-gradient(#ffffff, #dddddd);
   background-image: -webkit-linear-gradient(#ffffff, #dddddd);
   background-image: linear-gradient(#ffffff, #dddddd);
   border: 1px solid;
-  border-color: #ddd #bbb #999;
+  border-color: #dddddd #bbbbbb #999999;
   cursor: pointer;
-  color: #333;
+  color: #333333;
   display: inline-block;
+  font: bold 12px / 1.3 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
   outline: 0;
   overflow: visible;
   margin: 0;
@@ -627,37 +642,35 @@ input[type="button"] {
   text-decoration: none;
   vertical-align: top;
   width: auto;
-  font: bold 12px/1.3 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-  background: #dddddd url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAAAAADhgtq/AAAAHElEQVQoz2P8z4ADsOCW+UeGnsFs2nDzz5AMHQA+JRlAyyOraAAAAABJRU5ErkJggg==) repeat-x;
+  *padding-top: 2px;
+  *padding-bottom: 0;
 }
-/* line 116, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 106, ../libraries/formalize/assets/css/_formalize.scss */
 button:hover,
 a.button:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
   background-image: -moz-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
-  background-image: -o-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
   background-image: -webkit-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
   background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
   text-decoration: none;
 }
-/* line 121, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 110, ../libraries/formalize/assets/css/_formalize.scss */
 button:active,
 a.button:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
 input[type="button"]:active {
   background-image: -moz-linear-gradient(#dddddd, #eeeeee);
-  background-image: -o-linear-gradient(#dddddd, #eeeeee);
   background-image: -webkit-linear-gradient(#dddddd, #eeeeee);
   background-image: linear-gradient(#dddddd, #eeeeee);
   -moz-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
   box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
-  border-color: #999 #bbb #ddd;
+  border-color: #999999 #bbbbbb #dddddd;
 }
-/* line 135, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 120, ../libraries/formalize/assets/css/_formalize.scss */
 button::-moz-focus-inner,
 a.button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
@@ -667,7 +680,18 @@ input[type="button"]::-moz-focus-inner {
   padding: 0;
 }
 
-/* line 154, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 126, ../libraries/formalize/assets/css/_formalize.scss */
+a.button {
+  *padding-bottom: 3px;
+}
+
+/* line 131, ../libraries/formalize/assets/css/_formalize.scss */
+button {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+
+/* line 137, ../libraries/formalize/assets/css/_formalize.scss */
 textarea,
 select,
 input[type="date"],
@@ -703,11 +727,14 @@ input[type="week"] {
   padding: 2px 3px;
   text-align: left;
   font-size: 13px;
+  font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
   height: 1.8em;
   vertical-align: top;
-  font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
+  *padding-top: 2px;
+  *padding-bottom: 1px;
+  *height: auto;
 }
-/* line 196, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 174, ../libraries/formalize/assets/css/_formalize.scss */
 textarea[disabled],
 select[disabled],
 input[type="date"][disabled],
@@ -723,10 +750,10 @@ input[type="text"][disabled],
 input[type="time"][disabled],
 input[type="url"][disabled],
 input[type="week"][disabled] {
-  background-color: #eee;
+  background-color: #eeeeee;
 }
 
-/* line 201, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 179, ../libraries/formalize/assets/css/_formalize.scss */
 button[disabled],
 input[disabled],
 select[disabled],
@@ -741,43 +768,44 @@ a.button_disabled {
   -webkit-user-select: none;
   -khtml-user-select: none;
   user-select: none;
-  color: #888;
+  color: #888888;
   cursor: default;
 }
 
-/* line 220, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 198, ../libraries/formalize/assets/css/_formalize.scss */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #888;
+  color: #888888;
 }
 
-/* line 225, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 203, ../libraries/formalize/assets/css/_formalize.scss */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #888;
+  color: #888888;
 }
 
-/* line 230, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 208, ../libraries/formalize/assets/css/_formalize.scss */
 input.placeholder_text,
 textarea.placeholder_text {
-  color: #888;
+  color: #888888;
 }
 
-/* line 235, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 213, ../libraries/formalize/assets/css/_formalize.scss */
 textarea,
 select[size],
 select[multiple] {
   height: auto;
 }
 
-/* line 243, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 221, ../libraries/formalize/assets/css/_formalize.scss */
 select[size="0"],
 select[size="1"] {
   height: 1.8em;
+  *height: auto;
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
-  /* line 255, ../libraries/formalize/assets/css/_formalize.scss */
+  /* line 230, ../libraries/formalize/assets/css/_formalize.scss */
   select[size],
   select[multiple],
   select[multiple][size] {
@@ -785,7 +813,7 @@ select[size="1"] {
     padding-right: 3px;
   }
 
-  /* line 262, ../libraries/formalize/assets/css/_formalize.scss */
+  /* line 236, ../libraries/formalize/assets/css/_formalize.scss */
   select,
   select[size="0"],
   select[size="1"] {
@@ -795,31 +823,31 @@ select[size="1"] {
     padding-right: 20px;
   }
 
-  /* line 272, ../libraries/formalize/assets/css/_formalize.scss */
+  /* line 245, ../libraries/formalize/assets/css/_formalize.scss */
   ::-webkit-validation-bubble-message {
     -webkit-box-shadow: none;
     box-shadow: none;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, black));
     border: 0;
     color: white;
-    font: 13px/17px "Lucida Grande", Arial, "Liberation Sans", FreeSans, sans-serif;
+    font: 13px / 17px "Lucida Grande", Arial, "Liberation Sans", FreeSans, sans-serif;
     overflow: hidden;
     padding: 15px 15px 17px;
     text-shadow: black 0 0 1px;
     min-height: 16px;
   }
 
-  /* line 285, ../libraries/formalize/assets/css/_formalize.scss */
+  /* line 257, ../libraries/formalize/assets/css/_formalize.scss */
   ::-webkit-validation-bubble-arrow,
   ::-webkit-validation-bubble-top-outer-arrow,
   ::-webkit-validation-bubble-top-inner-arrow {
     -webkit-box-shadow: none;
     box-shadow: none;
-    background: #666;
-    border-color: #666;
+    background: #666666;
+    border-color: #666666;
   }
 }
-/* line 295, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 267, ../libraries/formalize/assets/css/_formalize.scss */
 textarea {
   min-height: 40px;
   overflow: auto;
@@ -827,19 +855,112 @@ textarea {
   width: 100%;
 }
 
-/* line 302, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 274, ../libraries/formalize/assets/css/_formalize.scss */
 optgroup {
   color: black;
   font-style: normal;
   font-weight: normal;
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
 }
-/* line 312, ../libraries/formalize/assets/css/_formalize.scss */
+/* line 282, ../libraries/formalize/assets/css/_formalize.scss */
 optgroup::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
+/* line 311, ../libraries/formalize/assets/css/_formalize.scss */
+.ie6_button,
+* html button,
+* html a.button {
+  background: #dddddd url('../images/button.png?1377505251') repeat-x;
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  font: bold 12px / 1.2 Arial, sans-serif;
+  padding: 2px 10px 0;
+  text-decoration: none;
+  overflow: visible;
+  vertical-align: top;
+  width: auto;
+}
+
+/* line 327, ../libraries/formalize/assets/css/_formalize.scss */
+* html a.button {
+  position: relative;
+  top: 3px;
+  padding-bottom: 2px;
+}
+
+/* line 333, ../libraries/formalize/assets/css/_formalize.scss */
+* html button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* line 338, ../libraries/formalize/assets/css/_formalize.scss */
+.ie6_input,
+* html textarea,
+* html select {
+  background: white;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: black;
+  padding: 2px 3px 1px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  vertical-align: top;
+}
+
+/* line 351, ../libraries/formalize/assets/css/_formalize.scss */
+* html select {
+  margin-top: 1px;
+}
+
+/* line 355, ../libraries/formalize/assets/css/_formalize.scss */
+.placeholder_text,
+.ie6_input_disabled,
+.ie6_button_disabled {
+  color: #888888;
+}
+
+/* line 361, ../libraries/formalize/assets/css/_formalize.scss */
+.ie6_input_disabled {
+  background: #eeeeee;
+}
+
+/*
+// Example Sprite
+$sprite-example-width: 20px;
+$sprite-example: sprite-map("sprite/example/*.png",
+  $position: $sprite-position,
+  $spacing: $sprite-spacing,
+  $repeat: $sprite-repeat,
+  $readonly-spacing: $sprite-spacing);
+
+// example Icons HiDpi
+$sprite-example-2x: sprite-map("sprite/example-icons@2x/*.png",
+  $position: $sprite-position,
+  $spacing: $sprite-spacing * 2,
+  $repeat: $sprite-repeat,
+  $readonly-spacing: $sprite-spacing);
+
+//
+// Mixins For Sprite Usage
+//
+
+// Example Sprite Mixin with HiDPI support
+@mixin sprite-example($image-file-name, $dimensions: false, $offset-x: 0, $offset-y: 0) {
+  background: $sprite-example no-repeat;
+  @include sprite($sprite-example, $image-file-name, $dimensions, $offset-x, $offset-y);
+
+  @include breakpoint($breakpoint-high-resolution) {
+    background: $sprite-example-2x no-repeat;
+    background-size: $sprite-example-width;
+    @include sprite($sprite-example, $image-file-name, $dimensions, $offset-x, $offset-y);
+  }
+}
+*/
 /*******************************************************************************
      ____                   _____ _                           _
     | __ )  __ _ ___  ___  | ____| | ___ _ __ ___   ___ _ __ | |_ ___
@@ -880,17 +1001,18 @@ table.borderless tbody, table.borderless td {
 /* line 15, ../sass/base/_media.scss */
 img,
 video {
-  max-width: 100%;
+  display: block;
   height: auto;
+  max-width: 100%;
   -ms-interpolation-mode: bicubic;
 }
-/* line 21, ../sass/base/_media.scss */
+/* line 63, ../sass/utilities/_mixins.layout.scss */
 .ie8 img, .ie8
 video {
   width: auto;
 }
 
-/* line 32, ../sass/base/_media.scss */
+/* line 26, ../sass/base/_media.scss */
 figure > img {
   display: block;
 }
@@ -3044,7 +3166,7 @@ td.revision-current {
 }
 /* line 5, ../sass/layout/_layout.content.scss */
 .main-content .panel-2col .panel-col-first {
-  width: 48.71795%;
+  width: 48.3871%;
   float: left;
   margin-right: -100%;
   margin-left: 0;
@@ -3054,7 +3176,7 @@ td.revision-current {
 .main-content .panel-2col .panel-col-last {
   margin-top: 1em;
   margin-top: 0;
-  width: 48.71795%;
+  width: 48.3871%;
   float: right;
   margin-left: 0;
   margin-right: 0;

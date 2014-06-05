@@ -1,3 +1,6 @@
+/*
+// Layout stylesheet.
+// ========================================================================== */
 /*******************************************************************************
      _   _      _
     | | | | ___| |_ __   ___ _ __ ___
@@ -126,7 +129,7 @@
 @media (min-width: 640px) {
   /* line 5, ../sass/layout/_layout.content.scss */
   .main-content .panel-2col .panel-col-first {
-    width: 48.71795%;
+    width: 48.3871%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -141,7 +144,7 @@
   /* line 11, ../sass/layout/_layout.content.scss */
   .main-content .panel-2col .panel-col-last {
     margin-top: 0;
-    width: 48.71795%;
+    width: 48.3871%;
     float: right;
     margin-left: 0;
     margin-right: 0;
