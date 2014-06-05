@@ -24,9 +24,9 @@ $breakpoint-high-resolution: min-resolution 1.3dppx;
 $breakpoint-orientation-landscape: orientation landscape;
 $breakpoint-orientation-portrait: orientation portrait;
 
-$breakpoint-output = false;
+$breakpoint-output: false;
 
-@if $breakpont-output == true {
+@if $breakpoint-output == true {
   //  Output the breakpoint config for use in JavaScript
   body:after {
     font-size: 0;
