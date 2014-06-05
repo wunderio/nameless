@@ -37,7 +37,7 @@
   }
 }
 
-// Maintain a given aspect ratio.
+// Maintain an given aspect ratio.
 // To get the expected result replace the colon in the aspect ratio with a slash.
 // e.g. 16:9 will become 16/9
 @mixin box-aspect-ratio($ratio: 2) {
@@ -47,8 +47,56 @@
   padding-bottom: #{$gap + "%"};
 }
 
-// Reset responsive element to normal behavior
-@mixin reset-responsive-element() {
+@mixin responsive-media($upscaling: false, $force: false) {
+  $important: null;
+  @if ($force) {
+    $important: !important;
+  }
+  display: block;
+  height: auto#{$important};
+  @if ($upscaling == false) {
+    max-width: 100%#{$important};
+  }
+
+  -ms-interpolation-mode: bicubic;
+
+  .ie8 & {
+    width: auto#{$important}; // IE8-Fix
+  }
+
+  @if ($upscaling) {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+// Reset responsive image to normal behavior
+@mixin reset-responsive-media() {
   height: initial;
   max-width: none;
+}
+
+// Aligns 2 elements side by side. Very useful for search bars.
+@mixin input-bar($left-input, $right-input, $ratio: 4/3) {
+  position: relative;
+  min-height: $form-item-height;
+
+  #{$left-input},
+  #{$right-input} {
+    position: absolute;
+    top: 0;
+    line-height: normal !important;
+  }
+
+  #{$left-input} {
+    left: 0;
+    width: #{100 / $ratio + 1 + "%"};
+    z-index: 10;
+  }
+
+  #{$right-input} {
+    right: 0;
+    width: #{100 - 100 / $ratio + 1 + "%"};
+    z-index: 20;
+  }
 }

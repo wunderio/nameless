@@ -14,13 +14,7 @@
 
 img,
 video {
-  max-width: 100%;
-  height: auto;
-  -ms-interpolation-mode: bicubic;
-
-  .ie8 & {
-    width: auto; // IE8-Fix
-  }
+  @include responsive-media();
 }
 
 // Figure image
