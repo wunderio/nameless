@@ -44,3 +44,25 @@ Replace the **[placeholder]** with your new theme name.
 	compass compile	
 	
 	
+
+## Automation with Grunt
+
+@see: [Grunt documentation](http://gruntjs.com/getting-started)
+
+### pre-requisites:
+* you need to have [nodejs and npm](http://nodejs.org/) installed.  
+* you need to have grunt-cli installed as global package `npm install -g grunt-cli`, see [grunt getting started guide](http://gruntjs.com/getting-started)
+* you need to run `npm install`
+
+### usage
+
+* to lint your JavaScript files once, you run `grunt`
+* to lint your JavaScript files constantly while developing, you run `grunt watch`
+
+### roadmap
+* compass compile tasks for localdev and server with grunt
+* minifying of images
+* uglifying of JS scripts
+* performance monitoring with phantomas
+
+

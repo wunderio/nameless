@@ -1,2 +1,3 @@
-/.sass-cache
-/libraries
+.sass-cache
+libraries
+node_modules

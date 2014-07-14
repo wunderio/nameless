@@ -1,9 +1,9 @@
 (function ($) {
-
+  'use strict';
   Drupal.behaviors.nameless = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('body', context).click(function () {
-        console.log('Hello world!')
+        console.log('Hello world!');
       });
     }
   };
