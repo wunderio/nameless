@@ -15,9 +15,9 @@ Starting point for drupal theme development and to allow a clean output of conte
 1. Add to %drupalroot%/sites/all/themes
 2. **Rename theme and hooks to a project specific name**
 3. Update README to contain project specific information
-4. Run 'bower install' to download the required libraries
+4. Run `bower install` to download the required libraries
 5. Delete the .gitignore file or remove the line ignoring the libraries folder
-6. Run 'compass compile' to generate the first version of your css files
+6. Run `compass compile` to generate the first version of your css files
 
 ## Quick install via command line
 Replace the **[placeholder]** with your new theme name.
