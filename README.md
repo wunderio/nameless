@@ -58,10 +58,10 @@ Replace the **[placeholder]** with your new theme name.
 
 * to lint your JavaScript files once, you run `grunt`
 * to lint your JavaScript files constantly while developing, you run `grunt watch`
+* to minify images and SVGs, place files in `./images_originals` folder and run `grunt imagemin` or `grunt svgmin`
 
 ### roadmap
 * compass compile tasks for localdev and server with grunt
-* minifying of images
 * uglifying of JS scripts
 * performance monitoring with phantomas
 

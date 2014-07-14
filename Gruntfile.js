@@ -38,6 +38,28 @@ module.exports = function (grunt) {
           './js/{,*/}*.js'
         ]
       }
+    },
+
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: './images_originals',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: './images'
+        }]
+      }
+    },
+
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: './images_originals',
+          src: '{,*/}*.svg',
+          dest: './images'
+        }]
+      }
     }//,
 
     // Compiles Sass to CSS and generates necessary files if requested
