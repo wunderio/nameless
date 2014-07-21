@@ -16,8 +16,9 @@ Starting point for drupal theme development and to allow a clean output of conte
 2. **Rename theme and hooks to a project specific name**
 3. Update README to contain project specific information
 4. Run `bower install` to download the required libraries
-5. Delete the .gitignore file or remove the line ignoring the libraries folder
-6. Run `compass compile` to generate the first version of your css files
+5. Run `npm install` to install the required npm plugins for automation
+6. Delete the .gitignore file or remove the line ignoring the libraries folder
+7. Run `grunt` to generate the first version of your css files
 
 ## Quick install via command line
 Replace the **[placeholder]** with your new theme name.
@@ -54,14 +55,17 @@ Replace the **[placeholder]** with your new theme name.
 * you need to have grunt-cli installed as global package `npm install -g grunt-cli`, see [grunt getting started guide](http://gruntjs.com/getting-started)
 * you need to run `npm install`
 
-### usage
+### usage in a local dev environment
 
-* to lint your JavaScript files once, you run `grunt`
-* to lint your JavaScript files constantly while developing, you run `grunt watch`
+* to lint your JavaScript files once, you run `grunt jshint`
 * to minify images and SVGs, place files in `./images_originals` folder and run `grunt imagemin` or `grunt svgmin`
+* to compile CSS files from your SASS, run `grunt compass:localdev`
+
+* to constantly monitor your theme directory and execute all necessary tasks while developing, you run `grunt`
+
 
 ### roadmap
-* compass compile tasks for localdev and server with grunt
+* compass compile tasks for server/CI with grunt
 * uglifying of JS scripts
 * performance monitoring with phantomas
 

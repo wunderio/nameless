@@ -17,10 +17,10 @@ module.exports = function (grunt) {
         files: ['./js/{,*/}*.js'],
         tasks: ['newer:jshint:all']
       },
-//      compass: {
-//        files: ['./sass/{,*/}*.{scss,sass}'],
-//        tasks: ['compass:localdev']
-//      },
+      compass: {
+        files: ['./sass/{,*/}*.{scss,sass}'],
+        tasks: ['compass:localdev']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       }
@@ -60,39 +60,47 @@ module.exports = function (grunt) {
           dest: './images'
         }]
       }
-    }//,
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
-//    compass: {
-//      options: {
-//        sassDir: './sass',
-//        cssDir: './css',
-//        generatedImagesDir: './images',
-//        imagesDir: './images',
-//        javascriptsDir: './js',
-//        fontsDir: './fonts',
-//        importPath: './libraries',
-//        httpImagesPath: '/images',
-//        httpGeneratedImagesPath: '/images',
-//        httpFontsPath: '/fonts',
-//        relativeAssets: false,
-//        assetCacheBuster: false,
-//        raw: 'Sass::Script::Number.precision = 10\n'
-//      },
-//      dist: {
-//        options: {
-//          generatedImagesDir: './images'
-//        }
-//      },
-//      localdev: {
-//        options: {
-//          debugInfo: true
-//        }
-//      }
-//    }
+    compass: {
+      options: {
+        sassDir: './sass',
+        cssDir: './css',
+        generatedImagesDir: './images',
+        imagesDir: './images',
+        javascriptsDir: './js',
+        fontsDir: './fonts',
+        importPath: ['./libraries/normalize-scss', './libraries/formalize/assets/css'],
+        httpImagesPath: '/images',
+        httpGeneratedImagesPath: '/images',
+        httpFontsPath: '/fonts',
+        relativeAssets: true,
+        assetCacheBuster: false,
+        require: ['singularitygs', 'breakpoint'],
+        bundleExec: true,
+
+        raw: 'Sass::Script::Number.precision = 10\n'
+      },
+      dist: {
+        options: {
+          environment: 'production',
+          noLineComments: true,
+          outputStyle: 'compressed'
+        }
+      },
+      localdev: {
+        options: {
+          environment: 'development',
+          //debugInfo: true,
+          noLineComments: false
+        }
+      }
+    }
   });
 
   grunt.registerTask('default', [
-    'newer:jshint'
+    'newer:jshint',
+    'watch'
   ]);
 };

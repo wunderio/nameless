@@ -1,6 +1,8 @@
 #
-# This file is only needed for Compass/Sass integration. If you are not using
-# Compass, you may safely ignore or delete this file.
+# This file is only needed for manual Compass/Sass integration.
+# Since this project contains a Gemfile, make sure you use 'bundle exec compass compile'.
+# HOWEVER: YOU SHOULD NOT COMPILE THE STYLESHEETS USING THE CONFIG ANY MORE!
+# THERE'S NOW A GRUNT TASK TO WATCH AND COMPILE FOR SEPARATE ENVIRONMENTS
 #
 # If you'd like to learn more about Sass and Compass, see the sass/README.txt
 # file for more information.

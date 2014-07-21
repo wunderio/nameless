@@ -988,7 +988,7 @@ html {
 h1,
 .alpha {
   font-size: 2.77em;
-  line-height: 1.62455em;
+  line-height: 1.6245487365em;
   margin-bottom: 1.2135em;
 }
 
@@ -996,7 +996,7 @@ h1,
 h2,
 .beta {
   font-size: 1.85em;
-  line-height: 1.62162em;
+  line-height: 1.6216216216em;
   margin-bottom: 1.2135em;
 }
 
@@ -1004,7 +1004,7 @@ h2,
 h3,
 .gamma {
   font-size: 1.385em;
-  line-height: 2.16606em;
+  line-height: 2.1660649819em;
   margin-bottom: 1.2135em;
 }
 
@@ -1012,7 +1012,7 @@ h3,
 h4,
 .delta {
   font-size: 1.077em;
-  line-height: 1.39276em;
+  line-height: 1.3927576602em;
   margin-bottom: 1.2135em;
 }
 
@@ -1020,7 +1020,7 @@ h4,
 h5,
 .epsilon {
   font-size: 0.85em;
-  line-height: 1.76471em;
+  line-height: 1.7647058824em;
   margin-bottom: 1.2135em;
 }
 
@@ -1028,7 +1028,7 @@ h5,
 h6,
 .zeta {
   font-size: 0.67em;
-  line-height: 2.23881em;
+  line-height: 2.2388059701em;
   margin-bottom: 1.2135em;
 }
 
@@ -1064,7 +1064,7 @@ h3, h4, h5, h6,
 
 /* line 113, ../sass/base/_typography.scss */
 hgroup {
-  margin-bottom: 0.60811em;
+  margin-bottom: 0.6081081081em;
 }
 
 /* line 133, ../sass/base/_typography.scss */
@@ -1076,7 +1076,7 @@ hgroup {
 /* line 136, ../sass/base/_typography.scss */
 .small {
   font-size: 0.7em;
-  line-height: 2.14286em;
+  line-height: 2.1428571429em;
 }
 
 /* line 139, ../sass/base/_typography.scss */
@@ -1088,7 +1088,7 @@ hgroup {
 /* line 142, ../sass/base/_typography.scss */
 .mega {
   font-size: 4.5em;
-  line-height: 1.33333em;
+  line-height: 1.3333333333em;
 }
 
 /* line 145, ../sass/base/_typography.scss */
