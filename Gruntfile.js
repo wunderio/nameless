@@ -99,6 +99,11 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('dist', [
+    'jshint:all',
+    'compass:dist'
+  ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'watch'
