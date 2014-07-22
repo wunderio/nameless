@@ -34,31 +34,31 @@ $breakpoint-output: false;
     line-height: 0;
     color: transparent;
     position: absolute;
-    content: "breakp";
+    content: 'breakp';
     @include breakpoint($breakpoint-xxs) {
-      content: "breakp-xxs";
+      content: 'breakp-xxs';
     }
     @include breakpoint($breakpoint-xs) {
-      content: "breakp-xxs breakp-xs";
+      content: 'breakp-xxs breakp-xs';
     }
     @include breakpoint($breakpoint-s) {
-      content: "breakp-xxs breakp-xs breakp-s";
+      content: 'breakp-xxs breakp-xs breakp-s';
     }
     @include breakpoint($breakpoint-m) {
-      content: "breakp-xxs breakp-xs breakp-s breakp-m";
+      content: 'breakp-xxs breakp-xs breakp-s breakp-m';
     }
 
     @include breakpoint($breakpoint-l) {
-      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-l";
+      content: 'breakp-xxs breakp-xs breakp-s breakp-m breakp-l';
     }
     @include breakpoint($breakpoint-ad-l) {
-      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l";
+      content: 'breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l';
     }
     @include breakpoint($breakpoint-xl) {
-      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl";
+      content: 'breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl';
     }
     @include breakpoint($breakpoint-xxl) {
-      content: "breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl breakp-xxl";
+      content: 'breakp-xxs breakp-xs breakp-s breakp-m breakp-ad-l breakp-l breakp-xl breakp-xxl';
     }
   }
 }

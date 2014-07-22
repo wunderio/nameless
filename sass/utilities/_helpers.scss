@@ -50,7 +50,7 @@
 }
 
 .muted {
-  @include opacity(0.5);
+  @include opacity(.5);
 }
 
 %border-box {

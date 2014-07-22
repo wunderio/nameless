@@ -13,5 +13,8 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-imagemin": "^0.7.1",
     "grunt-svgmin": "^0.4.0"
+  },
+  "devDependencies": {
+    "grunt-scss-lint": "^0.1.12"
   }
 }

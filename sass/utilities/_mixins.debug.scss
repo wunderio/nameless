@@ -2,18 +2,18 @@
 // Mixins for debugging purposes
 // =============================================================================
 
-@mixin regionDebug($regionBgColor, $regionTitle) {
+@mixin region-debug($region-bg-color, $region-title) {
   @if $debug {
     @extend %border-box;
     min-height: 150px;
-    background: rgba($regionBgColor, 0.2);
+    background: rgba($region-bg-color, .2);
     outline: 1px dashed $silver;
     margin: 10px 0;
     padding: 20px;
     position: relative;
 
     &:after {
-      content: $regionTitle;
+      content: $region-title;
       font-size: 12px;
       position: absolute;
       top: 5px;
@@ -23,15 +23,15 @@
   }
 }
 
-@mixin breakpointDebug($breakpointTitle, $breakpoint, $pseudo-element: 'after', $showBreakpointValue: false) {
+@mixin breakpoint-debug($breakpoint-title, $breakpoint, $pseudo-element: 'after', $show-breakpoint-value: false) {
   @if $debug {
     @include breakpoint($breakpoint) {
       &:#{$pseudo-element} {
-        @if $showBreakpointValue {
-          content: '#{$breakpointTitle}: #{$breakpoint}';
+        @if $show-breakpoint-value {
+          content: '#{$breakpoint-title}: #{$breakpoint}';
         }
         @else {
-          content: '#{$breakpointTitle}';
+          content: '#{$breakpoint-title}';
         }
       }
     }

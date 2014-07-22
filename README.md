@@ -63,6 +63,15 @@ Replace the **[placeholder]** with your new theme name.
 
 * to constantly monitor your theme directory and execute all necessary tasks while developing, you run `grunt`
 
+* to lint your SCSS files once, you run `grunt scsslint`
+
+### usage in a CI/production environment
+
+run `grunt dist` to
+
+* lint JS files  
+* compile compressed CSS from SASS  
+
 
 ### roadmap
 * compass compile tasks for server/CI with grunt

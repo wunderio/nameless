@@ -1,4 +1,8 @@
 .main-content {
+  margin-bottom: 2em;
+  @include breakpoint($breakpoint-m, $no-query: true) {
+    margin-bottom: 0;
+  }
   @include clearfix();
 
   // panels 2 column layout
@@ -15,12 +19,6 @@
       @include grid-span(4, 5, 8);
     }
   }
-
-  margin-bottom: 2em;
-  @include breakpoint($breakpoint-m, $no-query: true) {
-    margin-bottom: 0;
-  }
-
 }
 
 aside {

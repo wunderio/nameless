@@ -50,6 +50,17 @@ module.exports = function (grunt) {
       }
     },
 
+    scsslint: {
+      allFiles: [
+        'sass/{,*/}*.scss'
+      ],
+      options: {
+        bundleExec: true,
+        config: '.scss-lint.yml',
+        colorizeOutput: true
+      }
+    },
+
     imagemin: {
       dist: {
         files: [{

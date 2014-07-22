@@ -5,11 +5,11 @@
 a {
   color: $link-color;
   text-decoration: none;
-  @include transition(0.3s color, 0.3s background);
+  @include transition(.3s color, .3s background);
 
   &:hover,
   &:active,
-  &:focus{
+  &:focus {
     color: $link-color-hover;
     text-decoration: underline;
 
@@ -33,12 +33,17 @@ p a {
 }
 
 // links in headlines
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   a {
     color: inherit;
     &:hover,
     &:active,
-    &:focus{
+    &:focus {
       color: $link-color-hover;
       text-decoration: none;
     }

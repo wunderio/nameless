@@ -15,7 +15,8 @@
 
 // Breakpoint debug
 @if $debug {
-  html, body {
+  html,
+  body {
     &:before,
     &:after {
       display: block;
@@ -26,13 +27,13 @@
 
       @include box-sizing(border-box);
       @include border-radius(10px);
-      @include single-box-shadow(rgba(0,0,0,0.3), 2px, 2px, 3px, false, false);
+      @include single-box-shadow(rgba(0, 0, 0, .3), 2px, 2px, 3px, false, false);
 
       font-size: 12px;
       color: $black;
 
-      background-color: rgba(255,255,255,0.75);
-      padding: 0.5em 1em;
+      background-color: rgba(255, 255, 255, .75);
+      padding: .5em 1em;
 
 
     }
@@ -56,13 +57,13 @@
       margin-left: -10em;
     }
 
-    @include breakpointDebug('$breakpoint-xxs', $breakpoint-xxs, 'before', true);
-    @include breakpointDebug('$breakpoint-xs', $breakpoint-xs, 'before', true);
-    @include breakpointDebug('$breakpoint-s', $breakpoint-s, 'before', true);
-    @include breakpointDebug('$breakpoint-m', $breakpoint-m, 'before', true);
-    @include breakpointDebug('$breakpoint-l', $breakpoint-l, 'before', true);
-    @include breakpointDebug('$breakpoint-xl', $breakpoint-xl, 'before', true);
-    @include breakpointDebug('$breakpoint-xxl', $breakpoint-xxl, 'before', true);
+    @include breakpoint-debug('$breakpoint-xxs', $breakpoint-xxs, 'before', true);
+    @include breakpoint-debug('$breakpoint-xs', $breakpoint-xs, 'before', true);
+    @include breakpoint-debug('$breakpoint-s', $breakpoint-s, 'before', true);
+    @include breakpoint-debug('$breakpoint-m', $breakpoint-m, 'before', true);
+    @include breakpoint-debug('$breakpoint-l', $breakpoint-l, 'before', true);
+    @include breakpoint-debug('$breakpoint-xl', $breakpoint-xl, 'before', true);
+    @include breakpoint-debug('$breakpoint-xxl', $breakpoint-xxl, 'before', true);
   }
 
   body {
@@ -77,9 +78,9 @@
       content: 'Orientation: unknown';
     }
 
-    @include breakpointDebug('Resolution: High-res', $breakpoint-high-resolution, 'before');
+    @include breakpoint-debug('Resolution: High-res', $breakpoint-high-resolution, 'before');
 
-    @include breakpointDebug('Orientation: Landscape', $breakpoint-orientation-landscape);
-    @include breakpointDebug('Orientation: Portrait', $breakpoint-orientation-portrait);
+    @include breakpoint-debug('Orientation: Landscape', $breakpoint-orientation-landscape);
+    @include breakpoint-debug('Orientation: Portrait', $breakpoint-orientation-portrait);
   }
 }

@@ -31,7 +31,7 @@ $golden-ratio: 1.618;
 // -----------------------------------------------------------------------------
 // Typography
 // -----------------------------------------------------------------------------
-$base-rhythm:       rhythm(0.75);
+$base-rhythm:       rhythm(.75);
 
 $base-font-size:    16px;
 $base-line-height:  24px;
@@ -42,12 +42,12 @@ $mono-font-family:        Monaco, Menlo, Consolas, "Courier New", monospace;
 $brand-font-family:       'PT Sans Narrow', sans-serif;
 
 // The font sizes for h1-h6.
-$h1-font-size: 2.77 * $base-font-size; // 36px/13px
-$h2-font-size: 1.85 * $base-font-size; // 24px/13px
-$h3-font-size: 1.385* $base-font-size; // 18px/13px
-$h4-font-size: 1.077* $base-font-size; // 14px/13px
-$h5-font-size: 0.85 * $base-font-size; // 11px/13px
-$h6-font-size: 0.67 * $base-font-size;
+$h1-font-size: 2.77  * $base-font-size; // 36px/13px
+$h2-font-size: 1.85  * $base-font-size; // 24px/13px
+$h3-font-size: 1.385 * $base-font-size; // 18px/13px
+$h4-font-size: 1.077 * $base-font-size; // 14px/13px
+$h5-font-size: .85   * $base-font-size; // 11px/13px
+$h6-font-size: .67   * $base-font-size;
 
 $headings-font-family:    inherit;
 $headings-font-weight:    bold;
@@ -58,8 +58,8 @@ $huge-font-size:          3    * $base-font-size;
 $mega-font-size:          4.5  * $base-font-size;
 $giga-font-size:          6    * $base-font-size;
 
-$small-font-size:         0.7  * $base-font-size;
-$micro-font-size:         0.5  * $base-font-size;
+$small-font-size:         .7   * $base-font-size;
+$micro-font-size:         .5   * $base-font-size;
 
 // -----------------------------------------------------------------------------
 // Functional color variables
@@ -79,7 +79,7 @@ $tab-primary-bgcolor-hover:    nth($grays, 3);
 $tab-primary-color-hover:      $black;
 $tab-primary-bgcolor-default:  nth($grays, 1);
 $tab-primary-color-default:    $black;
-$tab-primary-border-radius:  5px;
+$tab-primary-border-radius:    5px;
 
 $tab-secondary-bgcolor-active:    nth($grays, 5);
 $tab-secondary-color-active:      $white;

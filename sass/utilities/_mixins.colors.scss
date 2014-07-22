@@ -3,28 +3,28 @@
 // =============================================================================
 
 // Gradient Bar Colors. For example for buttons and alerts.
-@mixin gradientBar($primaryColor, $secondaryColor) {
-  @include background-image(linear-gradient($primaryColor, $secondaryColor));
-  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+@mixin gradientBar($primary-color, $secondary-color) {
+  @include background-image(linear-gradient($primary-color, $secondary-color));
+  border-color: $secondary-color $secondary-color darken($secondary-color, 15%);
+  border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) fade-in(rgba(0, 0, 0, .1), .15);
 }
 
 // Use a gradient for the button background
-@mixin buttonGradientBackground($startColor, $endColor) {
+@mixin buttonGradientBackground($start-color, $end-color) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
-  @include gradientBar($startColor, $endColor);
-  *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  @include gradientBar($start-color, $end-color);
+  *background-color: $end-color; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   @include gradient-reset-filter();
 }
 
 // Cross-Browser background gradient
-@mixin backgroundLinearGradient($startColor, $endColor, $direction: top) {
-  @include background(linear-gradient($direction, $startColor, $endColor));
+@mixin backgroundLinearGradient($start-color, $end-color, $direction: top) {
+  @include background(linear-gradient($direction, $start-color, $end-color));
   @if $direction == top {
     $ie-direction: 0;
   } @else {
     $ie-direction: 1;
   }
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=$ie-direction );
-  background-color: $startColor;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-color}', endColorstr='#{$end-color}',GradientType=$ie-direction );
+  background-color: $start-color;
 }
