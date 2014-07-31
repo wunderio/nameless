@@ -86,13 +86,13 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: './sass',
-        cssDir: './css',
-        generatedImagesDir: './images',
-        imagesDir: './images',
-        javascriptsDir: './js',
-        fontsDir: './fonts',
-        importPath: ['./libraries/normalize-scss', './libraries/formalize/assets/css'],
+        sassDir: 'sass',
+        cssDir: 'css',
+        generatedImagesDir: 'images',
+        imagesDir: 'images',
+        javascriptsDir: 'js',
+        fontsDir: 'fonts',
+        importPath: ['libraries/normalize-scss', 'libraries/formalize/assets/css'],
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images',
         httpFontsPath: '/fonts',
@@ -100,7 +100,7 @@ module.exports = function (grunt) {
         assetCacheBuster: false,
         require: ['singularitygs', 'breakpoint'],
         bundleExec: true,
-
+        sourcemap: true,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {

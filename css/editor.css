@@ -76,7 +76,7 @@
 .clearfix:after {
   visibility: hidden;
   display: block;
-  content: "";
+  content: '';
   clear: both;
   height: 0;
 }
@@ -907,15 +907,16 @@ table.borderless {
   border: 0;
 }
 /* line 21, ../sass/base/_html-elements.scss */
-table.borderless tbody, table.borderless td {
+table.borderless tbody,
+table.borderless td {
   border: 0;
 }
 
-/* line 26, ../sass/base/_html-elements.scss */
+/* line 27, ../sass/base/_html-elements.scss */
 .cke_editable table.borderless {
   border: 1px silver dashed;
 }
-/* line 29, ../sass/base/_html-elements.scss */
+/* line 30, ../sass/base/_html-elements.scss */
 .cke_editable table.borderless td {
   border: 1px silver dashed;
 }
@@ -964,12 +965,32 @@ a:hover.icon, a:active.icon, a:focus.icon {
   text-decoration: underline;
 }
 
-/* line 37, ../sass/base/_links.scss */
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+/* line 42, ../sass/base/_links.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   color: inherit;
 }
-/* line 39, ../sass/base/_links.scss */
-h1 a:hover, h1 a:active, h1 a:focus, h2 a:hover, h2 a:active, h2 a:focus, h3 a:hover, h3 a:active, h3 a:focus, h4 a:hover, h4 a:active, h4 a:focus, h5 a:hover, h5 a:active, h5 a:focus, h6 a:hover, h6 a:active, h6 a:focus {
+/* line 44, ../sass/base/_links.scss */
+h1 a:hover, h1 a:active, h1 a:focus,
+h2 a:hover,
+h2 a:active,
+h2 a:focus,
+h3 a:hover,
+h3 a:active,
+h3 a:focus,
+h4 a:hover,
+h4 a:active,
+h4 a:focus,
+h5 a:hover,
+h5 a:active,
+h5 a:focus,
+h6 a:hover,
+h6 a:active,
+h6 a:focus {
   color: #883d0d;
   text-decoration: none;
 }
@@ -1040,77 +1061,105 @@ h6,
 }
 
 /* line 88, ../sass/base/_typography.scss */
-h1, h2, h3, h4, h5, h6,
-.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alpha,
+.beta,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
   font-family: inherit;
   font-weight: bold;
   color: inherit;
   margin-top: 0;
 }
-/* line 94, ../sass/base/_typography.scss */
-hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6, hgroup
-.alpha, hgroup .beta, hgroup .gamma, hgroup .delta, hgroup .epsilon, hgroup .zeta {
+/* line 104, ../sass/base/_typography.scss */
+hgroup h1, hgroup
+h2, hgroup
+h3, hgroup
+h4, hgroup
+h5, hgroup
+h6, hgroup
+.alpha, hgroup
+.beta, hgroup
+.gamma, hgroup
+.delta, hgroup
+.epsilon, hgroup
+.zeta {
   margin-bottom: 0;
 }
 
-/* line 99, ../sass/base/_typography.scss */
-h1, h2,
-.alpha, .beta {
+/* line 109, ../sass/base/_typography.scss */
+h1,
+h2,
+.alpha,
+.beta {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: bold;
   color: inherit;
 }
 
-/* line 106, ../sass/base/_typography.scss */
-h3, h4, h5, h6,
-.gamma, .delta, .epsilon, .zeta {
+/* line 118, ../sass/base/_typography.scss */
+h3,
+h4,
+h5,
+h6,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
   font-family: inherit;
   font-weight: bold;
   color: inherit;
 }
 
-/* line 113, ../sass/base/_typography.scss */
+/* line 131, ../sass/base/_typography.scss */
 hgroup {
   margin-bottom: 0.6081081081em;
 }
 
-/* line 133, ../sass/base/_typography.scss */
+/* line 151, ../sass/base/_typography.scss */
 .micro {
   font-size: 0.5em;
   line-height: 3em;
 }
 
-/* line 136, ../sass/base/_typography.scss */
+/* line 154, ../sass/base/_typography.scss */
 .small {
   font-size: 0.7em;
   line-height: 2.1428571429em;
 }
 
-/* line 139, ../sass/base/_typography.scss */
+/* line 157, ../sass/base/_typography.scss */
 .huge {
   font-size: 3em;
   line-height: 1.5em;
 }
 
-/* line 142, ../sass/base/_typography.scss */
+/* line 160, ../sass/base/_typography.scss */
 .mega {
   font-size: 4.5em;
   line-height: 1.3333333333em;
 }
 
-/* line 145, ../sass/base/_typography.scss */
+/* line 163, ../sass/base/_typography.scss */
 .giga {
   font-size: 6em;
   line-height: 1.25em;
 }
 
-/* line 149, ../sass/base/_typography.scss */
+/* line 167, ../sass/base/_typography.scss */
 p,
 pre {
   margin: 0;
 }
 
-/* line 154, ../sass/base/_typography.scss */
+/* line 172, ../sass/base/_typography.scss */
 p + p,
 p + pre,
 pre + p,
@@ -1123,7 +1172,7 @@ p + h6 {
   margin: 1.125em 0 0;
 }
 
-/* line 166, ../sass/base/_typography.scss */
+/* line 184, ../sass/base/_typography.scss */
 .lead,
 h1 + p,
 h2 + p,
@@ -1134,31 +1183,31 @@ h6 + p {
   margin-bottom: 0;
 }
 
-/* line 176, ../sass/base/_typography.scss */
+/* line 194, ../sass/base/_typography.scss */
 blockquote {
   padding: 0 0 0 0.75em;
   margin: 0 0 1.125em;
 }
-/* line 179, ../sass/base/_typography.scss */
+/* line 197, ../sass/base/_typography.scss */
 blockquote p {
   margin-bottom: 0;
   font-weight: 300;
   line-height: 30px;
 }
-/* line 184, ../sass/base/_typography.scss */
+/* line 202, ../sass/base/_typography.scss */
 blockquote footer,
 blockquote small {
   display: block;
   line-height: 24px;
   color: silver;
 }
-/* line 189, ../sass/base/_typography.scss */
+/* line 207, ../sass/base/_typography.scss */
 blockquote footer:before,
 blockquote small:before {
   content: '\2014 \00A0';
 }
 
-/* line 197, ../sass/base/_typography.scss */
+/* line 215, ../sass/base/_typography.scss */
 ul,
 ol,
 dl,
@@ -1167,21 +1216,21 @@ menu {
   padding: 0;
 }
 
-/* line 206, ../sass/base/_typography.scss */
+/* line 224, ../sass/base/_typography.scss */
 .node ul, .node ol, .node dl, .cke_editable ul, .cke_editable ol, .cke_editable dl {
   overflow: hidden;
 }
-/* line 209, ../sass/base/_typography.scss */
+/* line 227, ../sass/base/_typography.scss */
 .node ul li, .node ol li, .node dl li, .cke_editable ul li, .cke_editable ol li, .cke_editable dl li {
   position: relative;
   left: 1.5em;
 }
-/* line 216, ../sass/base/_typography.scss */
+/* line 234, ../sass/base/_typography.scss */
 .node ol li, .cke_editable ol li {
   left: 2.5em;
 }
 
-/* line 222, ../sass/base/_typography.scss */
+/* line 240, ../sass/base/_typography.scss */
 ul ul,
 ul ol,
 ol ol,
@@ -1189,22 +1238,22 @@ ol ul {
   margin-bottom: 0;
 }
 
-/* line 229, ../sass/base/_typography.scss */
+/* line 247, ../sass/base/_typography.scss */
 li {
   line-height: 24px;
 }
 
-/* line 233, ../sass/base/_typography.scss */
+/* line 251, ../sass/base/_typography.scss */
 dl {
   padding: 0;
 }
 
-/* line 237, ../sass/base/_typography.scss */
+/* line 255, ../sass/base/_typography.scss */
 dd {
   margin: 0 0 0 1.125em;
 }
 
-/* line 241, ../sass/base/_typography.scss */
+/* line 259, ../sass/base/_typography.scss */
 ul.unstyled,
 ol.unstyled,
 nav ul,
@@ -1214,7 +1263,7 @@ nav ol {
   list-style-image: none;
 }
 
-/* line 253, ../sass/base/_typography.scss */
+/* line 271, ../sass/base/_typography.scss */
 hr {
   display: block;
   height: 1px;
@@ -1224,7 +1273,7 @@ hr {
   padding: 0;
 }
 
-/* line 263, ../sass/base/_typography.scss */
+/* line 281, ../sass/base/_typography.scss */
 address {
   display: block;
   margin-bottom: 1.125em;
@@ -1232,19 +1281,19 @@ address {
   line-height: 24px;
 }
 
-/* line 274, ../sass/base/_typography.scss */
+/* line 292, ../sass/base/_typography.scss */
 ::-moz-selection {
   background: #e56716;
   text-shadow: none;
 }
 
-/* line 279, ../sass/base/_typography.scss */
+/* line 297, ../sass/base/_typography.scss */
 ::selection {
   background: #e56716;
   text-shadow: none;
 }
 
-/* line 284, ../sass/base/_typography.scss */
+/* line 302, ../sass/base/_typography.scss */
 .caps {
   text-transform: uppercase;
 }
@@ -3056,3 +3105,5 @@ td.revision-current {
   filter: Alpha(Opacity=30);
   border-radius: 8px;
 }
+
+/*# sourceMappingURL=editor.css.map */
