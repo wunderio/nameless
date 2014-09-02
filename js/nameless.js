@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, Drupal) {
   'use strict';
   Drupal.behaviors.nameless = {
     attach: function (context) {
@@ -8,4 +8,4 @@
     }
   };
 
-})(jQuery);
+})(jQuery, Drupal);
