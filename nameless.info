@@ -3,17 +3,12 @@ description = Starting point for development and to allow a clean output of cont
 core = 7.x
 
 ;-------------------- C S S -----------------------
-; We include one "editor" stylesheet that contains
-; resets and normalizations as well as styles used
-; by editors such as typography and styles for use
-; in a WYSIWYG editor.
 ;
-; All other styles will be placed in the styles
+; All styles will be placed in the styles
 ; file. This will include styles for layout, page
-; elements, features and print overrides.
+; elements, features.
+; Print overrides will reside in print.css.
 
-stylesheets[all][] = css/layout.css
-stylesheets[all][] = css/editor.css
 stylesheets[all][] = css/style.css
 stylesheets[print][] = css/print.css
 
