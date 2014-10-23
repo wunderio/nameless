@@ -163,6 +163,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
+    'compass:localdev',
+    'newer:imagemin',
+    'newer:svgmin',
     'watch'
   ]);
 };
