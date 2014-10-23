@@ -51,38 +51,44 @@ html {
 
 h1,
 .alpha {
-  @include adjust-font-size-to( $h1-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h1-font-size;
+  line-height: $h1-font-size * 1.1;
+  margin-bottom: $h1-font-size/3;
 }
 
 h2,
 .beta {
-  @include adjust-font-size-to( $h2-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h2-font-size;
+  line-height: $h2-font-size * 1.1;
+  margin-bottom: $h2-font-size/3;
 }
 
 h3,
 .gamma {
-  @include adjust-font-size-to( $h3-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h3-font-size;
+  line-height: $h3-font-size * 1.1;
+  margin-bottom: $h3-font-size/3;
 }
 
 h4,
 .delta {
-  @include adjust-font-size-to( $h4-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h4-font-size;
+  line-height: $h4-font-size * 1.1;
+  margin-bottom: $h4-font-size/3;
 }
 
 h5,
 .epsilon {
-  @include adjust-font-size-to( $h5-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h5-font-size;
+  line-height: $h5-font-size * 1.1;
+  margin-bottom: $h5-font-size/3;
 }
 
 h6,
 .zeta {
-  @include adjust-font-size-to( $h6-font-size );
-  @include trailer($headings-trailer);
+  font-size: $h6-font-size;
+  line-height: $h6-font-size * 1.1;
+  margin-bottom: $h6-font-size/3;
 }
 
 h1,
@@ -178,7 +184,7 @@ p + h3,
 p + h4,
 p + h5,
 p + h6, {
-  margin: $base-rhythm 0 0;
+  margin-top: $base-rhythm;
 }
 // leading paragraph
 .lead,
@@ -192,12 +198,10 @@ h6 + p {
 }
 
 blockquote {
-  padding: 0 0 0 rhythm(.5);
-  margin: 0 0 $base-rhythm;
+  padding: 0;
+  margin: $base-rhythm 0;
   p {
     margin-bottom: 0;
-    font-weight: 300;
-    line-height: $base-line-height * 1.25;
   }
   footer,
   small {
@@ -227,12 +231,7 @@ menu {
     li {
       position: relative;
       left: 1.5em;
-    }
-  }
-
-  ol {
-    li {
-      left: 2.5em;
+      width: 95%;
     }
   }
 }
