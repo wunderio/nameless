@@ -79,7 +79,7 @@
 // Aligns 2 elements side by side. Very useful for search bars.
 @mixin input-bar($left-input, $right-input, $ratio: 4/3) {
   position: relative;
-  min-height: $form-item-height;
+  min-height: $base-line-height;
 
   #{$left-input},
   #{$right-input} {
