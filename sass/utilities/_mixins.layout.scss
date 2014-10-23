@@ -52,7 +52,7 @@
   @if ($force) {
     $important: !important;
   }
-  display: block;
+  display: inline-block;
   height: auto#{$important};
   @if ($upscaling == false) {
     max-width: 100%#{$important};
