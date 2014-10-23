@@ -9,6 +9,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-notify');
+
   grunt.initConfig({
 
     // Watches files for changes and runs tasks based on the changed files
@@ -19,7 +21,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['sass/{,*/}*.{scss,sass}'],
-        tasks: ['compass:localdev'],
+        tasks: ['compass:localdev', 'notify:compass'],
         options: {
           interrupt: true,
           livereload: true
@@ -29,11 +31,17 @@ module.exports = function (grunt) {
         files: [
           'images_originals/{,*/}*.{png,jpg,jpeg,gif}'
         ],
-        tasks: ['newer:imagemin']
+        tasks: ['newer:imagemin', 'notify:imagemin'],
+        options: {
+          event: ['added', 'changed']
+        }
       },
       imagesOriginalsSvg: {
         files: ['images_originals/{,*/}*.svg'],
-        tasks: ['newer:svgmin']
+        tasks: ['newer:svgmin', 'notify:imagemin'],
+        options: {
+          event: ['added', 'changed']
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -129,6 +137,20 @@ module.exports = function (grunt) {
           options   : {},
           url       : 'http://abas.dev/',
           buildUi   : true
+        }
+      }
+    },
+    notify: {
+      compass: {
+        options: {
+          title: 'Compilation done',
+          message: 'Compass updated all css files.'
+        }
+      },
+      imagemin: {
+        options: {
+          title: 'Images minified',
+          message: 'Imagemin successfully minified all new images.'
         }
       }
     }

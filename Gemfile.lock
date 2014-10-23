@@ -18,6 +18,8 @@ GEM
     compass-import-once (1.0.4)
       sass (>= 3.2, < 3.5)
     ffi (1.9.3)
+    modular-scale (2.0.5)
+      compass (>= 0.12.0)
     multi_json (1.10.1)
     rainbow (2.0.0)
     rb-fsevent (0.9.4)
@@ -32,6 +34,7 @@ GEM
     singularitygs (1.2.1)
       breakpoint (~> 2.4)
       sass (~> 3.3.0)
+    terminal-notifier (1.6.1)
 
 PLATFORMS
   ruby
@@ -40,6 +43,8 @@ DEPENDENCIES
   breakpoint (~> 2.4.2)
   bundler (>= 1.6.4)
   compass (~> 1.0.0.alpha.21)
+  modular-scale (~> 2.0.5)
   sass (~> 3.3.10)
   scss-lint (~> 0.25.1)
   singularitygs (~> 1.2.1)
+  terminal-notifier (>= 1.6.1)
