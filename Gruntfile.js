@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         files: ['sass/{,*/}*.{scss,sass}'],
         tasks: ['compass:localdev'],
         options: {
-          spawn: false,
+          interrupt: true,
           livereload: true
         }
       },
