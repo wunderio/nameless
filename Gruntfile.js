@@ -19,7 +19,11 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['sass/{,*/}*.{scss,sass}'],
-        tasks: ['compass:localdev']
+        tasks: ['compass:localdev'],
+        options: {
+          spawn: false,
+          livereload: true
+        }
       },
       imagesOriginalsImg: {
         files: [
@@ -98,7 +102,7 @@ module.exports = function (grunt) {
         httpFontsPath: '/fonts',
         relativeAssets: true,
         assetCacheBuster: false,
-        require: ['singularitygs', 'breakpoint'],
+        require: ['singularitygs', 'breakpoint', 'modular-scale'],
         bundleExec: true,
         sourcemap: true,
         raw: 'Sass::Script::Number.precision = 10\n'
@@ -115,6 +119,16 @@ module.exports = function (grunt) {
           environment: 'development',
           //debugInfo: true,
           noLineComments: false
+        }
+      }
+    },
+    phantomas: {
+      gruntSite : {
+        options : {
+          indexPath : './phantomas/',
+          options   : {},
+          url       : 'http://abas.dev/',
+          buildUi   : true
         }
       }
     }
