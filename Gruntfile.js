@@ -21,7 +21,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['sass/{,*/}*.{scss,sass}'],
-        tasks: ['compass:localdev', 'notify:compass'],
+        tasks: ['compass:localDevOnlyStyle', 'notify:compassStyle', 'compass:localDevAllFiles', 'notify:compassAll'],
         options: {
           interrupt: true,
           livereload: true
@@ -122,7 +122,15 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         }
       },
-      localdev: {
+      localDevOnlyStyle: {
+        options: {
+          environment: 'development',
+          //debugInfo: true,
+          noLineComments: false,
+          specify: 'sass/style.scss'
+        }
+      },
+      localDevAllFiles: {
         options: {
           environment: 'development',
           //debugInfo: true,
@@ -141,10 +149,16 @@ module.exports = function (grunt) {
       }
     },
     notify: {
-      compass: {
+      compassStyle: {
+        options: {
+          title: 'style.css compiled',
+          message: 'Compass generated the style.css file.'
+        }
+      },
+      compassAll: {
         options: {
           title: 'Compilation done',
-          message: 'Compass updated all css files.'
+          message: 'Compass generated all remaining css files.'
         }
       },
       imagemin: {
@@ -163,7 +177,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'compass:localdev',
+    'compass:localDevOnlyStyle',
+    'compass:localDevAllFiles',
     'newer:imagemin',
     'newer:svgmin',
     'watch'
