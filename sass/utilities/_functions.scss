@@ -1,0 +1,9 @@
+//
+// Functions - Some little helper classes
+// =============================================================================
+
+// Calculate the ratio between two values and return it in em
+// Good replacement for the adjust-font-size() function.
+@function ratio($size, $base-size){
+  @return $size / $base-size * 1em
+}
