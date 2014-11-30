@@ -125,8 +125,7 @@ module.exports = function (grunt) {
       localDevOnlyStyle: {
         options: {
           environment: 'development',
-          //debugInfo: true,
-          noLineComments: false,
+          noLineComments: true,
           specify: 'sass/style.scss'
         }
       },
