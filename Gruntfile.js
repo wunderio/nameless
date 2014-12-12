@@ -92,7 +92,7 @@ module.exports = function (grunt) {
         httpFontsPath: '/fonts',
         relativeAssets: true,
         assetCacheBuster: false,
-        require: ['singularitygs', 'breakpoint', 'modular-scale'],
+        require: ['compass/import-once/activate', 'singularitygs', 'breakpoint', 'modular-scale'],
         bundleExec: true,
         sourcemap: true,
         noLineComments: true,
