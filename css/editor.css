@@ -565,11 +565,13 @@ input[type="button"] {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   -moz-background-clip: padding;
+  -o-background-clip: padding-box;
   -webkit-background-clip: padding;
   background-clip: padding-box;
   background: #dddddd url('../images/button.png') repeat-x;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
   background-image: -moz-linear-gradient(#ffffff, #dddddd);
   background-image: -webkit-linear-gradient(#ffffff, #dddddd);
   background-image: linear-gradient(#ffffff, #dddddd);
@@ -597,6 +599,7 @@ input[type="submit"]:hover,
 input[type="button"]:hover {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMXB4IiBzdG9wLWNvbG9yPSIjZWVlZWVlIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
   background-image: -moz-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
   background-image: -webkit-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
   background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
@@ -609,6 +612,7 @@ input[type="submit"]:active,
 input[type="button"]:active {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dddddd), color-stop(100%, #eeeeee));
   background-image: -moz-linear-gradient(#dddddd, #eeeeee);
   background-image: -webkit-linear-gradient(#dddddd, #eeeeee);
   background-image: linear-gradient(#dddddd, #eeeeee);
@@ -654,6 +658,7 @@ input[type="week"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -moz-background-clip: padding;
+  -o-background-clip: padding-box;
   -webkit-background-clip: padding;
   background-clip: padding-box;
   -moz-border-radius: 0;
@@ -896,7 +901,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background: white;
+  background: #fff;
 }
 
 * {
@@ -925,10 +930,10 @@ table.borderless td {
 }
 
 .cke_editable table.borderless {
-  border: 1px silver dashed;
+  border: 1px #c0c0c0 dashed;
 }
 .cke_editable table.borderless td {
-  border: 1px silver dashed;
+  border: 1px #c0c0c0 dashed;
 }
 
 img,
@@ -951,6 +956,7 @@ a {
   color: #e56716;
   text-decoration: none;
   -moz-transition: color 0.3s, background 0.3s;
+  -o-transition: color 0.3s, background 0.3s;
   -webkit-transition: color 0.3s, background 0.3s;
   transition: color 0.3s, background 0.3s;
 }
@@ -1025,7 +1031,7 @@ button,
 input,
 select,
 textarea {
-  color: black;
+  color: #000;
   font-family: Arial, sans-serif;
 }
 
@@ -1188,7 +1194,7 @@ blockquote footer,
 blockquote small {
   display: block;
   line-height: 24px;
-  color: silver;
+  color: #c0c0c0;
 }
 blockquote footer:before,
 blockquote small:before {
@@ -1244,7 +1250,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid silver;
+  border-top: 1px solid #c0c0c0;
   margin: 0 0 1.125em;
   padding: 0;
 }
@@ -1361,7 +1367,7 @@ fieldset.collapsible .fieldset-legend {
 }
 
 .resizable-textarea .grippie {
-  background: #eeeeee url(../images/drupal/grippie.png) no-repeat center 2px;
+  background: #eee url(../images/drupal/grippie.png) no-repeat center 2px;
   border: 1px solid #ddd;
   border-top-width: 0;
   cursor: s-resize;
@@ -1646,7 +1652,7 @@ ul.tabs {
   list-style: none;
 }
 ul.tabs.primary {
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid #a9a9a9;
   border-collapse: collapse;
   height: auto;
   line-height: normal;
@@ -1669,7 +1675,7 @@ ul.tabs.primary li a {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  background-color: gainsboro;
+  background-color: #dcdcdc;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -1680,15 +1686,15 @@ ul.tabs.primary li a {
   margin-right: 0.5em;
   padding: 0.5em 1em;
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 ul.tabs.primary li.active a {
-  background-color: darkgray;
-  color: white;
+  background-color: #a9a9a9;
+  color: #fff;
 }
 ul.tabs.primary li a:hover {
-  background-color: silver;
-  color: black;
+  background-color: #c0c0c0;
+  color: #000;
 }
 ul.tabs.secondary {
   padding-left: 0;
@@ -1706,8 +1712,8 @@ ul.tabs.secondary li a {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  background-color: gainsboro;
-  color: black;
+  background-color: #dcdcdc;
+  color: #000;
   font-weight: bold;
   margin: 0 0.2em 0.2em 0;
   padding: 0.3em 0.75em;
@@ -1717,12 +1723,12 @@ ul.tabs.secondary li a {
   border-radius: 5px;
 }
 ul.tabs.secondary li.active a {
-  background-color: darkgray;
-  color: white;
+  background-color: #a9a9a9;
+  color: #fff;
 }
 ul.tabs.secondary li a:hover {
-  background-color: silver;
-  color: black;
+  background-color: #c0c0c0;
+  color: #000;
 }
 
 /**
@@ -1749,7 +1755,7 @@ ul.tabs.secondary li a:hover {
 
 .status {
   background-image: url(../../../../../misc/message-24-ok.png);
-  border-color: #bbee77;
+  border-color: #be7;
   color: #234600;
 }
 
@@ -1763,12 +1769,12 @@ ul.tabs.secondary li a:hover {
 
 .warning {
   background-image: url(../../../../../misc/message-24-warning.png);
-  border-color: #eedd55;
-  color: #884400;
+  border-color: #ed5;
+  color: #840;
 }
 
 .warning {
-  color: #884400;
+  color: #840;
 }
 
 div.warning, table tr.warning {
@@ -1790,7 +1796,7 @@ div.error, table tr.error {
 }
 
 div.error p.error {
-  color: #333333;
+  color: #333;
 }
 
 .comments-wrapper {
@@ -1819,7 +1825,7 @@ div.error p.error {
 }
 
 td.revision-current {
-  background: #ffffcc;
+  background: #ffc;
 }
 
 .panel-pane .admin-links {
