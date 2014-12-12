@@ -16,11 +16,11 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-        files: ['js/{,*/}*.js'],
+        files: ['js/**/*.js'],
         tasks: ['newer:jshint:all']
       },
       compass: {
-        files: ['sass/{,*/}*.{scss,sass}'],
+        files: ['sass/**/*.{scss,sass}'],
         tasks: ['compass:localDevOnlyStyle', 'notify:compassStyle', 'compass:localDevAllFiles', 'notify:compassAll'],
         options: {
           interrupt: true,
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       imagesOriginalsImg: {
         files: [
-          'images_originals/{,*/}*.{png,jpg,jpeg,gif,svg}'
+          'images_originals/**/*.{png,jpg,jpeg,gif,svg}'
         ],
         tasks: ['newer:imagemin', 'notify:imagemin'],
         options: {
@@ -50,20 +50,20 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          './js/{,*/}*.js'
+          './js/**/*.js'
         ]
       }
     },
 
     scsslint: {
-      allFiles: [
-        'sass/{,*/}*.scss'
-      ],
       options: {
         bundleExec: true,
         config: '.scss-lint.yml',
         colorizeOutput: true
-      }
+      },
+      all: [
+        'sass/**/*.scss'
+      ]
     },
 
     imagemin: {
