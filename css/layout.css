@@ -9,7 +9,6 @@
     |_| |_|\___|_| .__/ \___|_|  |___/
                  |_|
 *******************************************************************************/
-/* line 6, ../sass/utilities/_helpers.scss */
 .hide-text {
   font: 0/0 a;
   color: transparent;
@@ -18,7 +17,6 @@
   border: 0;
 }
 
-/* line 11, ../sass/utilities/_helpers.scss */
 .element-invisible,
 .visuallyhidden {
   position: absolute !important;
@@ -28,7 +26,6 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* line 18, ../sass/utilities/_helpers.scss */
 .element-invisible.focusable,
 .visuallyhidden.focusable {
   position: absolute !important;
@@ -37,7 +34,6 @@
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 41, ../sass/utilities/_mixins.hiding.scss */
 .element-invisible.focusable:active, .element-invisible.focusable:focus,
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
@@ -48,7 +44,6 @@
   overflow: auto;
 }
 
-/* line 23, ../sass/utilities/_helpers.scss */
 .element-visible {
   position: static !important;
   clip: auto;
@@ -57,22 +52,18 @@
   overflow: auto;
 }
 
-/* line 28, ../sass/utilities/_helpers.scss */
 .hide {
   display: none;
 }
 
-/* line 31, ../sass/utilities/_helpers.scss */
 .show {
   display: block;
 }
 
-/* line 36, ../sass/utilities/_helpers.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 13, ../sass/utilities/_mixins.scss */
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -81,19 +72,16 @@
   height: 0;
 }
 
-/* line 44, ../sass/utilities/_helpers.scss */
 .clear {
   clear: both;
 }
 
-/* line 48, ../sass/utilities/_helpers.scss */
 .text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* line 52, ../sass/utilities/_helpers.scss */
 .muted {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
@@ -107,24 +95,20 @@
     |_____\__,_|\__, |\___/ \__,_|\__|
                 |___/
 *******************************************************************************/
-/* line 5, ../sass/layout/_simple-flexible.scss */
 .page {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* line 1, ../sass/layout/_layout.content.scss */
 .main-content {
   margin-bottom: 2em;
 }
 @media (min-width: 950px) {
-  /* line 1, ../sass/layout/_layout.content.scss */
   .main-content {
     margin-bottom: 0;
   }
 }
-/* line 13, ../sass/utilities/_mixins.scss */
 .main-content:after {
   visibility: hidden;
   display: block;
@@ -133,7 +117,6 @@
   height: 0;
 }
 @media (min-width: 640px) {
-  /* line 9, ../sass/layout/_layout.content.scss */
   .main-content .panel-2col .panel-col-first {
     width: 48.3870967742%;
     float: left;
@@ -142,12 +125,10 @@
     clear: none;
   }
 }
-/* line 15, ../sass/layout/_layout.content.scss */
 .main-content .panel-2col .panel-col-last {
   margin-top: 1em;
 }
 @media (min-width: 640px) {
-  /* line 15, ../sass/layout/_layout.content.scss */
   .main-content .panel-2col .panel-col-last {
     margin-top: 0;
     width: 48.3870967742%;
@@ -158,7 +139,6 @@
   }
 }
 
-/* line 25, ../sass/layout/_layout.content.scss */
 aside .block + .block {
   margin-top: 2em;
 }

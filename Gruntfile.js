@@ -113,27 +113,25 @@ module.exports = function (grunt) {
         require: ['singularitygs', 'breakpoint', 'modular-scale'],
         bundleExec: true,
         sourcemap: true,
+        noLineComments: true,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {
         options: {
           environment: 'production',
-          noLineComments: true,
           outputStyle: 'compressed'
         }
       },
       localDevOnlyStyle: {
         options: {
           environment: 'development',
-          noLineComments: true,
           specify: 'sass/style.scss'
         }
       },
       localDevAllFiles: {
         options: {
-          environment: 'development',
-          //debugInfo: true,
-          noLineComments: false
+          environment: 'development'
+          //,debugInfo: true,
         }
       }
     },
