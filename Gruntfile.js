@@ -29,16 +29,9 @@ module.exports = function (grunt) {
       },
       imagesOriginalsImg: {
         files: [
-          'images_originals/{,*/}*.{png,jpg,jpeg,gif}'
+          'images_originals/{,*/}*.{png,jpg,jpeg,gif,svg}'
         ],
         tasks: ['newer:imagemin', 'notify:imagemin'],
-        options: {
-          event: ['added', 'changed']
-        }
-      },
-      imagesOriginalsSvg: {
-        files: ['images_originals/{,*/}*.svg'],
-        tasks: ['newer:svgmin', 'notify:imagemin'],
         options: {
           event: ['added', 'changed']
         }
@@ -78,18 +71,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: './images_originals',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: './images'
-        }]
-      }
-    },
-
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: './images_originals',
-          src: '{,*/}*.svg',
+          src: '{,*/}*.{png,jpg,jpeg,gif,svg}',
           dest: './images'
         }]
       }
@@ -177,7 +159,6 @@ module.exports = function (grunt) {
     'compass:localDevOnlyStyle',
     'compass:localDevAllFiles',
     'newer:imagemin',
-    'newer:svgmin',
     'watch'
   ]);
 };
