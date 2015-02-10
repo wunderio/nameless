@@ -11,6 +11,8 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-notify');
 
+  grunt.loadNpmTasks('grunt-phantomcss');
+
   grunt.initConfig({
 
     // Watches files for changes and runs tasks based on the changed files
@@ -145,7 +147,26 @@ module.exports = function (grunt) {
           message: 'Imagemin successfully minified all new images.'
         }
       }
+    },
+    phantomcss: {
+      options: {
+        baseURL: 'http://project-url.dev',
+        screenshots: 'test/references/all/',
+        results: 'test/results/'
+      },
+      src: [
+        'test/**/*.js'
+      ]
     }
+  });
+
+  grunt.registerTask('test', 'Test page for css & design regressions', function() {
+    if (grunt.option('type')) {
+      grunt.config.set('phantomcss.src', ['test/' + grunt.option('type') + '.js']);
+      grunt.config.set('phantomcss.options.screenshots', 'test/references/type_' + grunt.option('type') + '/');
+    }
+
+    grunt.task.run(['phantomcss']);
   });
 
   grunt.registerTask('dist', [
