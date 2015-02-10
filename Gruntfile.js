@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:all']
       },
       compass: {
-        files: ['sass/**/*.{scss,sass}'],
+        files: ['scss/**/*.{scss,sass}'],
         tasks: ['compass:localDevOnlyStyle', 'notify:compassStyle', 'compass:localDevAllFiles', 'notify:compassAll'],
         options: {
           interrupt: true,
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: 'sass',
+        sassDir: 'scss',
         cssDir: 'css',
         generatedImagesDir: 'images',
         imagesDir: 'images',
@@ -107,13 +107,12 @@ module.exports = function (grunt) {
       localDevOnlyStyle: {
         options: {
           environment: 'development',
-          specify: 'sass/style.scss'
+          specify: 'scss/style.scss'
         }
       },
       localDevAllFiles: {
         options: {
           environment: 'development'
-          //,debugInfo: true,
         }
       }
     },
