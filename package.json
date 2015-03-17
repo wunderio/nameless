@@ -17,5 +17,9 @@
     "jshint-stylish": "^1.0.0",
     "load-grunt-tasks": "^3.1.0",
     "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "_comment": "Remove .info files as long https://www.drupal.org/node/2329453 is not fixed.",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   }
 }
