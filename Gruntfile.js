@@ -123,7 +123,7 @@ module.exports = function (grunt) {
         options : {
           indexPath : './phantomas/',
           options   : {},
-          url       : 'http://abas.dev/',
+          url       : 'http://project-url.dev/',
           buildUi   : true
         }
       }
