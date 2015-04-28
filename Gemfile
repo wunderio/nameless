@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.1'
 
 gem 'sass', '~> 3.4.11'
 gem 'compass', '~> 1.1.0.alpha.3'

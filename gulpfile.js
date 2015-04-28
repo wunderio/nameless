@@ -78,6 +78,7 @@ gulp.task('styles', function () {
     .pipe(livereload());
 });
 
+// Helper tasks for pagespeed analysis:
 gulp.task('ngrok-url', function(cb) {
   return ngrok.connect({
 
@@ -113,15 +114,18 @@ gulp.task('psi-desktop', function (cb) {
   });
 });
 
-gulp.task('pagespeed', function(cb) {
-  runSequence('ngrok-url', 'psi-mobile', 'psi-desktop', 'psi-exit', cb);
-});
-
 // psi task runs and exits
 gulp.task('psi-exit', function() {
   console.log('Woohoo! Check out your page speed scores!');
   process.exit();
 });
+
+// This is the main pagespeed task that will run all helper tasks
+gulp.task('pagespeed', function(cb) {
+  runSequence('ngrok-url', 'psi-mobile', 'psi-desktop', 'psi-exit', cb);
+});
+
+
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function () {
@@ -139,6 +143,9 @@ gulp.task('default', function (cb) {
   runSequence('styles', ['jshint', 'images'], cb);
 });
 
+
+// Test tasks that need to be run standalone:
+//
 gulp.task( 'bs-reference', function () {
   gulp.src( './node_modules/backstopjs/gulpfile.js' )
     .pipe($.chug({
