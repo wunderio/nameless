@@ -1,0 +1,27 @@
+name: nameless
+type: theme
+description: Starting point for development and to allow a clean output of content
+base theme: classy
+core: 8.x
+
+#-------------- L I B R A R I E S -----------------
+#
+# All styles will be placed in the styles
+
+libraries:
+ - nameless/global-styles
+
+#---------------- R E G I O N S -------------------
+regions:
+  messages: Messages
+  help: Help
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+  header: Header
+  navigation: Navigation
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
+  footer: Footer
