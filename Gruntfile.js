@@ -1,4 +1,3 @@
-
 'use strict';
 
 module.exports = function (grunt) {
@@ -19,7 +18,7 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: ['js/**/*.js'],
-        tasks: ['newer:jshint:all']
+        tasks: ['jshint:all']
       },
       compass: {
         files: ['scss/**/*.{scss,sass}'],
@@ -72,9 +71,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: './images_originals',
-          src: '{,*/}*.{png,jpg,jpeg,gif,svg}',
-          dest: './images'
+          cwd: './images_originals/',
+          src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+          dest: './images/'
         }]
       }
     },
