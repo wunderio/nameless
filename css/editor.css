@@ -87,6 +87,14 @@
   opacity: 0.5;
 }
 
+.direction-ltr {
+  direction: ltr;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
 /*******************************************************************************
      _   _                            _ _
     | \ | | ___  _ __ _ __ ___   __ _| (_)_______
@@ -835,10 +843,6 @@ $sprite-example-2x: sprite-map("sprite/example-icons@2x/*.png",
     | |_) | (_| \__ \  __/ | |___| |  __/ | | | | |  __/ | | | |_\__ \
     |____/ \__,_|___/\___| |_____|_|\___|_| |_| |_|\___|_| |_|\__|___/
 *******************************************************************************/
-html {
-  overflow-y: scroll;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -860,13 +864,17 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  cursor: default;
+}
+
+table, tbody {
+  border-top: 0;
 }
 
 table.borderless {
   border: 0;
 }
-table.borderless tbody,
-table.borderless td {
+table.borderless tbody, table.borderless td {
   border: 0;
 }
 
@@ -887,6 +895,18 @@ video {
 .ie8 img, .ie8
 video {
   width: auto;
+}
+
+p img,
+p video,
+h1 img,
+h1 video, h2 img,
+h2 video, h3 img,
+h3 video, h4 img,
+h4 video, h5 img,
+h5 video, h6 img,
+h6 video {
+  display: inline-block;
 }
 
 figure > img {
