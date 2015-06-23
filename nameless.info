@@ -3,14 +3,8 @@ description = Starting point for development and to allow a clean output of cont
 core = 7.x
 
 ;-------------------- C S S -----------------------
-;
-; All styles will be placed in the styles
-; file. This will include styles for layout, page
-; elements, features.
-; Print overrides will reside in print.css.
 
 stylesheets[all][] = css/style.css
-stylesheets[print][] = css/print.css
 
 ;--------------------- J S ------------------------
 

@@ -6,7 +6,6 @@
 * debug partial (debugging code)
 * editor.scss (reset, typography and all elements to be shown or used in wysiwyg)
 * style.scss (main stylesheet containing layout, features and style overrides)
-* print.scss (print stylesheet)
 
 ## sub directory structure:
 For a more detailed description look at the first comment in the [directory]/_[directory].scss file.
