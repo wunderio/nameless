@@ -1,4 +1,5 @@
 # Nameless Drupal 8 theme
+[![devDependency Status](https://david-dm.org/wunderkraut/nameless/dev-status.svg)](https://david-dm.org/wunderkraut/nameless#info=devDependencies)
 
 Starting point for drupal theme development and to allow a clean output of content.
 
