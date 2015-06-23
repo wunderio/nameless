@@ -17,6 +17,15 @@ video {
   @include responsive-media();
 }
 
+// Avoid line breaks within paragraphs
+p,
+h1,h2,h3,h4,h5,h6 {
+  img,
+  video {
+    display: inline-block;
+  }
+}
+
 // Figure image
 //
 // Markup:
