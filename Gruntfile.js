@@ -164,20 +164,33 @@ module.exports = function (grunt) {
     },
     phantomcss: {
       options: {
-        baseURL: 'http://project-url.dev',
-        screenshots: 'test/references/all/',
-        results: 'test/results/'
+        screenshots: 'references',
+        results: 'results',
+        viewportSize: [1400, 600],
+        mismatchTolerance: 0.05,
+        rootUrl: 'http://project-url.dev/'
       },
       src: [
         'test/**/*.js'
       ]
     }
   });
-
+  /**
+   * Run a visual regression test with phantom css
+   * Basic usage: "grunt test"
+   *
+   * params:
+   * @type just test a single js file. "grunt test --type=pages"
+   * @url set the baseUrl for the test. "grunt test --url=user@password:stage.example.wunderkraut.io"
+   *
+   */
   grunt.registerTask('test', 'Test page for css & design regressions', function() {
+
     if (grunt.option('type')) {
       grunt.config.set('phantomcss.src', ['test/' + grunt.option('type') + '.js']);
-      grunt.config.set('phantomcss.options.screenshots', 'test/references/type_' + grunt.option('type') + '/');
+    }
+    if (grunt.option('url')) {
+      grunt.config.set('phantomcss.options.rootUrl', grunt.option('url'));
     }
 
     grunt.task.run(['phantomcss']);

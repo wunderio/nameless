@@ -26,6 +26,37 @@ module.exports = {
       }
     })();
   },
+  /**
+   * Takes a screenshot of every vertical tab. Very useful to test admin interfaces.
+   * @todo create another function to test horizontal and vertical tabs created by field groups.
+   */
+  testVerticalTabs: function (pageName) {
+    var selector = '.vertical-tabs ul.vertical-tabs-list',
+        numTabs = 0,
+        tools = this;
+
+    casper.waitForSelector(selector, function then() {
+
+      numTabs = casper.evaluate(function(sel) {
+        return document.querySelectorAll(sel + ' li').length;
+      }, selector);
+
+      if (numTabs > 1) {
+        var tabs = [];
+        for (var i = 1; i <= numTabs; i++) {
+          tabs.push(i);
+        }
+        tabs.forEach(function(tab) {
+          casper.thenClick(selector + ' li:nth-child(' + tab + ') a')
+          .then(function() {
+            phantomcss.screenshot('ul.vertical-tabs-list + div.vertical-tabs-panes', 0, tools.getHiddenElements('logged-in'), 'loggedIn/admin/' + pageName + '.vertical-tabs#' + tab);
+          });
+        });
+      }
+    }, function onTimeout() {
+      casper.log('Cannot find any vertical tabs.', 'warning');
+    }, 3000);
+  },
   getHiddenElements: function (type) {
     var hidden = '';
     switch (type) {
