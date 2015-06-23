@@ -12,6 +12,8 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-phantomcss');
 
+  grunt.loadNpmTasks('grunt-postcss');
+
   grunt.initConfig({
 
     // Watches files for changes and runs tasks based on the changed files
@@ -22,7 +24,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['scss/**/*.{scss,sass}'],
-        tasks: ['compass:localDevOnlyStyle', 'notify:compassStyle', 'compass:localDevAllFiles', 'notify:compassAll'],
+        tasks: ['compass:localDevOnlyStyle', 'notify:compassStyle', 'compass:localDevAllFiles', 'postcss:theme', 'notify:compassAll'],
         options: {
           interrupt: true,
           livereload: true
@@ -117,6 +119,19 @@ module.exports = function (grunt) {
         }
       }
     },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 3 versions'})
+        ]
+      },
+      theme: {
+        src: [
+          'css/*.css'
+        ]
+      }
+    },
     phantomas: {
       gruntSite : {
         options : {
@@ -175,9 +190,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'compass:localDevOnlyStyle',
-    'compass:localDevAllFiles',
+    'newer:compass:localDevOnlyStyle',
+    'newer:compass:localDevAllFiles',
     'newer:imagemin',
+    'newer:postcss',
     'watch'
   ]);
 };
