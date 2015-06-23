@@ -56,3 +56,10 @@
 %border-box {
   @include box-sizing(border-box);
 }
+
+.direction-ltr {
+  direction: ltr;
+}
+.direction-rtl {
+  direction: rtl;
+}
