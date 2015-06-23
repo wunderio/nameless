@@ -33,9 +33,6 @@
   <?php endif; ?>
   <meta http-equiv="cleartype" content="on">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <!--[if lt IE 9]>
-  <script src="<?php print $base_path . $theme_path; ?>/libraries/html5shiv/dist/html5shiv.js"></script>
-  <![endif]-->
   <?php print $styles; ?>
   <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
@@ -48,11 +45,5 @@
   <?php print $scripts; ?>
   <!--  page bottom region-->
   <?php print $page_bottom; ?>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-  chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
 </body>
 </html>
