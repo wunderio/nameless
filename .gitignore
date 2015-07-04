@@ -1,5 +1,6 @@
 .sass-cache
 node_modules
+assets/libraries
 phantomas
 test/references
 test/results
