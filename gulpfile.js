@@ -15,9 +15,16 @@ var runSequence = require('run-sequence');
 var pagespeed = require('psi');
 var livereload = require('gulp-livereload');
 var reload = livereload.reload;
-var bowerFiles = require('main-bower-files');
 var ngrok = require('ngrok');
 var site = 'http://project-url.dev';
+var postcss = require('gulp-postcss');
+var postcssImport = require('postcss-import');
+var cssnext = require('cssnext');
+var postcssNested = require('postcss-nested');
+var postcssSimpleVars= require('postcss-simple-vars');
+var autoprefixer = require('autoprefixer-core');
+var mqpacker = require('css-mqpacker');
+var csswring = require('csswring');
 
 
 var AUTOPREFIXER_BROWSERS = [
@@ -54,30 +61,53 @@ gulp.task('images', function () {
 
 
 // Compile and Automatically Prefix Stylesheets
-gulp.task('styles', function () {
-  // For best performance, don't add Sass partials to `gulp.src`
-/*  return gulp.src([
-    'sass/style.scss'
+gulp.task('postcss', function () {
+  var processors = [
+    postcssImport,
+    autoprefixer({browsers: AUTOPREFIXER_BROWSERS}),
+    cssnext(),
+    postcssNested,
+    postcssSimpleVars,
+    mqpacker,
+    csswring
+  ];
+  return gulp.src([
+    './css-src/**/*.pcss',
+    '!./css-src/**/_*.pcss'
   ])
-    .pipe($.changed('styles', {extension: '.scss'}))
-    .pipe($.rubySass({
-      style: 'expanded',
-      precision: 10,
-      sourcemap: true,
-      sourcemapPath: '.',
-      require: ['compass', 'singularitygs', 'breakpoint', 'modular-scale'],
-      loadPath: 'libraries',
-      bundleExec: true,
-      compass: true
-    })
-      .on('error', console.error.bind(console))
-  )
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('css'))
-    .pipe($.size({title: 'styles'}))
-    .pipe(livereload());*/
+    .pipe($.changed('styles', {extension: '.pcss'}))
+    .pipe($.sourcemaps.init())
+    .pipe(postcss(processors))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('./css'))
+    .pipe($.size({title: 'styles'}));
 });
 
+gulp.task('postcss-rename', function () {
+
+  return gulp.src([
+    './css/**/*.pcss'
+  ])
+    .pipe($.rename(function (path) {
+      path.extname = ".css"
+    }))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('postcss-map-rename', function () {
+  return gulp.src([
+    './css/**/*.pcss.map'
+  ])
+    .pipe($.rename(function (path) {
+      path.basename = path.basename.replace('.pcss', '.css', 'gi');
+    }))
+    .pipe($.replace(/"file":"(\w+)\.pcss"/g, '"file":"$1.css"'))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('styles', function () {
+  runSequence('postcss', ['postcss-rename', 'postcss-map-rename']);
+});
 // Helper tasks for pagespeed analysis:
 gulp.task('ngrok-url', function(cb) {
   return ngrok.connect({
@@ -133,7 +163,7 @@ gulp.task('watch', function () {
     reloadPage: ''
   });
 
-  gulp.watch(['scss/**/*.{scss,css}'], ['styles']);
+  gulp.watch(['css-src/**/*.{pcss}'], ['styles'], reload);
   gulp.watch(['js/**/*.js'], ['jshint']);
   gulp.watch(['images/**/*', 'templates/**/*.tpl.php'], reload);
 });

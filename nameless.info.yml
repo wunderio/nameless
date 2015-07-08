@@ -9,7 +9,7 @@ core: 8.x
 # All styles will be placed in the styles
 
 libraries:
- - nameless/global-styles
+ - nameless/global-styling
 
 #---------------- R E G I O N S -------------------
 regions:
