@@ -1,7 +1,11 @@
 {
   "name": "nameless",
   "version": "0.1.0",
-  "description": "Starter theme for Drupal 7.",
+  "description": "Starter theme for Drupal 8.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wunderkraut/nameless"
+  },
   "dependencies": {},
   "devDependencies": {
     "backstopjs": "^0.4.1",
@@ -20,10 +24,10 @@
     "gulp-jshint": "^1.6.3",
     "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.5.3",
+    "gulp-postcss": "^5.1.9",
     "gulp-replace": "^0.4.0",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-scss-lint": "^0.1.12",
     "gulp-size": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^0.3.1",
     "gulp-uncss": "^0.4.5",
     "gulp-useref": "^0.6.0",
@@ -44,5 +48,5 @@
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "author": "Andreas Sahle <andreas.sahle@wunderkraut.com>",
-  "license": "GPL"
+  "license": "GPL-2.0"
 }

@@ -56,7 +56,7 @@ gulp.task('images', function () {
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src([
+/*  return gulp.src([
     'sass/style.scss'
   ])
     .pipe($.changed('styles', {extension: '.scss'}))
@@ -75,7 +75,7 @@ gulp.task('styles', function () {
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('css'))
     .pipe($.size({title: 'styles'}))
-    .pipe(livereload());
+    .pipe(livereload());*/
 });
 
 // Helper tasks for pagespeed analysis:
@@ -158,9 +158,4 @@ gulp.task( 'bs-test', function () {
     .pipe($.chug({
       tasks:  [ 'test' ]
     }));
-});
-
-gulp.task('scss-lint', function() {
-  gulp.src('sass/**/*.scss')
-    .pipe($.scssLint());
 });

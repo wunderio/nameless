@@ -2,10 +2,7 @@
   "name": "nameless",
   "version": "0.0.0",
   "dependencies": {
-    "formalize": "*",
-    "html5shiv": "~3.7.2",
-    "normalize-scss": "~3.0.2",
-    "respond": "~1.4.2"
+
   },
   "devDependencies": {}
 }
