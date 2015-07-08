@@ -105,8 +105,13 @@ gulp.task('postcss-map-rename', function () {
     .pipe(gulp.dest('./css'));
 });
 
+gulp.task('styles-clean', function () {
+  return gulp.src(['./css/**/*.pcss.map', './css/**/*.pcss'], {read: false})
+    .pipe($.clean());
+});
+
 gulp.task('styles', function () {
-  runSequence('postcss', ['postcss-rename', 'postcss-map-rename']);
+  runSequence('postcss', ['postcss-rename', 'postcss-map-rename'], 'styles-clean');
 });
 // Helper tasks for pagespeed analysis:
 gulp.task('ngrok-url', function(cb) {
