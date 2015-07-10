@@ -61,7 +61,7 @@ gulp.task('images', function () {
 
 
 // Compile and Automatically Prefix Stylesheets
-gulp.task('postcss', function () {
+gulp.task('styles', function () {
   var processors = [
     postcssImport,
     autoprefixer({browsers: AUTOPREFIXER_BROWSERS}),
@@ -72,8 +72,8 @@ gulp.task('postcss', function () {
     csswring
   ];
   return gulp.src([
-    './css-src/**/*.pcss',
-    '!./css-src/**/_*.pcss'
+    './css-src/**/*.p.css',
+    '!./css-src/**/_*.p.css'
   ])
     .pipe($.changed('styles', {extension: '.pcss'}))
     .pipe($.sourcemaps.init())
@@ -83,36 +83,6 @@ gulp.task('postcss', function () {
     .pipe($.size({title: 'styles'}));
 });
 
-gulp.task('postcss-rename', function () {
-
-  return gulp.src([
-    './css/**/*.pcss'
-  ])
-    .pipe($.rename(function (path) {
-      path.extname = ".css"
-    }))
-    .pipe(gulp.dest('./css'));
-});
-
-gulp.task('postcss-map-rename', function () {
-  return gulp.src([
-    './css/**/*.pcss.map'
-  ])
-    .pipe($.rename(function (path) {
-      path.basename = path.basename.replace('.pcss', '.css', 'gi');
-    }))
-    .pipe($.replace(/"file":"(\w+)\.pcss"/g, '"file":"$1.css"'))
-    .pipe(gulp.dest('./css'));
-});
-
-gulp.task('styles-clean', function () {
-  return gulp.src(['./css/**/*.pcss.map', './css/**/*.pcss'], {read: false})
-    .pipe($.clean());
-});
-
-gulp.task('styles', function () {
-  runSequence('postcss', ['postcss-rename', 'postcss-map-rename'], 'styles-clean');
-});
 // Helper tasks for pagespeed analysis:
 gulp.task('ngrok-url', function(cb) {
   return ngrok.connect({
