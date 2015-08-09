@@ -1,0 +1,109 @@
+/*
+//
+// VARIABLES for SASS/COMPASS
+// =============================================================================
+*/
+
+@import '_config.colors.p.css';
+/*
+// -----------------------------------------------------------------------------
+// Debugging
+// -----------------------------------------------------------------------------
+*/
+
+$debug: false;
+/*
+// -----------------------------------------------------------------------------
+// Browser support
+// -----------------------------------------------------------------------------
+*/
+
+$legacy-support-for-ie:   false;
+$legacy-support-for-ie6:  false;
+$legacy-support-for-ie7:  false;
+$legacy-support-for-ie8:  false;
+/*
+// -----------------------------------------------------------------------------
+// Mathematical values
+// -----------------------------------------------------------------------------
+*/
+
+$golden-ratio: 1.618;
+/*
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+*/
+$base-rhythm:       rhythm(.75);
+
+$base-font-size:    16px;
+$base-line-height:  24px;
+
+$sans-font-family:        Arial, sans-serif;
+$serif-font-family:       Georgia, "Times New Roman", Times, serif;
+$mono-font-family:        Monaco, Menlo, Consolas, "Courier New", monospace;
+$brand-font-family:       'PT Sans Narrow', sans-serif;
+
+/*// The font sizes for h1-h6.*/
+$h1-font-size: 2.77  * $base-font-size; /*// 36px/13px*/
+$h2-font-size: 1.85  * $base-font-size; /*// 24px/13px*/
+$h3-font-size: 1.385 * $base-font-size; /*// 18px/13px*/
+$h4-font-size: 1.077 * $base-font-size; /*// 14px/13px*/
+$h5-font-size: .85   * $base-font-size; /*// 11px/13px*/
+$h6-font-size: .67   * $base-font-size;
+
+$headings-font-family:    inherit;
+$headings-font-weight:    bold;
+$headings-trailer:        $golden-ratio / 2;
+
+/*// extra font sizes*/
+$huge-font-size:          3    * $base-font-size;
+$mega-font-size:          4.5  * $base-font-size;
+$giga-font-size:          6    * $base-font-size;
+
+$small-font-size:         .7   * $base-font-size;
+$micro-font-size:         .5   * $base-font-size;
+/*
+// -----------------------------------------------------------------------------
+// Functional color variables
+// -----------------------------------------------------------------------------
+*/
+
+$base-background-color: $white;
+
+/*
+
+// -----------------------------------------------------------------------------
+// Drupal elements
+// -----------------------------------------------------------------------------
+*/
+
+/*// Tabs*/
+$tab-primary-bgcolor-active:   nth($grays, 5);
+$tab-primary-color-active:     $white;
+$tab-primary-bgcolor-hover:    nth($grays, 3);
+$tab-primary-color-hover:      $black;
+$tab-primary-bgcolor-default:  nth($grays, 1);
+$tab-primary-color-default:    $black;
+$tab-primary-border-radius:    5px;
+
+$tab-secondary-bgcolor-active:    nth($grays, 5);
+$tab-secondary-color-active:      $white;
+$tab-secondary-bgcolor-hover:     nth($grays, 3);
+$tab-secondary-color-hover:       $black;
+$tab-secondary-bgcolor-default:   nth($grays, 1);
+$tab-secondary-color-default:     $black;
+$tab-secondary-border-radius:   $tab-primary-border-radius;
+
+/*// Messages*/
+$message-border-style:        1px dashed;
+$message-border-radius:       8px;
+$message-status-bgcolor:      #f8fff0;
+$message-status-bordercolor:  #be7;
+$message-status-color:        #234600;
+$message-warning-bgcolor:     #fffce5;
+$message-warning-bordercolor: #ed5;
+$message-warning-color:       #840;
+$message-error-bgcolor:       #fef5f1;
+$message-error-bordercolor:   #ed541d;
+$message-error-color:         #8c2e0b;
