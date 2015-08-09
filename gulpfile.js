@@ -72,10 +72,10 @@ gulp.task('styles', function () {
     csswring
   ];
   return gulp.src([
-    './css-src/**/*.p.css',
-    '!./css-src/**/_*.p.css'
+    './postcss/**/*.p.css',
+    '!./postcss/**/_*.p.css'
   ])
-    .pipe($.changed('styles', {extension: '.pcss'}))
+    .pipe($.changed('styles', {extension: '.p.css'}))
     .pipe($.sourcemaps.init())
     .pipe(postcss(processors))
     .pipe($.sourcemaps.write('.'))
@@ -138,7 +138,7 @@ gulp.task('watch', function () {
     reloadPage: ''
   });
 
-  gulp.watch(['css-src/**/*.{pcss}'], ['styles'], reload);
+  gulp.watch(['postcss/**/*.{p.css}'], ['styles'], reload);
   gulp.watch(['js/**/*.js'], ['jshint']);
   gulp.watch(['images/**/*', 'templates/**/*.tpl.php'], reload);
 });
