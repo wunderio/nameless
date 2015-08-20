@@ -1,0 +1,15 @@
+{
+  "preset": "google",
+  "disallowMixedSpacesAndTabs": true,
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "validateIndentation": 2,
+  "jsDoc": {
+    "checkAnnotations": {
+      "preset": "jsdoc3",
+      "extra": {
+        "file": true
+      }
+    }
+  },
+  "excludeFiles": ["node_modules/**", "libraries"]
+}
