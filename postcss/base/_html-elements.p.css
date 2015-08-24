@@ -1,14 +1,11 @@
-//
+/*
 // HTML Base Elements
 // =============================================================================
+*/
 
-body {
-  padding: 0;
-  margin: 0;
-  background: $body-background;
-}
-
+/*
 // Use border-box for every element on the website
+*/
 * {
   @include box-sizing(inherit);
   &:after,
@@ -20,10 +17,15 @@ body {
 body {
   @include box-sizing(border-box);
   cursor: default;
+  padding: 0;
+  margin: 0;
+  background: $body-background;
 }
 
 
+/*
 // Tables
+*/
 table, tbody {
   border-top: 0;
 }

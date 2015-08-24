@@ -1,47 +1,12 @@
 @import '../_config.p.css';
 
-body {
-  padding: 0;
-  margin: 0;
-  background: $body-background;
-}
+//
+// Base - Import file
+// =============================================================================
 
-/*
-// Use border-box for every element on the website
-*/
-* {
-  @include box-sizing(inherit);
-  &:after,
-  &:before {
-    @include box-sizing(inherit);
-  }
-}
+@import '_fonts.p.css';
 
-body {
-  @include box-sizing(border-box);
-  cursor: default;
-}
-
-
-/*
-// Tables
-*/
-table, tbody {
-  border-top: 0;
-}
-
-table.borderless {
-  border: 0;
-
-  tbody, td {
-    border: 0;
-  }
-}
-
-.cke_editable table.borderless {
-  border: 1px $silver dashed;
-
-  td {
-    border: 1px $silver dashed;
-  }
-}
+@import '_html-elements.p.css';
+@import '_media.p.css';
+@import '_links.p.css';
+@import '_typography.p.css';
