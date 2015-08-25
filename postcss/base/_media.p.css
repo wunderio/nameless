@@ -7,10 +7,12 @@
 
 img,
 video {
-  @include responsive-media();
+  /*@include responsive-media();*/
 }
 
+/*
 // Avoid line breaks within paragraphs
+*/
 p,
 h1,h2,h3,h4,h5,h6 {
   img,
@@ -18,13 +20,15 @@ h1,h2,h3,h4,h5,h6 {
     display: inline-block;
   }
 }
-
+/*
 // Figure image
 //
 // Markup:
 // <figure><img src="http://placehold.it/250x250" /></figure>
 //
 // Styleguide 3.1.2
+*/
+
 figure > img {
   display: block;
 }

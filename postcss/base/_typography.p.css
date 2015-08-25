@@ -1,8 +1,29 @@
+/*
 //
 // Typography styles
 // =============================================================================
+*/
 
 
+/*
+lineHeightRatio headerRatio bodyFont bodyFontWeight bodyColor headerFont headerFontWeight headerColor minFont maxFont minWidth maxWidth verticalRhythm
+$line-height-ratio  : 1.75;
+$header-ratio       : null;
+$body-font          : null;
+$body-font-weight   : 300;
+$body-color         : $text-color;
+$header-font        : null;
+$header-font-weight : 500;
+$header-color       : $text-color;
+$min-font           : '12px';
+$max-font           : '20px';
+$min-width          : '600px';
+$max-width          : '1000px';
+$vertical-rhythm    : true;
+*/
+@mixin typographic 1.75, null, null, 300, #333, null, 500, #333, 12px, 18px, 600px, 1000px, true ;
+
+/*
 html,
 button,
 input,
@@ -13,10 +34,9 @@ textarea {
 }
 
 html {
-  @include adjust-font-size-to($base-font-size);
   font-size: $base-font-size; // set a pixel based value as a basic font-size
 }
-
+/!*
 // Headlines
 //
 // 0.75 unit of vertical rhythm on the bottom margin.
@@ -47,36 +67,36 @@ html {
 // <p class="zeta">Paragraph "zeta" styled like a headline -h6: -he's the exact opposite of the hero. And most times they're friends, like you and me!</p>
 //
 // Styleguide 3.2.2
-
+*!/
 
 h1,
 .alpha {
-  font-size: ratio($h1-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h1-font-size, $base-font-size;
 }
 
 h2,
 .beta {
-  font-size: ratio($h2-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h2-font-size, $base-font-size;
 }
 
 h3,
 .gamma {
-  font-size: ratio($h3-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h3-font-size, $base-font-size;
 }
 
 h4,
 .delta {
-  font-size: ratio($h4-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h4-font-size, $base-font-size;
 }
 
 h5,
 .epsilon {
-  font-size: ratio($h5-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h5-font-size, $base-font-size;
 }
 
 h6,
 .zeta {
-  font-size: ratio($h6-font-size, $base-font-size);
+  @mixin ratio 'font-size', $h6-font-size, $base-font-size;
 }
 
 h1,
@@ -130,6 +150,7 @@ hgroup {
   @include trailer(.75, $h2-font-size);
 }
 
+/!*
 // Predefined type sizes
 //
 // A series of classes for setting massive type; for use in heroes, mastheads,
@@ -145,21 +166,22 @@ hgroup {
 // <p class="giga">Paragraph "giga": Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
 //
 // Styleguide 3.2.3
+*!/
 
 .micro {
-  @include adjust-font-size-to($micro-font-size);
+  @mixin ratio 'font-size', $micro-font-size, $base-font-size;
 }
 .small {
-  @include adjust-font-size-to($small-font-size);
+  @mixin ratio 'font-size', $small-font-size, $base-font-size;
 }
 .huge {
-  @include adjust-font-size-to($huge-font-size);
+  @mixin ratio 'font-size', $huge-font-size, $base-font-size;
 }
 .mega {
-  @include adjust-font-size-to($mega-font-size);
+  @mixin ratio 'font-size', $mega-font-size, $base-font-size;
 }
 .giga {
-  @include adjust-font-size-to($giga-font-size);
+  @mixin ratio 'font-size', $giga-font-size, $base-font-size;
 }
 
 p,
@@ -178,7 +200,10 @@ p + h5,
 p + h6, {
   margin-top: $base-rhythm;
 }
+/!*
 // leading paragraph
+*!/
+
 .lead,
 h1 + p,
 h2 + p,
@@ -205,9 +230,11 @@ blockquote {
     }
   }
 }
-
+/!*
 // Lists
 // -----------------------------------------------------------------------------
+*!/
+
 ul,
 ol,
 dl,
@@ -256,8 +283,10 @@ nav ol {
   list-style-image: none;
 }
 
+/!*
 // Misc
 // -----------------------------------------------------------------------------
+*!/
 
 hr {
   display: block;
@@ -268,7 +297,10 @@ hr {
   padding: 0;
 }
 
+/!*
 // Addresses
+*!/
+
 address {
   display: block;
   margin-bottom: $base-rhythm;
@@ -277,9 +309,12 @@ address {
 }
 
 
+/!*
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection declarations have to be separate.
 // Customize the background color to match your design.
+*!/
+
 ::-moz-selection {
   background: $text-selection-color;
   text-shadow: none;
@@ -293,3 +328,4 @@ address {
 .caps{
   text-transform: uppercase;
 }
+*/

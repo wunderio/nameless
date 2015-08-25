@@ -5,6 +5,7 @@
 */
 
 @import '_config.colors.p.css';
+
 /*
 // -----------------------------------------------------------------------------
 // Debugging
@@ -12,6 +13,7 @@
 */
 
 $debug: false;
+
 /*
 // -----------------------------------------------------------------------------
 // Browser support
@@ -22,6 +24,7 @@ $legacy-support-for-ie:   false;
 $legacy-support-for-ie6:  false;
 $legacy-support-for-ie7:  false;
 $legacy-support-for-ie8:  false;
+
 /*
 // -----------------------------------------------------------------------------
 // Mathematical values
@@ -29,12 +32,13 @@ $legacy-support-for-ie8:  false;
 */
 
 $golden-ratio: 1.618;
+
 /*
 // -----------------------------------------------------------------------------
 // Typography
 // -----------------------------------------------------------------------------
 */
-$base-rhythm:       rhythm(.75);
+
 
 $base-font-size:    16px;
 $base-line-height:  24px;
@@ -56,13 +60,17 @@ $headings-font-family:    inherit;
 $headings-font-weight:    bold;
 $headings-trailer:        $golden-ratio / 2;
 
-/*// extra font sizes*/
+/*
+// extra font sizes
+*/
 $huge-font-size:          3    * $base-font-size;
 $mega-font-size:          4.5  * $base-font-size;
 $giga-font-size:          6    * $base-font-size;
 
 $small-font-size:         .7   * $base-font-size;
 $micro-font-size:         .5   * $base-font-size;
+
+
 /*
 // -----------------------------------------------------------------------------
 // Functional color variables
@@ -72,13 +80,14 @@ $micro-font-size:         .5   * $base-font-size;
 $base-background-color: $white;
 
 /*
-
 // -----------------------------------------------------------------------------
 // Drupal elements
 // -----------------------------------------------------------------------------
 */
 
-/*// Tabs*/
+/*
+// Tabs
+*/
 $tab-primary-bgcolor-active:   nth($grays, 5);
 $tab-primary-color-active:     $white;
 $tab-primary-bgcolor-hover:    nth($grays, 3);
@@ -95,7 +104,9 @@ $tab-secondary-bgcolor-default:   nth($grays, 1);
 $tab-secondary-color-default:     $black;
 $tab-secondary-border-radius:   $tab-primary-border-radius;
 
-/*// Messages*/
+/*
+// Messages
+*/
 $message-border-style:        1px dashed;
 $message-border-radius:       8px;
 $message-status-bgcolor:      #f8fff0;

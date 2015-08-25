@@ -1,11 +1,13 @@
+/*
 //
 // Link styles
 // =============================================================================
+*/
 
 a {
   color: $link-color;
   text-decoration: none;
-  @include transition(.3s color, .3s background);
+  /*@include transition(.3s color, .3s background);*/
 
   &:hover,
   &:active,
@@ -19,11 +21,16 @@ a {
   }
 }
 
+/*
 // Links within paragraphs
+*/
 p a {
+
 }
 
+/*
 // current / active link
+*/
 .current,
 .active {
   & > a {
@@ -31,8 +38,9 @@ p a {
     text-decoration: underline;
   }
 }
-
+/*
 // links in headlines
+*/
 h1,
 h2,
 h3,

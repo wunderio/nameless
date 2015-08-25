@@ -9,9 +9,11 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var path = require('path');
 var postcss = require('gulp-postcss');
 var postcssImport = require('postcss-import');
 var cssnext = require('cssnext');
+var postcssMixins = require('postcss-mixins');
 var postcssNested = require('postcss-nested');
 var postcssSimpleVars = require('postcss-simple-vars');
 var autoprefixer = require('autoprefixer-core');
@@ -33,6 +35,9 @@ gulp.task('styles', false, function() {
     postcssImport,
     autoprefixer({browsers: config.autoPrefixer}),
     cssnext(),
+    postcssMixins({
+      mixinsDir: path.join(__dirname, 'postcss-mixins')
+    }),
     postcssNested,
     postcssSimpleVars,
     mqpacker,
