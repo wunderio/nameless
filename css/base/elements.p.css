@@ -1,2 +1,896 @@
-*{@include box-sizing(inherit)}*:after,*:before{@include box-sizing(inherit)}body{@include box-sizing(border-box);cursor:default;padding:0;margin:0;background:#fff}table,tbody{border-top:0}table.borderless{border:0}table.borderless tbody,table.borderless td{border:0}.cke_editable table.borderless{border:1px silver dashed}.cke_editable table.borderless td{border:1px silver dashed}p img,p video,h1 img,h1 video,h2 img,h2 video,h3 img,h3 video,h4 img,h4 video,h5 img,h5 video,h6 img,h6 video{display:inline-block}figure>img{display:block}a{color:#e56716;text-decoration:none}a:hover,a:active,a:focus{color:#e56716;text-decoration:underline}a:hover.icon,a:active.icon,a:focus.icon{text-decoration:none}.current>a,.active>a{cursor:text;text-decoration:underline}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,.alpha a,.beta a,.gamma a,.delta a,.epsilon a,.zeta a{color:inherit}h1 a:hover,h1 a:active,h1 a:focus,h2 a:hover,h2 a:active,h2 a:focus,h3 a:hover,h3 a:active,h3 a:focus,h4 a:hover,h4 a:active,h4 a:focus,h5 a:hover,h5 a:active,h5 a:focus,h6 a:hover,h6 a:active,h6 a:focus,.alpha a:hover,.alpha a:active,.alpha a:focus,.beta a:hover,.beta a:active,.beta a:focus,.gamma a:hover,.gamma a:active,.gamma a:focus,.delta a:hover,.delta a:active,.delta a:focus,.epsilon a:hover,.epsilon a:active,.epsilon a:focus,.zeta a:hover,.zeta a:active,.zeta a:focus{color:#e56716;text-decoration:none}html{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:300;color:#333;font-size:12px;line-height:1em}h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0}p,blockquote,pre,address,dl,ol,ul,table{margin-bottom:1em}h1,h2,h3,h4,h5,h6{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:500;color:#333;clear:both}h1{font-size:27.85438995234061px;margin-top:.5385147556871748em;line-height:.6462177068246098em;margin-bottom:.10770295113743496em}h2{font-size:23.53700340860508px;margin-top:.6372943802402659em;line-height:.764753256288319em;margin-bottom:.14370464113148615em}h3{font-size:19.888804974891777px;margin-top:.7541931261801024em;line-height:.9050317514161228em;margin-bottom:.1735909160991131em}h4{font-size:16.806071548796314px;margin-top:.8925345793303093em;line-height:1.0710414951963712em;margin-bottom:.21037163487807517em}h5{font-size:14.201156945318074px;margin-top:1.0562519700160975em;line-height:1.267502364019317em;margin-bottom:.2112503940032195em}h6{font-size:12px;margin-top:1.25em;line-height:1.5em;margin-bottom:.2916666666666667em}blockquote{font-style:italic}blockquote cite{display:block;font-style:normal}pre{padding:.5em;margin-bottom:1em}pre code{padding:0}code{font-family:Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;padding:.05em .15em;line-height:0}big,small,sub,sup{line-height:0}abbr,acronym{border-bottom:1px dotted currentColor;cursor:help}address{font-style:normal}dt{color:#333;font-weight:700}ul{padding-left:1.1em}ol{padding-left:1.4em}fieldset{padding:.5em 1em 1em;border-width:1px;border-style:solid;max-width:100%;margin-bottom:1.0555555555555556em}legend{color:#333;font-weight:700}input[type=text],input[type=email],input[type=password],textarea{display:block;max-width:100%;padding:.25em;font-size:12px;margin-bottom:.6944444444444444em}input[type=submit],button{display:block;cursor:pointer;font-size:12px;padding:.25em 1em;margin-bottom:.6666666666666666em}label{display:block;padding-bottom:.125em;margin-bottom:-.1111111111111111em}table{width:100%;border-spacing:0;border-collapse:collapse;margin-bottom:1.2777777777777777em}th{text-align:left;color:#333;padding:.125em .5em}td{padding:.125em .5em}@media(min-width:600px){html{font-size:calc(12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)))}input[type=text],input[type=email],input[type=password],textarea{font-size:calc(12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)))}input[type=submit],button{font-size:calc(12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)))}}@media(min-width:1000px){html{font-size:18px}fieldset{margin-bottom:1.1805555555555556em}fieldset button,fieldset input[type=submit]{margin-bottom:0}input[type=text],input[type=email],input[type=password],textarea{font-size:18px;margin-bottom:.2986111111111111em}input[type=submit],button{font-size:18px;margin-bottom:.75em}table{margin-bottom:1.1666666666666667em}th{padding:.25em .5em}td{padding:.25em .5em}}@media(min-width:600px){h1{font-size:calc(27.85438995234061px + (41.78158492851092 - 27.85438995234061) * ((100vw - 600px) / (1000 - 600)))}h2{font-size:calc(23.53700340860508px + (35.305505112907625 - 23.53700340860508) * ((100vw - 600px) / (1000 - 600)))}h3{font-size:calc(19.888804974891777px + (29.833207462337665 - 19.888804974891777) * ((100vw - 600px) / (1000 - 600)))}h4{font-size:calc(16.806071548796314px + (25.209107323194473 - 16.806071548796314) * ((100vw - 600px) / (1000 - 600)))}h5{font-size:calc(14.201156945318074px + (21.30173541797711 - 14.201156945318074) * ((100vw - 600px) / (1000 - 600)))}h6{font-size:calc(12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)))}}@media(min-width:1000px){h1{font-size:41.78158492851092px;margin-top:.5385147556871748em;line-height:.6462177068246098em;margin-bottom:.10770295113743496em}h2{font-size:35.305505112907625px;margin-top:.6372943802402657em;line-height:.7647532562883189em;margin-bottom:.13828938610367517em}h3{font-size:29.833207462337665px;margin-top:.7541931261801024em;line-height:.9050317514161228em;margin-bottom:.16600681914474885em}h4{font-size:25.209107323194473px;margin-top:.8925345793303093em;line-height:1.0710414951963714em;margin-bottom:.19975006187407074em}h5{font-size:21.30173541797711px;margin-top:1.0562519700160975em;line-height:1.267502364019317em;margin-bottom:.2112503940032195em}h6{font-size:18px;margin-top:1.25em;line-height:1.5em;margin-bottom:.2708333333333333em}}
+/*
+//
+// VARIABLES for SASS/COMPASS
+// =============================================================================
+*/
+
+/*
+//
+// Color definitions
+// =============================================================================
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Basic colors
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// Shades of gray (not the book, just the colors)
+// http://en.wikipedia.org/wiki/Shades_of_gray
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Customer Colors
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// Add customer colors here
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Typography colors
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Backgrounds
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Other colors
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Debugging
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Browser support
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Mathematical values
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+*/
+
+/*// The font sizes for h1-h6.*/ /*// 36px/13px*/ /*// 24px/13px*/ /*// 18px/13px*/ /*// 14px/13px*/ /*// 11px/13px*/
+
+/*
+// extra font sizes
+*/
+
+
+/*
+// -----------------------------------------------------------------------------
+// Functional color variables
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// -----------------------------------------------------------------------------
+// Drupal elements
+// -----------------------------------------------------------------------------
+*/
+
+/*
+// Tabs
+*/
+
+/*
+// Messages
+*/
+
+/*
+//
+// Elements - Import file
+// =============================================================================
+*/
+
+/*
+//
+// Font definitions
+// =============================================================================
+*/
+
+/*
+// HTML Base Elements
+// =============================================================================
+*/
+
+/*
+// Use border-box for every element on the website
+*/
+* {
+  @include box-sizing(inherit);
+}
+*:after,
+  *:before {
+  @include box-sizing(inherit);
+}
+
+body {
+  @include box-sizing(border-box);
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+
+/*
+// Tables
+*/
+table, tbody {
+  border-top: 0;
+}
+
+table.borderless {
+  border: 0;
+}
+
+table.borderless tbody, table.borderless td {
+  border: 0;
+}
+
+.cke_editable table.borderless {
+  border: 1px #c0c0c0 dashed;
+}
+
+.cke_editable table.borderless td {
+  border: 1px #c0c0c0 dashed;
+}
+/*
+// =============================================================================
+// @file:
+// basic elements for media (e.g. img and video)
+// =============================================================================
+*/
+
+img,
+video {
+  /*@include responsive-media();*/
+}
+
+/*
+// Avoid line breaks within paragraphs
+*/
+p img,
+  p video,
+  h1 img,
+  h1 video,
+  h2 img,
+  h2 video,
+  h3 img,
+  h3 video,
+  h4 img,
+  h4 video,
+  h5 img,
+  h5 video,
+  h6 img,
+  h6 video {
+  display: inline-block;
+}
+/*
+// Figure image
+//
+// Markup:
+// <figure><img src="http://placehold.it/250x250" /></figure>
+//
+// Styleguide 3.1.2
+*/
+
+figure > img {
+  display: block;
+}
+/*
+//
+// Link styles
+// =============================================================================
+*/
+
+a {
+  color: #e56716;
+  text-decoration: none;
+}
+
+/*@include transition(.3s color, .3s background);*/
+
+a:hover,
+  a:active,
+  a:focus {
+  color: #e56716;
+  text-decoration: underline;
+}
+
+a:hover.icon, a:active.icon, a:focus.icon {
+  text-decoration: none;
+}
+
+/*
+// Links within paragraphs
+*/
+p a {
+
+}
+
+/*
+// current / active link
+*/
+.current > a, .active > a {
+  cursor: text;
+  text-decoration: underline;
+}
+/*
+// links in headlines
+*/
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .alpha a, .beta a, .gamma a, .delta a, .epsilon a, .zeta a {
+  color: inherit;
+}
+h1 a:hover,
+    h1 a:active,
+    h1 a:focus,
+    h2 a:hover,
+    h2 a:active,
+    h2 a:focus,
+    h3 a:hover,
+    h3 a:active,
+    h3 a:focus,
+    h4 a:hover,
+    h4 a:active,
+    h4 a:focus,
+    h5 a:hover,
+    h5 a:active,
+    h5 a:focus,
+    h6 a:hover,
+    h6 a:active,
+    h6 a:focus,
+    .alpha a:hover,
+    .alpha a:active,
+    .alpha a:focus,
+    .beta a:hover,
+    .beta a:active,
+    .beta a:focus,
+    .gamma a:hover,
+    .gamma a:active,
+    .gamma a:focus,
+    .delta a:hover,
+    .delta a:active,
+    .delta a:focus,
+    .epsilon a:hover,
+    .epsilon a:active,
+    .epsilon a:focus,
+    .zeta a:hover,
+    .zeta a:active,
+    .zeta a:focus {
+  color: #e56716;
+  text-decoration: none;
+}
+/*
+//
+// Typography styles
+// =============================================================================
+*/
+
+
+/*
+lineHeightRatio headerRatio bodyFont bodyFontWeight bodyColor headerFont headerFontWeight headerColor minFont maxFont minWidth maxWidth verticalRhythm
+$line-height-ratio  : 1.75;
+$header-ratio       : null;
+$body-font          : null;
+$body-font-weight   : 300;
+$body-color         : $text-color;
+$header-font        : null;
+$header-font-weight : 500;
+$header-color       : $text-color;
+$min-font           : '12px';
+$max-font           : '20px';
+$min-width          : '600px';
+$max-width          : '1000px';
+$vertical-rhythm    : true;
+*/
+html {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-weight: 300;
+  color: #333;
+  font-size: 12px;
+  line-height: 1em;
+}
+@media (min-width: 600px) {
+  html {
+    font-size: calc( 12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: 18px;
+  }
+}
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+}
+p, blockquote, pre, address, dl, ol, ul, table {
+  margin-bottom: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-weight: 500;
+  color: #333;
+  clear: both;
+}
+h1 {
+  font-size: 27.85438995234061px;
+  margin-top: 0.5385147556871748em;
+  line-height: 0.6462177068246098em;
+  margin-bottom: 0.10770295113743496em;
+}
+@media (min-width:600px) {
+  h1 {
+    font-size: calc( 27.85438995234061px + (41.78158492851092 - 27.85438995234061) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h1 {
+    font-size: 41.78158492851092px;
+    margin-top: 0.5385147556871748em;
+    line-height: 0.6462177068246098em;
+    margin-bottom: 0.10770295113743496em;
+  }
+}
+h2 {
+  font-size: 23.53700340860508px;
+  margin-top: 0.6372943802402659em;
+  line-height: 0.764753256288319em;
+  margin-bottom: 0.14370464113148615em;
+}
+@media (min-width:600px) {
+  h2 {
+    font-size: calc( 23.53700340860508px + (35.305505112907625 - 23.53700340860508) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h2 {
+    font-size: 35.305505112907625px;
+    margin-top: 0.6372943802402657em;
+    line-height: 0.7647532562883189em;
+    margin-bottom: 0.13828938610367517em;
+  }
+}
+h3 {
+  font-size: 19.888804974891777px;
+  margin-top: 0.7541931261801024em;
+  line-height: 0.9050317514161228em;
+  margin-bottom: 0.1735909160991131em;
+}
+@media (min-width:600px) {
+  h3 {
+    font-size: calc( 19.888804974891777px + (29.833207462337665 - 19.888804974891777) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h3 {
+    font-size: 29.833207462337665px;
+    margin-top: 0.7541931261801024em;
+    line-height: 0.9050317514161228em;
+    margin-bottom: 0.16600681914474885em;
+  }
+}
+h4 {
+  font-size: 16.806071548796314px;
+  margin-top: 0.8925345793303093em;
+  line-height: 1.0710414951963712em;
+  margin-bottom: 0.21037163487807517em;
+}
+@media (min-width:600px) {
+  h4 {
+    font-size: calc( 16.806071548796314px + (25.209107323194473 - 16.806071548796314) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h4 {
+    font-size: 25.209107323194473px;
+    margin-top: 0.8925345793303093em;
+    line-height: 1.0710414951963714em;
+    margin-bottom: 0.19975006187407074em;
+  }
+}
+h5 {
+  font-size: 14.201156945318074px;
+  margin-top: 1.0562519700160975em;
+  line-height: 1.267502364019317em;
+  margin-bottom: 0.2112503940032195em;
+}
+@media (min-width:600px) {
+  h5 {
+    font-size: calc( 14.201156945318074px + (21.30173541797711 - 14.201156945318074) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h5 {
+    font-size: 21.30173541797711px;
+    margin-top: 1.0562519700160975em;
+    line-height: 1.267502364019317em;
+    margin-bottom: 0.2112503940032195em;
+  }
+}
+h6 {
+  font-size: 12px;
+  margin-top: 1.25em;
+  line-height: 1.5em;
+  margin-bottom: 0.2916666666666667em;
+}
+@media (min-width:600px) {
+  h6 {
+    font-size: calc( 12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width:1000px) {
+  h6 {
+    font-size: 18px;
+    margin-top: 1.25em;
+    line-height: 1.5em;
+    margin-bottom: 0.2708333333333333em;
+  }
+}
+blockquote {
+  font-style: italic;
+}
+blockquote cite {
+  display: block;
+  font-style: normal;
+}
+pre {
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+pre code {
+  padding: 0;
+}
+code {
+  font-family: "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "monospace";
+  padding: 0.05em 0.15em;
+  line-height: 0;
+}
+big, small, sub, sup {
+  line-height: 0;
+}
+abbr, acronym {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+address {
+  font-style: normal;
+}
+dt {
+  color: #333;
+  font-weight: bold;
+}
+ul {
+  padding-left: 1.1em;
+}
+ol {
+  padding-left: 1.4em;
+}
+fieldset {
+  padding: 0.5em 1em 1em;
+  border-width: 1px;
+  border-style: solid;
+  max-width: 100%;
+  margin-bottom: 1.0555555555555556em;
+}
+@media (min-width: 1000px) {
+  fieldset {
+    margin-bottom: 1.1805555555555556em;
+  }
+  fieldset button, fieldset input[type="submit"] {
+    margin-bottom: 0;
+  }
+}
+legend {
+  color: #333;
+  font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  display: block;
+  max-width: 100%;
+  padding: 0.25em;
+  font-size: 12px;
+  margin-bottom: 0.6944444444444444em;
+}
+@media (min-width: 600px) {
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-size: calc( 12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-size: 18px;
+    margin-bottom: 0.2986111111111111em;
+  }
+}
+input[type="submit"], button {
+  display: block;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0.25em 1em;
+  margin-bottom: 0.6666666666666666em;
+}
+@media (min-width: 600px) {
+  input[type="submit"], button {
+    font-size: calc( 12px + (18 - 12) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  input[type="submit"], button {
+    font-size: 18px;
+    margin-bottom: 0.75em;
+  }
+}
+label {
+  display: block;
+  padding-bottom: 0.125em;
+  margin-bottom: -0.1111111111111111em;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 1.2777777777777777em;
+}
+@media (min-width: 1000px) {
+  table {
+    margin-bottom: 1.1666666666666667em;
+  }
+}
+th {
+  text-align: left;
+  color: #333;
+  padding: 0.125em 0.5em;
+}
+@media (min-width: 1000px) {
+  th {
+    padding: 0.25em 0.5em;
+  }
+}
+td {
+  padding: 0.125em 0.5em;
+}
+@media (min-width: 1000px) {
+  td {
+    padding: 0.25em 0.5em;
+  }
+}
+body {
+  background: linear-gradient(to top, rgba(0, 255, 0, .1) 5%, white 5%);
+  background-size: 100% 1.75em;
+  background-position: 0 2px;
+}
+
+/*
+html,
+button,
+input,
+select,
+textarea {
+  color: $text-color;
+  font-family: $sans-font-family;
+}
+
+html {
+  font-size: $base-font-size; // set a pixel based value as a basic font-size
+}
+/!*
+// Headlines
+//
+// 0.75 unit of vertical rhythm on the bottom margin.
+//
+// Markup:
+// <h1>-headline -h1</h1>
+// <h2>-headline -h2</h2>
+// <h3>-headline -h3</h3>
+// <h4>-headline -h4</h4>
+// <h5>-headline -h5</h5>
+// <h6>-headline -h6</h6>
+//
+// Styleguide 3.2.1
+
+// Headline like styled elements
+//
+// As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+// When we define a heading we also define a corresponding class to go with it.
+// This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+// heading hierarchy.
+//
+// Markup:
+// <p class="alpha">Paragraph "alpha" styled like a headline -h1: Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. </p>
+// <p class="beta">Paragraph "beta" styled like a headline -h2: But I can't give you this case, it don't belong to me.</p>
+// <p class="gamma">Paragraph "gamma" styled like a headline -h3: Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
+// <p class="delta">Paragraph "delta" styled like a headline -h4: Now that we know who you are, I know who I am. I'm not a mistake!</p>
+// <p class="epsilon">Paragraph "epsilon" styled like a headline -h5: It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be?</p>
+// <p class="zeta">Paragraph "zeta" styled like a headline -h6: -he's the exact opposite of the hero. And most times they're friends, like you and me!</p>
+//
+// Styleguide 3.2.2
+*!/
+
+h1,
+.alpha {
+  @mixin ratio 'font-size', $h1-font-size, $base-font-size;
+}
+
+h2,
+.beta {
+  @mixin ratio 'font-size', $h2-font-size, $base-font-size;
+}
+
+h3,
+.gamma {
+  @mixin ratio 'font-size', $h3-font-size, $base-font-size;
+}
+
+h4,
+.delta {
+  @mixin ratio 'font-size', $h4-font-size, $base-font-size;
+}
+
+h5,
+.epsilon {
+  @mixin ratio 'font-size', $h5-font-size, $base-font-size;
+}
+
+h6,
+.zeta {
+  @mixin ratio 'font-size', $h6-font-size, $base-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alpha,
+.beta,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+
+  line-height: 1.2em;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+
+  hgroup & {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+.alpha,
+.beta {
+  font-family: $brand-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+}
+
+h3,
+h4,
+h5,
+h6,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+}
+
+hgroup {
+  @include trailer(.75, $h2-font-size);
+}
+
+/!*
+// Predefined type sizes
+//
+// A series of classes for setting massive type; for use in heroes, mastheads,
+// promos, etc.
+// A series of classes for setting small type, for use in smallprint etc.
+//
+// Markup:
+// <p class="micro">Paragraph "micro": Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. </p>
+// <p class="small">Paragraph "small": But I can't give you this case, it don't belong to me.</p>
+// <p>Paragraph without any class: -he's the exact opposite of the hero. And most times they're friends, like you and me!</p>
+// <p class="huge">Paragraph "huge": It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be?</p>
+// <p class="mega">Paragraph "mega": Now that we know who you are, I know who I am. I'm not a mistake!</p>
+// <p class="giga">Paragraph "giga": Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
+//
+// Styleguide 3.2.3
+*!/
+
+.micro {
+  @mixin ratio 'font-size', $micro-font-size, $base-font-size;
+}
+.small {
+  @mixin ratio 'font-size', $small-font-size, $base-font-size;
+}
+.huge {
+  @mixin ratio 'font-size', $huge-font-size, $base-font-size;
+}
+.mega {
+  @mixin ratio 'font-size', $mega-font-size, $base-font-size;
+}
+.giga {
+  @mixin ratio 'font-size', $giga-font-size, $base-font-size;
+}
+
+p,
+pre {
+  margin: 0;
+}
+
+p + p,
+p + pre,
+pre + p,
+pre + pre,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6, {
+  margin-top: $base-rhythm;
+}
+/!*
+// leading paragraph
+*!/
+
+.lead,
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-bottom: 0;
+}
+
+blockquote {
+  padding: 0;
+  margin: $base-rhythm 0;
+  p {
+    margin-bottom: 0;
+  }
+  footer,
+  small {
+    display: block;
+    line-height: $base-line-height;
+    color: nth($grays, 3);
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+/!*
+// Lists
+// -----------------------------------------------------------------------------
+*!/
+
+ul,
+ol,
+dl,
+menu {
+  margin: 0 0 rhythm(.5) 0;
+  padding: 0;
+}
+
+.node, .cke_editable {
+  ul, ol, dl {
+    overflow: hidden;
+
+    li {
+      position: relative;
+      left: 1.5em;
+      width: 95%;
+    }
+  }
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: $base-line-height;
+}
+
+dl {
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 0 $base-rhythm;
+}
+
+ul.unstyled,
+ol.unstyled,
+nav ul,
+nav ol {
+  margin-left: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+/!*
+// Misc
+// -----------------------------------------------------------------------------
+*!/
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid nth($grays, 3);
+  margin: 0 0 $base-rhythm;
+  padding: 0;
+}
+
+/!*
+// Addresses
+*!/
+
+address {
+  display: block;
+  margin-bottom: $base-rhythm;
+  font-style: normal;
+  line-height: $base-line-height;
+}
+
+
+/!*
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection declarations have to be separate.
+// Customize the background color to match your design.
+*!/
+
+::-moz-selection {
+  background: $text-selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $text-selection-color;
+  text-shadow: none;
+}
+
+.caps{
+  text-transform: uppercase;
+}
+*/
+
 /*# sourceMappingURL=../base/elements.p.css.map */

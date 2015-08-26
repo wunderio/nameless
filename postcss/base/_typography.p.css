@@ -21,7 +21,8 @@ $min-width          : '600px';
 $max-width          : '1000px';
 $vertical-rhythm    : true;
 */
-@mixin typographic 1.75, null, null, 300, #333, null, 500, #333, 12px, 18px, 600px, 1000px, true ;
+@mixin typographic 1.75, null, null, 300, #333, null, 500, #333, 14px, 18px, 600px, 1000px, true ;
+@mixin verticalGridOverlay 1.75, 2;
 
 /*
 html,

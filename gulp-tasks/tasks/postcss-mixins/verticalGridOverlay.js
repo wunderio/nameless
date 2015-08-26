@@ -16,13 +16,12 @@
  */
 'use strict';
 
-module.exports = function(lineHeightRatio, color, pxOffset) {
-  var $color = color || 'black',
-    $pxOffset = pxOffset || false;
+module.exports = function(mixin, $lineHeightRatio, $pxOffset) {
+
   return {
     'body': {
-      'background': 'linear-gradient(to top, rgba(' + $color + ', .1) 5%, white 5%)',
-      'background-size': '100% ' + lineHeightRatio + 'em',
+      'background': 'linear-gradient(to top, rgba(0, 255, 0, .1) 5%, white 5%)',
+      'background-size': '100% ' + $lineHeightRatio + 'em',
       'background-position': ($pxOffset) ? '0 ' + $pxOffset + 'px' : '0% 0%'
     }
   };
