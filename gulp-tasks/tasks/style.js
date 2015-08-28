@@ -17,7 +17,7 @@ var postcssMixins = require('postcss-mixins');
 var postcssNested = require('postcss-nested');
 var postcssAdvancedVars = require('postcss-advanced-variables');
 var postcssColorFunction = require('postcss-color-function');
-var postcssSimpleExtend = require('postcss-simple-extend');
+var postcssExtend = require('postcss-extend');
 var autoprefixer = require('autoprefixer-core');
 var mqpacker = require('css-mqpacker');
 var csswring = require('csswring');
@@ -40,7 +40,7 @@ var processors = [
   postcssAdvancedVars,
   postcssColorFunction,
   postcssNested,
-  postcssSimpleExtend
+  postcssExtend
 ];
 
 

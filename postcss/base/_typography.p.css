@@ -24,19 +24,6 @@
 @mixin typographic 1.75, null, null, 300, #333, null, 500, #333, 14px, 18px, 600px, 1000px, true ;
 @mixin verticalGridOverlay 1.75, 2;
 
-hgroup {
-  /*
-  @extend trailer-75;
-  */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 0;
-  }
-}
 
 /*
 // Lists
@@ -82,9 +69,7 @@ hr {
   border-top: 1px solid $silver;
   margin: 0;
   padding: 0;
-  /*
-  @extend trailer-100;
-  */
+  @extend .trailer-100;
 }
 
 /*
@@ -93,9 +78,7 @@ hr {
 address {
   display: block;
   font-style: normal;
-  /*
-  @extend trailer-100;
-  */
+  @extend .trailer-100;
 }
 
 blockquote {

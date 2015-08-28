@@ -620,23 +620,23 @@ module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFon
 
     'th': tTh(),
 
-    'td': tTd()/*,
+    'td': tTd(),
 
-    '@define-placeholder trailer-100': {
+    '.trailer-100': {
       'margin-bottom': vrBlock()
     },
 
-    '@define-placeholder trailer-75': {
+    '.trailer-75': {
       'margin-bottom': vrBlock(0.75)
     },
 
-    '@define-placeholder trailer-50': {
+    '.trailer-50': {
       'margin-bottom': vrBlock(0.5)
     },
 
-    '@define-placeholder trailer-25': {
+    '.trailer-25': {
       'margin-bottom': vrBlock(0.25)
-    }*/
+    }
 
   };
 };
