@@ -58,7 +58,7 @@ module.exports = function() {
       errorIcon: path.join(cwd, 'gulp-tasks/images/error.png')
     },
     lint: [
-      './/scripts/**/*.js',
+      './scripts/**/*.js',
       'gulpfile.js',
       './gulp-tasks/**/*.js'
     ],
@@ -101,7 +101,10 @@ module.exports = function() {
       mapExtension: '.map.js'
     },
     bs: {
-      proxy: '127.0.0.1'
+      files: ['./css/**/*.p.css', './js/**/*.js'],
+      logLevel: 'debug',
+      browser: 'google chrome canary',
+      proxy: 'd8play.local'
     },
     autoPrefixer: [
       'ie >= 10',

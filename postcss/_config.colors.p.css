@@ -55,7 +55,7 @@ $text-selection-color:    $carrot-orange;
 $headings-color:         inherit;
 
 $link-color:        $carrot-orange;
-$link-color-hover:  $link-color;
+$link-color-hover:  color($link-color blackness(+40%));
 
 /*
 // -----------------------------------------------------------------------------

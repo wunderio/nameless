@@ -60,7 +60,7 @@
 <div class="layout-container">
 
   <div class="wrapper wrapper--header">
-    <header role="banner">
+    <header role="banner" class="wrapper__content">
       {% if logo %}
         <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
           <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
@@ -92,23 +92,30 @@
   </div>
 
   <div class="wrapper wrapper--navigation">
-    {{ page.navigation }}
+    <section class="wrapper__content">
+      {{ page.navigation }}
+    </section>
   </div>
 
   <div class="wrapper wrapper--highlighted">
-    {{ page.highlighted }}
+    <section class="wrapper__content">
+      {{ page.highlighted }}
+    </section>
+
   </div>
 
   <div class="wrapper wrapper--help">
-    {{ page.help }}
-    {{ page.messages }}
+    <section class="wrapper__content">
+      {{ page.help }}
+      {{ page.messages }}
+    </section>
   </div>
 
   <div class="wrapper wrapper--main">
-    <main role="main">
+    <main role="main" class="wrapper__content main">
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-      <div class="layout-content">
+      <div class="main__content">
 
         {{ title_prefix }}
         {% if title %}
@@ -126,13 +133,13 @@
       </div>{# /.layout-content #}
 
       {% if page.sidebar_first %}
-        <aside class="layout-sidebar-first" role="complementary">
+        <aside class="main__sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>
       {% endif %}
 
       {% if page.sidebar_second %}
-        <aside class="layout-sidebar-second" role="complementary">
+        <aside class="main__sidebar-second" role="complementary">
           {{ page.sidebar_second }}
         </aside>
       {% endif %}
@@ -142,7 +149,7 @@
 
   <div class="wrapper wrapper--footer">
     {% if page.footer %}
-      <footer role="contentinfo">
+      <footer role="contentinfo" class="wrapper__content">
         {{ page.footer }}
       </footer>
     {% endif %}

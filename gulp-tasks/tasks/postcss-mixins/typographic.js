@@ -568,17 +568,17 @@ module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFon
 
     'h1, h2, h3, h4, h5, h6': tHeader(),
 
-    'h1': tH1(),
+    'h1, .alpha': tH1(),
 
-    'h2': tH2(),
+    'h2, .beta': tH2(),
 
-    'h3': tH3(),
+    'h3, .gamma': tH3(),
 
-    'h4': tH4(),
+    'h4, .delta': tH4(),
 
-    'h5': tH5(),
+    'h5, .epsilon': tH5(),
 
-    'h6': tH6(),
+    'h6, .zeta': tH6(),
 
     'blockquote': tBlockquote(),
 
@@ -620,7 +620,23 @@ module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFon
 
     'th': tTh(),
 
-    'td': tTd()
+    'td': tTd(),
+
+    '@define-placeholder trailer-100': {
+      'margin-bottom': vrBlock()
+    },
+
+    '@define-placeholder trailer-75': {
+      'margin-bottom': vrBlock(0.75)
+    },
+
+    '@define-placeholder trailer-50': {
+      'margin-bottom': vrBlock(0.5)
+    },
+
+    '@define-placeholder trailer-25': {
+      'margin-bottom': vrBlock(0.25)
+    }
 
   };
 };

@@ -9,7 +9,7 @@
 
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
-var browsersync = require('browser-sync');
+var browsersync = require('browser-sync').create();
 var reload = browsersync.reload;
 
 require('gulp-help')(gulp, {
@@ -26,16 +26,16 @@ require('require-dir')('./gulp-tasks/tasks');
 // refer to https://www.npmjs.org/package/gulp-help
 
 // add your top gulp tasks here
-gulp.task('default', false, ['styles', 'lint', 'images']);
+gulp.task('default', false, ['styles-dev', 'lint', 'images']);
 
 gulp.task('browser-sync', false, function() {
-  browsersync.init(null, config.bs);
+  browsersync.init(config.bs);
 });
 
 gulp.task('watch',
   'watch files for changes and reload browser',
   ['browser-sync'], function() {
-  gulp.watch([config.style.watchFolder], ['styles']);
+  gulp.watch([config.style.watchFolder], ['styles-dev']);
   gulp.watch([config.script.src], ['jshint']);
   gulp.watch([config.images.src, config.templates.src], reload);
 });

@@ -16,6 +16,9 @@ var cssnext = require('cssnext');
 var postcssMixins = require('postcss-mixins');
 var postcssNested = require('postcss-nested');
 var postcssSimpleVars = require('postcss-simple-vars');
+var postcssAdvancedVars = require('postcss-advanced-variables');
+var postcssColorFunction = require('postcss-color-function');
+var postcssSimpleExtend = require('postcss-simple-extend');
 var autoprefixer = require('autoprefixer-core');
 var mqpacker = require('css-mqpacker');
 var csswring = require('csswring');
@@ -29,24 +32,50 @@ var onError = function(err) {
   console.log(err);
 };
 
-// Compile and Automatically Prefix Stylesheets
+var processors = [
+  postcssImport,
+  postcssMixins({
+    mixinsDir: path.join(__dirname, 'postcss-mixins')
+  }),
+  autoprefixer({browsers: config.autoPrefixer}),
+  postcssAdvancedVars,
+  postcssColorFunction,
+  postcssNested,
+  postcssSimpleExtend
+];
+
+
+// Compile and Automatically Prefix Stylesheets fior production
 gulp.task('styles', false, function() {
-  var processors = [
-    postcssImport,
-    autoprefixer({browsers: config.autoPrefixer}),
-    cssnext(),
-    postcssMixins({
-      mixinsDir: path.join(__dirname, 'postcss-mixins')
-    }),
-    postcssNested,
-    postcssSimpleVars,
-    //mqpacker,
-    //csswring
-  ];
+  var processors = processors.concat([
+    mqpacker,
+    csswring
+  ]);
   return gulp.src(config.style.src)
     .pipe($.plumber({
       errorHandler: onError
     }))
+    .pipe($.changed('styles', {extension: '.p.css'}))
+    .pipe($.sourcemaps.init())
+    .pipe(postcss(processors))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest(config.style.dest))
+    .pipe($.size({title: 'styles'}))
+    .pipe(map(function() {
+      gutil.log(chalk.green('All styles processed'));
+      if (notifyGrowly) {
+        $.notify('All styles processed');
+      }
+    }));
+});
+
+// Compile and Automatically Prefix Stylesheets for dev
+gulp.task('styles-dev', false, function() {
+
+  return gulp.src(config.style.src)
+    //.pipe($.plumber({
+    //  errorHandler: onError
+    //}))
     .pipe($.changed('styles', {extension: '.p.css'}))
     .pipe($.sourcemaps.init())
     .pipe(postcss(processors))

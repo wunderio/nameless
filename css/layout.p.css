@@ -107,6 +107,14 @@
 */
 
 .layout-container {
+  width: 100%;
+}
+
+.layout-container > .wrapper {
+  width: 100%;
+}
+
+.layout-container > .wrapper > main {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
