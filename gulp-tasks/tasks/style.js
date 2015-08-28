@@ -15,7 +15,6 @@ var postcssImport = require('postcss-import');
 var cssnext = require('cssnext');
 var postcssMixins = require('postcss-mixins');
 var postcssNested = require('postcss-nested');
-var postcssSimpleVars = require('postcss-simple-vars');
 var postcssAdvancedVars = require('postcss-advanced-variables');
 var postcssColorFunction = require('postcss-color-function');
 var postcssSimpleExtend = require('postcss-simple-extend');
@@ -47,7 +46,7 @@ var processors = [
 
 // Compile and Automatically Prefix Stylesheets fior production
 gulp.task('styles', false, function() {
-  var processors = processors.concat([
+  var prodProcessors = processors.concat([
     mqpacker,
     csswring
   ]);
@@ -57,7 +56,7 @@ gulp.task('styles', false, function() {
     }))
     .pipe($.changed('styles', {extension: '.p.css'}))
     .pipe($.sourcemaps.init())
-    .pipe(postcss(processors))
+    .pipe(postcss(prodProcessors))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(config.style.dest))
     .pipe($.size({title: 'styles'}))
