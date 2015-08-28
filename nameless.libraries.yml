@@ -2,6 +2,9 @@ global-styling:
   css:
     base:
       css/base/elements.p.css: {}
+    components:
+      css/components/comment.theme.p.css: {}
+      css/components/search.theme.p.css: {}
     layout:
       css/layout.p.css: {}
     theme:
