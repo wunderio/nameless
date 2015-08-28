@@ -1,10 +1,12 @@
+/*
 //
 // Mixins for debugging purposes
 // =============================================================================
+*/
 
-@mixin region-debug($region-bg-color, $region-title) {
+@define-mixin region-debug $region-bg-color, $region-title {
   @if $debug {
-    @extend %border-box;
+    box-sizing: border-box;
     min-height: 150px;
     background: rgba($region-bg-color, .2);
     outline: 1px dashed $silver;
@@ -23,15 +25,15 @@
   }
 }
 
-@mixin breakpoint-debug($breakpoint-title, $breakpoint, $pseudo-element: 'after', $show-breakpoint-value: false) {
+@define-mixin breakpoint-debug $breakpoint-title, $breakpoint, $pseudo-element: 'after', $show-breakpoint-value: false {
   @if $debug {
-    @include breakpoint($breakpoint) {
-      &:#{$pseudo-element} {
+    @media (min-width: $breakpoint) {
+      &:$($pseudo-element) {
         @if $show-breakpoint-value {
-          content: '#{$breakpoint-title}: #{$breakpoint}';
+          content: '$($breakpoint-title): $($breakpoint)';
         }
         @else {
-          content: '#{$breakpoint-title}';
+          content: '$($breakpoint-title)';
         }
       }
     }

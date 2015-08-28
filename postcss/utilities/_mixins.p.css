@@ -1,26 +1,20 @@
+/*
 //
 // Mixins - Useful mixins to achieve several functionalities
 // =============================================================================
+*/
 
-@import 'mixins.colors';
-@import 'mixins.hiding';
-@import 'mixins.ie';
-@import 'mixins.layout';
-@import 'mixins.shorthand';
-@import 'mixins.debug';
+@import '_mixins.colors.p.css';
+@import '_mixins.hiding.p.css';
+@import '_mixins.layout.p.css';
+@import '_mixins.shorthand.p.css';
+@import '_mixins.debug.p.css';
 
-@mixin clearfix() {
-  &:after {
-    visibility: hidden;
-    display: block;
-    content: '';
-    clear: both;
-    height: 0;
-  }
-}
 
+/*
 // Placeholder text
-@mixin placeholder($color: $placeholderText) {
+*/
+@define-mixin placeholder $color: $placeholderText {
   &:-moz-placeholder {
     color: $color;
   }
@@ -31,19 +25,20 @@
     color: $color;
   }
 }
-
+/*
 // Text overflow
 // Requires inline-block or block for proper styling
-@mixin text-overflow() {
+*/
+@define-mixin text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-@mixin tab-focus() {
-  // Default
+@define-mixin tab-focus {
+  /* Default*/
   outline: thin dotted #333;
-  // Webkit
+  /* Webkit*/
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }

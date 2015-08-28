@@ -1,33 +1,26 @@
+/*
 //
 // Layout mixins - Layout related mixins
 // =============================================================================
+*/
 
+/*
 // Cross-Browser justified grid.
 // Inspired by http://code.jelmerdemaat.nl/2012/perfectly-justified-css-grid-technique-using-inline-block/
 // Important note: All elements need at least one space character between their tags to make this working!
-@mixin justifiedGrid($font-size: $base-font-size, $vertical-align: middle) {
+*/
+@define-mixin justifiedGrid $font-size: $base-font-size, $vertical-align: middle {
   text-align: justify;
-
-  @if $legacy-support-for-ie {
-    -ms-text-justify: distribute-all-lines;
-  }
-
-  @if $legacy-support-for-ie7 {
-    text-justify: distribute-all-lines;
-  }
 
   font-size: 0;
   line-height: 0;
 
   > * {
-    @include inline-block($vertical-align);
+    display: inline-block;
+    vertical-align: $vertical-align;
 
     font-size: $font-size;
     line-height: $font-size * ($base-line-height / $base-font-size);
-
-    @if $legacy-support-for-ie7 {
-      *text-align: left;
-    }
   }
 
   &:after {
@@ -36,33 +29,30 @@
     display: inline-block;
   }
 }
-
+/*
 // Maintain an given aspect ratio.
 // To get the expected result replace the colon in the aspect ratio with a slash.
 // e.g. 16:9 will become 16/9
-@mixin box-aspect-ratio($ratio: 2) {
+*/
+@define-mixin box-aspect-ratio $ratio: 2 {
   $gap: 100 / $ratio;
   width: 100%;
   height: 0;
-  padding-bottom: #{$gap + "%"};
+  padding-bottom: $gap + "%";
 }
 
-@mixin responsive-media($upscaling: false, $force: false) {
+@define-mixin responsive-mediab $upscaling: false, $force: false {
   $important: null;
   @if ($force) {
     $important: !important;
   }
   display: inline-block;
-  height: auto#{$important};
+  height: auto $important;
   @if ($upscaling == false) {
-    max-width: 100%#{$important};
+    max-width: 100% $important;
   }
 
   -ms-interpolation-mode: bicubic;
-
-  .ie8 & {
-    width: auto#{$important}; // IE8-Fix
-  }
 
   @if ($upscaling) {
     width: 100%;
@@ -70,33 +60,35 @@
   }
 }
 
+/*
 // Reset responsive image to normal behavior
-@mixin reset-responsive-media() {
+*/
+@define-mixin reset-responsive-media {
   height: initial;
   max-width: none;
 }
 
-// Aligns 2 elements side by side. Very useful for search bars.
-@mixin input-bar($left-input, $right-input, $ratio: 4/3) {
+/*// Aligns 2 elements side by side. Very useful for search bars.*/
+@define-mixin input-bar $left-input, $right-input, $ratio: 4/3 {
   position: relative;
   min-height: $base-line-height;
 
-  #{$left-input},
-  #{$right-input} {
+  $($left-input),
+  $($right-input) {
     position: absolute;
     top: 0;
     line-height: normal !important;
   }
 
-  #{$left-input} {
+  $($left-input) {
     left: 0;
-    width: #{100 / $ratio + 1 + "%"};
+    width: 100 / $ratio + 1 + "%";
     z-index: 10;
   }
 
-  #{$right-input} {
+  $($right-input) {
     right: 0;
-    width: #{100 - 100 / $ratio + 1 + "%"};
+    width: 100 - 100 / $ratio + 1 + "%";
     z-index: 20;
   }
 }

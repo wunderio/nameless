@@ -1,0 +1,30 @@
+/*
+//
+// Shorthand mixins - These save you some typing
+// =============================================================================
+*/
+
+/*
+// Sizing shortcuts
+*/
+@define-mixin size $width, $height: $width {
+  width: $width;
+  height: $height;
+}
+
+@define-mixin fill-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*
+// Set font properties seperated
+*/
+@define-mixin font-shorthand $size: $base-font-size, $weight: normal, $line-height: $base-line-height {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}

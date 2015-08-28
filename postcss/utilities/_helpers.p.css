@@ -1,27 +1,34 @@
+/*
 //
 // Helpers - Helping classes
 // =============================================================================
+*/
 
+/*
 // CSS image replacement
+*/
 .hide-text {
-  @include hide-text();
+  @mixin hide-text;
 }
 
+/*
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
 .element-invisible,
 .visuallyhidden {
-  @include element-invisible();
+  @mixin element-invisible;
 }
-
+/*
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
+*/
 .element-invisible.focusable,
 .visuallyhidden.focusable {
-  @include element-invisible-focusable();
+  @mixin element-invisible-focusable;
 }
 
 .element-visible {
-  @include element-invisible-off();
+  @mixin element-invisible-off;
 }
 
 // Toggling content
@@ -32,13 +39,15 @@
   display: block;
 }
 
+/*
 // Hide visually and from screenreaders, but maintain layout
+*/
 .invisible {
   visibility: hidden;
 }
 
 .clearfix {
-  @include clearfix();
+  @mixin clearfix;
 }
 
 .clear {
@@ -46,15 +55,15 @@
 }
 
 .text-overflow {
-  @include text-overflow();
+  @mixin text-overflow;
 }
 
 .muted {
-  @include opacity(.5);
+  opacity: .5;
 }
 
-%border-box {
-  @include box-sizing(border-box);
+.border-box {
+  box-sizing: border-box;
 }
 
 .direction-ltr {
