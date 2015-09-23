@@ -22,4 +22,4 @@ require('./gulp-tasks/tasks/style');
 // refer to https://www.npmjs.org/package/gulp-help
 
 // add your top gulp tasks here
-gulp.task('default', false, ['styles']);
+gulp.task('default', false, ['styles', 'css-inject']);
