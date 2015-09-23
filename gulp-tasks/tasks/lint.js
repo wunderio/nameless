@@ -2,68 +2,63 @@
  * Date: 20.08.15
  * Time: 11:14
  * @file
- *  Lint JS files with jshint and jscs
+ *  Lint JS files with eslint and jscs
  *
  */
 'use strict';
-/*jshint -W079 */
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var map = require('map-stream');
 var chalk = require('chalk');
-var jshint = $.jshint;
+var eslint = $.eslint;
 var jscs = $.jscs;
 var gutil = $.util;
 var config = require('../common/config')();
+var notify = require('gulp-notify');
 
 var onError = function(err) {
   console.log(err);
 };
 
+var EslintErrorHandler = {
+  errorHandler: notify.onError(function (error) {
+    if (notifyGrowly) {
+      return {
+        message: 'Error: <%= error.message %>',
+        title: '<%= error.name %>',
+        icon: config.growly.errorIcon
+      };
+    }
+  })
+};
+
 var notifyGrowly = config.growly.notify;
 
-gulp.task('jshint', false, function() {
-  var hasError = false;
-  var hasShown = false;
-  var successReporter = map(function(file, cb) {
-    if (!file.jshint.success) {
-      hasError = true;
-    }
-    cb(null, file);
-  });
+gulp.task('eslint-browser', false, function () {
+  return gulp.src(config.lint.node)
+    .pipe($.plumber(EslintErrorHandler))
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
-  return gulp.src(config.lint)
-    .pipe($.plumber({
-      errorHandler: onError
+gulp.task('eslint-node', false, function () {
+  return gulp.src(config.lint.node)
+    .pipe($.plumber(EslintErrorHandler))
+    .pipe(eslint({
+      rulePaths: [
+        'gulp-tasks'
+      ]
     }))
-    .pipe(jshint({
-      lookup: true
-    }))
-    .pipe(successReporter)
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'))
-    .on('error', function() {
-      gutil.log(chalk.red('Jshint failed'));
-      if (notifyGrowly) {
-        $.notify('One or more jshint error(s)');
-      }
-      throw new Error('jshint failed');
-    })
-    .pipe(map(function() {
-      if (!hasError && !hasShown) {
-        hasShown = true;
-        gutil.log(chalk.green('All Jshint files passed'));
-        if (notifyGrowly) {
-          $.notify('JsHint - All files passed');
-        }
-      }
-
-    }));
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('jscs', false, function() {
 
-  return gulp.src(config.lint)
+  var paths = config.lint.browser.concat(config.lint.node);
+
+  return gulp.src(paths)
     .pipe(jscs())
     .on('error', function(err) {
       gutil.log(err.toString());
@@ -71,7 +66,12 @@ gulp.task('jscs', false, function() {
       if (notifyGrowly) {
         $.notify('One or more jscs error(s)');
       }
-    });
+    })
+    .on('error', notify.onError({
+      message: "One or more Javascript coding style errors.",
+      title: "Javascript Code Style Error",
+      icon: config.growly.errorIcon
+    }));
 });
 
-gulp.task('lint', 'Lint all javascript files.', ['jshint', 'jscs']);
+gulp.task('lint', 'Lint all javascript files.', ['eslint-browser', 'eslint-node', 'jscs']);

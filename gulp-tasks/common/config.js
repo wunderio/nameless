@@ -57,24 +57,22 @@ module.exports = function() {
       failedIcon: path.join(cwd, 'gulp-tasks/images/failed.png'),
       errorIcon: path.join(cwd, 'gulp-tasks/images/error.png')
     },
-    lint: [
-      './scripts/**/*.js',
-      'gulpfile.js',
-      './gulp-tasks/**/*.js'
-    ],
+    lint: {
+      node: [
+        'gulpfile.js',
+        './gulp-tasks/**/*.js'
+      ],
+      browser: [
+        './scripts/**/*.js',
+      ]
+    },
     fonts: {
       src: ['./fonts/*.*'], // you can also add a specific src_appname
       dest: 'fonts'
     },
     images: {
-      src: [
-        './images/**/*'
-      ]
-    },
-    imagesOriginals: {
-      src: [
-        './images_originals/**/*'
-      ]
+      src: '/images_originals/**/*',
+      dest: '/images/'
     },
     templates: {
       src: [

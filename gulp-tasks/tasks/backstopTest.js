@@ -5,7 +5,6 @@
  *
  */
 'use strict';
-/*jshint -W079 */
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();

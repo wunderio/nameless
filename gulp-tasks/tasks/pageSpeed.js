@@ -5,7 +5,6 @@
  *
  */
 'use strict';
-/*jshint -W079 */
 var gulp = require('gulp');
 var pagespeed = require('psi');
 var ngrok = require('ngrok');

@@ -5,14 +5,11 @@
  *
  */
 'use strict';
-/*jshint -W079 */
-
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var path = require('path');
 var postcss = require('gulp-postcss');
 var postcssImport = require('postcss-import');
-var cssnext = require('cssnext');
 var postcssMixins = require('postcss-mixins');
 var postcssNested = require('postcss-nested');
 var postcssAdvancedVars = require('postcss-advanced-variables');
@@ -26,6 +23,7 @@ var map = require('map-stream');
 var gutil = $.util;
 var chalk = require('chalk');
 var notifyGrowly = config.growly.notify;
+var errorNotyShown = false;
 
 var onError = function(err) {
   console.log(err);
@@ -43,6 +41,40 @@ var processors = [
   postcssExtend
 ];
 
+var StylesDevErrorHandler = {
+  errorHandler: $.notify.onError(function (error) {
+    var message = error.message
+      .replace(/^\/[^ ]+\//, '')
+      .replace(/\^/, '')
+      .replace(/\s/, ' ')
+      .trim();
+
+    if (notifyGrowly) {
+      errorNotyShown = true;
+      return {
+        message: message,
+        title: 'postCSS error',
+        icon: config.growly.errorIcon
+      };
+    }
+  })
+};
+
+gulp.task('css-inject', function () {
+  var target = gulp.src('./fbs.libraries.yml');
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(['./css/components/*.p.css', '!./css/components/node__*.p.css'], {read: false});
+
+  return target.pipe($.inject(sources, {
+    starttag: '# css-components:{{ext}} #',
+    endtag: '# endinject #',
+    transform: function(filepath, file, index, length, targetFile) {
+      var path = filepath.substring(1);
+      return path + ': {}'
+    }
+  }, {name: 'css-components'}))
+    .pipe(gulp.dest('./'));
+});
 
 // Compile and Automatically Prefix Stylesheets fior production
 gulp.task('styles', false, function() {
@@ -54,37 +86,31 @@ gulp.task('styles', false, function() {
     .pipe($.plumber({
       errorHandler: onError
     }))
-    .pipe($.changed('styles', {extension: '.p.css'}))
     .pipe($.sourcemaps.init())
     .pipe(postcss(prodProcessors))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(config.style.dest))
-    .pipe($.size({title: 'styles'}))
-    .pipe(map(function() {
-      gutil.log(chalk.green('All styles processed'));
-      if (notifyGrowly) {
-        $.notify('All styles processed');
-      }
-    }));
+    .pipe($.size({title: 'styles'}));
 });
 
 // Compile and Automatically Prefix Stylesheets for dev
 gulp.task('styles-dev', false, function() {
 
+  errorNotyShown = false;
+
   return gulp.src(config.style.src)
-    //.pipe($.plumber({
-    //  errorHandler: onError
-    //}))
-    .pipe($.changed('styles', {extension: '.p.css'}))
+    .pipe($.plumber(StylesDevErrorHandler))
     .pipe($.sourcemaps.init())
     .pipe(postcss(processors))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(config.style.dest))
     .pipe($.size({title: 'styles'}))
-    .pipe(map(function() {
-      gutil.log(chalk.green('All styles processed'));
-      if (notifyGrowly) {
-        $.notify('All styles processed');
+    .pipe($.notify(function () {
+      if (!errorNotyShown) {
+        return {
+          message: 'All styles processed',
+          onLast: true
+        }
       }
     }));
 });

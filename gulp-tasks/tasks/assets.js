@@ -5,7 +5,6 @@
  *
  */
 'use strict';
-/*jshint -W079 */
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -16,7 +15,7 @@ var onError = function(err) {
 
 // Optimize Images
 gulp.task('images', false, function() {
-  return gulp.src(config.imagesOriginals.src)
+  return gulp.src(config.images.src)
     .pipe($.plumber({
       errorHandler: onError
     }))
@@ -24,6 +23,6 @@ gulp.task('images', false, function() {
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('images'))
+    .pipe(gulp.dest(config.images.dest))
     .pipe($.size({title: 'images'}));
 });

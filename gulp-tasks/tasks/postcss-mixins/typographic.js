@@ -1,7 +1,6 @@
 // PostCss adaptation of
 // Typographic v2.9.2 - https://github.com/corysimmons/typographic
 'use strict';
-/*jshint unused:false*/
 module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFontWeight, bodyColor, headerFont, headerFontWeight, headerColor, minFont, maxFont, minWidth, maxWidth, verticalRhythm) {
 
   // Ratios
@@ -55,7 +54,7 @@ module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFon
   var $palatino = '"Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", "Georgia", "serif"';
 
   // Settings
-  var $lineHeightRatio = (lineHeightRatio !== 'null') ? parseInt(lineHeightRatio, 10) : 1.75;
+  var $lineHeightRatio = (lineHeightRatio !== 'null') ? parseFloat(lineHeightRatio, 10) : 1.75;
   var $headerRatio = (headerRatio !== 'null') ? headerRatio : $golden;
   var $bodyFont = (bodyFont !== 'null') ? bodyFont : $helvetica;
   var $bodyFontWeight = (bodyFontWeight !== 'null') ? bodyFontWeight : '300';
@@ -174,7 +173,7 @@ module.exports = function(mixin, lineHeightRatio, headerRatio, bodyFont, bodyFon
 
   function tBlock() {
     return {
-      'margin-bottom': $lineHeightRatio + 'em'
+      'margin-top': $lineHeightRatio + 'em'
     };
   }
 
