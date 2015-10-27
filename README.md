@@ -29,6 +29,7 @@ Replace the **[placeholder]** with your new theme name.
     
     # Prepare the theme template
     git clone git@github.com:wunderkraut/nameless.git
+    git checkout d8
 	cp -r nameless [placeholder]
 	cd [placeholder]
 	rm -rdf .git*
