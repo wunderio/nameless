@@ -1,4 +1,6 @@
 .sass-cache
 node_modules
 phantomas
-css
+assets/css
+assets/vendor
+assets/images/iconstack.svg

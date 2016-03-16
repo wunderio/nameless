@@ -1,11 +1,11 @@
 global-styling:
   css:
     base:
-      css/base/elements.p.css: {}
-    components:
-      css/components/comment.theme.p.css: {}
-      css/components/search.theme.p.css: {}
+      css/base/elements.css: {}
+    component:
+      # css-components:css #
+      # endinject #
     layout:
-      css/layout.p.css: {}
+      css/layout.css: {}
     theme:
-      css/theme.p.css: {}
+      css/theme.css: {}
