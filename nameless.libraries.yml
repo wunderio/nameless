@@ -1,11 +1,11 @@
 global-styling:
   css:
     base:
-      css/base/elements.css: {}
+      assets/css/base/elements.css: {}
     component:
       # css-components:css #
       # endinject #
     layout:
-      css/layout.css: {}
+      assets/css/layout.css: {}
     theme:
-      css/theme.css: {}
+      assets/css/theme.css: {}
