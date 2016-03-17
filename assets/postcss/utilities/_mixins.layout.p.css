@@ -5,6 +5,18 @@
 */
 
 /*
+// Modern clearfix
+// @see: http://cssmojo.com/the-very-latest-clearfix-reloaded/
+*/
+@define-mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/*
 // Cross-Browser justified grid.
 // Inspired by http://code.jelmerdemaat.nl/2012/perfectly-justified-css-grid-technique-using-inline-block/
 // Important note: All elements need at least one space character between their tags to make this working!
@@ -41,7 +53,7 @@
   padding-bottom: $gap + "%";
 }
 
-@define-mixin responsive-mediab $upscaling: false, $force: false {
+@define-mixin responsive-media $upscaling: false, $force: false {
   $important: null;
   @if ($force) {
     $important: !important;

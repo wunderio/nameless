@@ -1,0 +1,14 @@
+/*
+//
+// Breakpoint definitions
+// =============================================================================
+*/
+
+/*// Device min-width breakpoints:*/
+$breakpoint-xxs:  320px;
+$breakpoint-xs:   480px;
+$breakpoint-s:    640px;
+$breakpoint-m:    950px;
+$breakpoint-l:    1025px;
+$breakpoint-xl:   1200px;
+$breakpoint-xxl:  1400px;

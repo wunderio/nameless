@@ -57,10 +57,10 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
+<div class="page-container">
 
-  <div class="wrapper wrapper--header">
-    <header role="banner" class="wrapper__content">
+  <div class="page-wrapper page-wrapper--header">
+    <header role="banner" class="page-wrapper__content">
       {% if logo %}
         <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
           <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
@@ -91,31 +91,31 @@
     </header>
   </div>
 
-  <div class="wrapper wrapper--navigation">
-    <section class="wrapper__content">
+  <div class="page-wrapper page-wrapper--navigation">
+    <section class="page-wrapper__content">
       {{ page.navigation }}
     </section>
   </div>
 
-  <div class="wrapper wrapper--highlighted">
-    <section class="wrapper__content">
+  <div class="page-wrapper page-wrapper--highlighted">
+    <section class="page-wrapper__content">
       {{ page.highlighted }}
     </section>
 
   </div>
 
-  <div class="wrapper wrapper--help">
-    <section class="wrapper__content">
+  <div class="page-wrapper page-wrapper--help">
+    <section class="page-wrapper__content">
       {{ page.help }}
       {{ page.messages }}
     </section>
   </div>
 
-  <div class="wrapper wrapper--main">
-    <main role="main" class="wrapper__content main">
+  <div class="page-wrapper page-wrapper--main">
+    <div class="page-wrapper__content main">
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-      <div class="main__content">
+      <main role="main" class="main__content">
 
         {{ title_prefix }}
         {% if title %}
@@ -130,7 +130,7 @@
         {% endif %}
 
         {{ page.content }}
-      </div>{# /.layout-content #}
+      </main>{# /.layout-content #}
 
       {% if page.sidebar_first %}
         <aside class="main__sidebar-first" role="complementary">
@@ -144,12 +144,12 @@
         </aside>
       {% endif %}
 
-    </main>
+    </div>
   </div>
 
-  <div class="wrapper wrapper--footer">
+  <div class="page-wrapper page-wrapper--footer">
     {% if page.footer %}
-      <footer role="contentinfo" class="wrapper__content">
+      <footer role="contentinfo" class="page-wrapper__content">
         {{ page.footer }}
       </footer>
     {% endif %}

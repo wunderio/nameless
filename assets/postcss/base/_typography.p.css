@@ -5,24 +5,61 @@
 */
 
 
-/**
-  $line-height-ratio  : 1.75;
-  $header-ratio       : null;
-  $body-font          : null;
-  $body-font-weight   : 300;
-  $body-color         : $text-color;
-  $header-font        : null;
-  $header-font-weight : 500;
-  $header-color       : $text-color;
-  $min-font           : '12px';
-  $max-font           : '20px';
-  $min-width          : '600px';
-  $max-width          : '1000px';
-  $vertical-rhythm    : true;
+body {
+  font-size: responsive calc($base-font-size * 0.8) $base-font-size;
+  font-range: 420px 1280px;
+  line-height: $base-line-height;
+  font-family: $base-font-family;
+}
+
+p {
+  text-align: justify;
+}
+
+/*
+// Super simple fake vertical rhythm till postcss-vertical-rhythm and postcss-resonsive-type work together.
+*/
+h1, h2, h3, h4, h5, h6, p {
+  &,
+  & + form,
+  & + ul,
+  & + ol {
+    margin-top: calc($base-vertical-space / 4);
+    margin-bottom: calc($base-vertical-space / 4 * 3);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: calc($base-vertical-space / 4 * 7);
+}
+
+/*
+// Headlines
+// -----------------------------------------------------------------------------
 */
 
-@mixin typographic 1.75, null, null, 300, #333, null, 500, #333, 14px, 18px, 600px, 1000px, true ;
-@mixin verticalGridOverlay 1.75, 2;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  color: $headings-color;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+h3 {
+  color: #666666;
+}
+
+.text-inverted {
+  color: $lightgray;
+}
+.headlines-inverted {
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+}
 
 
 /*
@@ -54,7 +91,6 @@ nav ul,
 nav ol {
   margin-left: 0;
   list-style: none;
-  list-style-image: none;
 }
 
 /*
@@ -69,7 +105,7 @@ hr {
   border-top: 1px solid $silver;
   margin: 0;
   padding: 0;
-  @extend .trailer-100;
+  margin-bottom: calc($base-vertical-space / 4 * 3);
 }
 
 /*
@@ -78,7 +114,7 @@ hr {
 address {
   display: block;
   font-style: normal;
-  @extend .trailer-100;
+  margin-bottom: calc($base-vertical-space / 4 * 3);
 }
 
 blockquote {

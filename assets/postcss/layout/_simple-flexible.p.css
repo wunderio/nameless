@@ -4,14 +4,43 @@
 // =============================================================================
 */
 
-.layout-container {
+.page-container {
   width: 100%;
-  > .wrapper {
+  > .page-wrapper {
     width: 100%;
-    > .wrapper__content {
+    > .page-wrapper__content {
       width: 90%;
       max-width: 1100px;
       margin: 0 auto;
     }
+  }
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main__content {
+
+  @media (min-width: $breakpoint-m) {
+    width: 60%;
+    flex-grow: 3;
+  }
+}
+
+.main__sidebar-first {
+  width: 100%;
+
+  @media (min-width: $breakpoint-m) {
+    order: -1;
+    width: 20%;
+  }
+}
+.main__sidebar-second {
+  width: 100%;
+
+  @media (min-width: $breakpoint-xl) {
+    width: 20%;
   }
 }

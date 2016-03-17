@@ -7,7 +7,10 @@
 
 img,
 video {
-  /*@include responsive-media();*/
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
 }
 
 /*
@@ -22,13 +25,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 /*
 // Figure image
-//
-// Markup:
-// <figure><img src="http://placehold.it/250x250" /></figure>
-//
-// Styleguide 3.1.2
 */
 
-figure > img {
-  display: block;
+figure {
+  > img {
+    display: block;
+  }
 }

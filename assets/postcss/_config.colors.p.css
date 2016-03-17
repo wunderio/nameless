@@ -43,6 +43,9 @@ $carrot-orange:  #e56716;
 $sky-blue:       #58b8d1;
 $leaf-green:     #88b700;
 
+$primary-color: #1e7ed1;
+$secondary-color: #58b8d1;
+
 /*
 // -----------------------------------------------------------------------------
 // Typography colors
@@ -54,7 +57,7 @@ $text-selection-color:    $carrot-orange;
 
 $headings-color:         inherit;
 
-$link-color:        $carrot-orange;
+$link-color:        $secondary-color;
 $link-color-hover:  color($link-color blackness(+40%));
 
 /*

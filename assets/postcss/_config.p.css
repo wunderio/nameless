@@ -3,7 +3,7 @@
 // VARIABLES for SASS/COMPASS
 // =============================================================================
 */
-
+@import '_config.breakpoints.p.css';
 @import '_config.colors.p.css';
 
 /*
@@ -70,6 +70,16 @@ $giga-font-size:          6    * $base-font-size;
 $small-font-size:         .7   * $base-font-size;
 $micro-font-size:         .5   * $base-font-size;
 
+/*
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+*/
+
+$base-space: 15px;
+$base-vertical-space: $base-space;
+$base-horizontal-space: $base-space;
+$grid-default-gutter: calc($base-space * 2);
 
 /*
 // -----------------------------------------------------------------------------
