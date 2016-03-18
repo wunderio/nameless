@@ -24,7 +24,7 @@ module.exports = {
   },
   cssInject: {
     target: path.join('../nameless.libraries.yml'),
-    src: path.join('css', 'component', '**', '*.css')
+    src: path.join('css', 'components', '**', '*.css')
   },
   svgStack: {
     src: path.join('icons', '*.svg'),

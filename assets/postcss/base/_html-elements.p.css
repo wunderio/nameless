@@ -8,6 +8,7 @@
 */
 * {
   @include box-sizing(inherit);
+
   &:after,
   &:before {
     @include box-sizing(inherit);

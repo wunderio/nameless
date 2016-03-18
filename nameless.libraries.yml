@@ -4,6 +4,9 @@ global-styling:
       assets/css/base/elements.css: {}
     component:
       # css-components:css #
+      assets/css/components/buttons.css: {}
+      assets/css/components/comment.theme.css: {}
+      assets/css/components/search.theme.css: {}
       # endinject #
     layout:
       assets/css/layout.css: {}

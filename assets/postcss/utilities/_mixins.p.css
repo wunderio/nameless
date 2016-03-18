@@ -4,6 +4,7 @@
 // =============================================================================
 */
 
+@import '_mixins.buttons.p.css';
 @import '_mixins.colors.p.css';
 @import '_mixins.hiding.p.css';
 @import '_mixins.layout.p.css';
@@ -18,9 +19,11 @@
   &:-moz-placeholder {
     color: $color;
   }
+
   &:-ms-input-placeholder {
     color: $color;
   }
+
   &::-webkit-input-placeholder {
     color: $color;
   }

@@ -33,7 +33,7 @@ p a {
 */
 .current,
 .active {
-  & > a {
+  &> a {
     cursor: text;
     text-decoration: underline;
   }
@@ -55,6 +55,7 @@ h6,
 .zeta {
   a {
     color: inherit;
+
     &:hover,
     &:active,
     &:focus {

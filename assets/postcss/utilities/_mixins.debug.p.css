@@ -8,7 +8,7 @@
   @if $debug {
     box-sizing: border-box;
     min-height: 150px;
-    background: rgba($region-bg-color, .2);
+    background: rgba($region-bg-color, 0.2);
     outline: 1px dashed $silver;
     margin: 10px 0;
     padding: 20px;

@@ -6,8 +6,10 @@
 
 .page-container {
   width: 100%;
+
   > .page-wrapper {
     width: 100%;
+
     > .page-wrapper__content {
       width: 90%;
       max-width: 1100px;
@@ -22,7 +24,6 @@
 }
 
 .main__content {
-
   @media (min-width: $breakpoint-m) {
     width: 60%;
     flex-grow: 3;
