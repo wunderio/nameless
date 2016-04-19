@@ -6,6 +6,7 @@ global-styling:
       # css-components:css #
       assets/css/components/buttons.css: {}
       assets/css/components/comment.theme.css: {}
+      assets/css/components/forms.css: {}
       assets/css/components/search.theme.css: {}
       # endinject #
     layout:

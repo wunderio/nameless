@@ -11,7 +11,7 @@
 @define-mixin gradientBar($primary-color, $secondary-color) {
   @include background-image(linear-gradient($primary-color, $secondary-color));
   border-color: $secondary-color $secondary-color darken($secondary-color, 15%);
-  border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) fade-in(rgba(0, 0, 0, .1), .15);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fade-in(rgba(0, 0, 0, 0.1), 0.15);
 }
 
 // Use a gradient for the button background

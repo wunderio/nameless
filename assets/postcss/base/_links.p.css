@@ -7,7 +7,7 @@
 a {
   color: $link-color;
   text-decoration: none;
-  /*@include transition(.3s color, .3s background);*/
+  /*@include transition(.3s color, 0.3s background);*/
 
   &:hover,
   &:active,
@@ -33,7 +33,7 @@ p a {
 */
 .current,
 .active {
-  &> a {
+  > a {
     cursor: text;
     text-decoration: underline;
   }

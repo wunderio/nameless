@@ -67,7 +67,7 @@ h3 {
 // -----------------------------------------------------------------------------
 */
 
-.node, .cke_editable {
+.cke_editable {
   ul, ol, dl {
     overflow: hidden;
 
@@ -88,7 +88,9 @@ ol ul {
 ul.unstyled,
 ol.unstyled,
 nav ul,
-nav ol {
+nav ol
+ul.menu,
+ol.menu {
   margin-left: 0;
   list-style: none;
 }

@@ -32,3 +32,25 @@
   }
 }
 
+@define-mixin button-cta-primary $border-width: 1px {
+  @mixin button-cta $white, $secondary-color, $white, $primary-color, 1px, 3px;
+  border-color: $secondary-color;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+@define-mixin button-cta-secondary $border-width: 1px {
+  @mixin button-cta $white, $primary-color, $white, $secondary-color, 1px, 3px;
+  border-color: $primary-color;
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+}
+
+@define-mixin button-cta-standard $border-width: 1px {
+  @mixin button-cta $text-color, #fff, $text-color, $fbs-light-gray, 1px, 3px;
+  border-color: $text-color;
+}

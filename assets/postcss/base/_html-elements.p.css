@@ -7,16 +7,16 @@
 // Use border-box for every element on the website
 */
 * {
-  @include box-sizing(inherit);
+  box-sizing: inherit;
 
   &:after,
   &:before {
-    @include box-sizing(inherit);
+    box-sizing: inherit;
   }
 }
 
 body {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   cursor: default;
   padding: 0;
   margin: 0;

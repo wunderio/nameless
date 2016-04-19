@@ -1,0 +1,21 @@
+@import '../utilities/_utilities.p.css';
+@import '../_config.p.css';
+
+.form-actions {
+  display: flex;
+
+  .button {
+    &.form-submit {
+      @mixin button-cta-primary;
+    }
+
+    &:not(.button--primary):not(.form-submit) {
+      @mixin button-cta-secondary;
+    }
+  }
+
+  .button + .button {
+    margin-left: 1em;
+  }
+}
+

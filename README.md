@@ -9,11 +9,11 @@ Starting point for drupal theme development and to allow a clean output of conte
 * basic html elements should be styled normalized and simple but pretty
 * all Drupal elements should be styled or explicitly left out -> normalize
 * basic Drupal theme scaffolding, preprocessing and resets should be done
-* Cross-browser and device support (IE8+, Firefox, Chrome, Safari, Opera, iOS, Android. IE7 is partly supported)
+* Cross-browser and device support (IE9+, Firefox, Chrome, Safari, Opera, iOS, Android)
 
 ## Usage
 
-1. Add to %drupalroot%/sites/all/themes
+1. Add to %drupalroot%/themes
 2. **Rename theme and hooks to a project specific name**
 3. Update README to contain project specific information
 4. Run `bower install` to download the required libraries
@@ -55,24 +55,11 @@ Replace the **[placeholder]** with your new theme name.
 
 ### usage in a local dev environment
 
-* to lint your JavaScript files once, you run `gulp jshint`
-* to minify images and SVGs, place files in `./images_originals` folder and run `gulp images`
-
-* to constantly monitor your theme directory and execute all necessary tasks while developing, you run `gulp watch`
-
-* to lint your SCSS files once, you run `gulp scsslint`
+* to automate during development run `gulp
 
 ### usage in a CI/production environment
 
-run `gulp dist` to
+run ``/build.sh` to
 
-* lint JS files  
-* compile compressed CSS from SASS  
-
-
-### roadmap
-* move to postCSS from SASS
-* performance monitoring with phantomas
-* implement gulp dis task for CI
-
-
+* compile CSS
+* create SVG stack
