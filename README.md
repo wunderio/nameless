@@ -25,13 +25,13 @@ Starting point for drupal theme development and to allow a clean output of conte
 Replace the **[placeholder]** with your new theme name.
 
     # Go into your theme directory
-    cd /your/drupal/folder/sites/all/themes/
-    
+    cd /your/drupal/folder/themes/
+
     # Prepare the theme template
     git clone git@github.com:wunderkraut/nameless.git
-    git checkout d8
 	cp -r nameless [placeholder]
 	cd [placeholder]
+    git checkout d8
 	rm -rdf .git*
 
 	# Rename files
@@ -49,7 +49,7 @@ Replace the **[placeholder]** with your new theme name.
 @see: [Gulp documentation](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
 ### pre-requisites:
-* you need to have [nodejs and npm](http://nodejs.org/) installed.  
+* you need to have [nodejs and npm](http://nodejs.org/) installed.
 * you need to have gulp installed as global package `npm install -g gulp`
 * you need to run `npm install`
 
