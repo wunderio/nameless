@@ -51,15 +51,16 @@ Replace the **[placeholder]** with your new theme name.
 ### pre-requisites:
 * you need to have [nodejs and npm](http://nodejs.org/) installed.  
 * you need to have gulp installed as global package `npm install -g gulp`
+* you need to have bower installed as global package `npm install -g bower`
 * you need to run `npm install`
 
 ### usage in a local dev environment
 
-* to automate during development run `gulp
+* to automate during development run `gulp`
 
 ### usage in a CI/production environment
 
-run ``/build.sh` to
+run 
 
-* compile CSS
-* create SVG stack
+    export NODE_ENV=production
+    gulp --gulpfile gulpfile_prod.js

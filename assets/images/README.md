@@ -1,6 +1,5 @@
-# directory for original images or SVGs that might need to be minified
+# directory for processed images or SVGs that will be linked from the css files
 
 ## usage:
-* place original images or SVGs in this folder
-* run `grunt imagemin` or `grunt svgmin`
-* minified images and SVGs will be created and placed into the images folder (preserving the folder structure)
+* th images in the ../images_originals folder will be minified and placed here
+* run `gulp imagemin` to process the images
