@@ -1,6 +1,9 @@
 @import '../utilities/_utilities.p.css';
 @import '../_config.p.css';
 
+label {
+  display: block;
+}
 .form-actions {
   display: flex;
 
@@ -16,6 +19,25 @@
 
   .button + .button {
     margin-left: 1em;
+  }
+}
+
+form {
+  .container-inline {
+    display: flex;
+    justify-content: flex-start;
+
+    label {
+      display: block;
+      &:after {
+        content: '';
+      }
+    }
+
+    > .form-wrapper {
+      display: block;
+      margin-right: 1em;
+    }
   }
 }
 
