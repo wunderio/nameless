@@ -15,7 +15,8 @@ require('gulp-task-backstop-test')(gulp, gulpConfig);
 
 gulp.task('default', [
   'build',
-  'watch'
+  'watch',
+  'serve'
 ]);
 
 gulp.task('build', [
